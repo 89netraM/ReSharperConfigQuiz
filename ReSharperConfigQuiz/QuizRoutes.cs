@@ -71,7 +71,11 @@ public static class QuizRoutes
         [FromRoute] Guid quizId,
         [FromRoute] Guid id)
     {
-        var quiz = await dbContext.Quizzes.Include(q => q.Questions).FirstOrDefaultAsync(q => q.Id == quizId);
+        var quiz = await dbContext.Quizzes
+            .Include(q => q.Questions)
+            .ThenInclude(q => q.Answers)
+            .ThenInclude(a => a.Example)
+            .FirstOrDefaultAsync(q => q.Id == quizId);
 
         if (quiz is null)
         {
