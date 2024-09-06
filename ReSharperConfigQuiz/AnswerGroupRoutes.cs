@@ -16,10 +16,11 @@ public static class AnswerGroupRoutes
     {
         var group = routeBuilder.MapGroup(prefix);
         group.MapGet(pattern: "{id}", GetAnswerGroup);
+        group.MapGet(pattern: "{id}/common-config", GetCommonConfig);
+
         group.MapPost(pattern: "", AddAnswerGroup);
         group.MapDelete(pattern: "{id}", RemoveAnswerGroup);
         group.MapPost(pattern: "{id}/submission", AddSubmission);
-        group.MapGet(pattern: "{id}/common-config", GetCommonConfig);
     }
 
     private static Task<AnswerGroup?> GetAnswerGroup([FromServices] DbContext dbContext, [FromRoute] Guid id) =>
@@ -44,18 +45,49 @@ public static class AnswerGroupRoutes
         return entity.Entity;
     }
 
-    private static Task RemoveAnswerGroup([FromServices] DbContext dbContext, [FromRoute] Guid id) =>
-        dbContext.AnswerGroups.Where(ag => ag.Id == id).ExecuteDeleteAsync();
+    private static async Task RemoveAnswerGroup([FromServices] DbContext dbContext, [FromRoute] Guid id)
+    {
+        var quiz = await dbContext.AnswerGroups.Include(ag => ag.Submissions).FirstOrDefaultAsync(ag => ag.Id == id);
+
+        if (quiz is null)
+        {
+            return;
+        }
+
+        dbContext.AnswerGroups.Remove(quiz);
+        await dbContext.SaveChangesAsync();
+    }
 
     private static async Task<Submission?> AddSubmission(
         [FromServices] DbContext dbContext,
         [FromRoute] Guid id,
-        [FromBody] Submission submission)
+        [FromBody] SubmissionDto submissionDto)
     {
-        var answerGroup = dbContext.AnswerGroups.Find(id);
+        var answerGroup = await dbContext.AnswerGroups
+            .Include(ag => ag.Submissions)
+            .Include(ag => ag.Quiz)
+            .ThenInclude(q => q.Questions)
+            .ThenInclude(q => q.Answers)
+            .ThenInclude(a => a.Example)
+            .FirstOrDefaultAsync(ag => ag.Id == id);
+
         if (answerGroup is null)
         {
             return null;
+        }
+
+        var answerMap = answerGroup.Quiz.Questions.SelectMany(q => q.Answers).ToDictionary(a => a.Id);
+
+        var submission = new Submission { Name = submissionDto.Name, Answers = [] };
+        dbContext.Add(submission);
+        foreach (var answerId in submissionDto.Answers)
+        {
+            if (!answerMap.TryGetValue(answerId, out var answer))
+            {
+                return null;
+            }
+
+            submission.Answers.Add(answer);
         }
 
         answerGroup.Submissions.Add(submission);
