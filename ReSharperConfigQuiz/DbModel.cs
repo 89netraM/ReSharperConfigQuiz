@@ -17,6 +17,8 @@ public class DbContext(DbContextOptions<DbContext> options) : EfDbContext(option
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Submission>().HasMany(s => s.Answers).WithMany();
+
+        modelBuilder.Entity<AnswerGroup>().HasAlternateKey(ag => ag.PublicId);
     }
 }
 
@@ -67,6 +69,8 @@ public class Example
 public class AnswerGroup
 {
     public Guid Id { get; } = Guid.NewGuid();
+
+    public Guid PublicId { get; } = Guid.NewGuid();
 
     public required Quiz Quiz { get; init; }
 

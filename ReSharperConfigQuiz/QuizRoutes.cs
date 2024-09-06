@@ -94,7 +94,7 @@ public static class QuizRoutes
 
         if (quiz is null)
         {
-            return Results.NoContent();
+            return Results.NotFound();
         }
 
         dbContext.Quizzes.Remove(quiz);

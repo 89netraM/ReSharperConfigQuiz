@@ -30,7 +30,7 @@ public static class AnswerGroupRoutes
             .AsNoTracking()
             .Include(ag => ag.Submissions)
             .ThenInclude(a => a.Answers)
-            .FirstOrDefaultAsync(ag => ag.Id == id);
+            .FirstOrDefaultAsync(ag => ag.Id == id || ag.PublicId == id);
 
         return answerGroup is not null ? Results.Json(answerGroup) : Results.NotFound();
     }
@@ -57,7 +57,7 @@ public static class AnswerGroupRoutes
 
         if (answerGroup is null)
         {
-            return Results.NoContent();
+            return Results.NotFound();
         }
 
         dbContext.AnswerGroups.Remove(answerGroup);
@@ -77,7 +77,7 @@ public static class AnswerGroupRoutes
             .ThenInclude(q => q.Questions)
             .ThenInclude(q => q.Answers)
             .ThenInclude(a => a.Example)
-            .FirstOrDefaultAsync(ag => ag.Id == id);
+            .FirstOrDefaultAsync(ag => ag.Id == id || ag.PublicId == id);
 
         if (answerGroup is null)
         {
@@ -113,7 +113,7 @@ public static class AnswerGroupRoutes
             .Include(ag => ag.Quiz)
             .ThenInclude(q => q.Questions)
             .ThenInclude(q => q.Answers)
-            .FirstOrDefaultAsync(ag => ag.Id == id);
+            .FirstOrDefaultAsync(ag => ag.Id == id || ag.PublicId == id);
         if (answerGroup is null)
         {
             return Results.NotFound(value: "Answer group not found");
