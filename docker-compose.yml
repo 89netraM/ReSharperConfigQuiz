@@ -1,0 +1,44 @@
+version: "3.1"
+
+services:
+  server:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    restart: unless-stopped
+    environment:
+      - ConnectionStrings__QuizDatabase=Host=db;Username=user;Password=password;Database=quiz
+    ports:
+      - 8080:80
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: quiz
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - quizDb:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  pgadmin4:
+    image: elestio/pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: password
+      PGADMIN_LISTEN_PORT: 8081
+    volumes:
+      - pgadmin:/pgadmin4/servers.json
+    ports:
+      - 8081:8081
+    depends_on:
+      - db
+
+volumes:
+  quizDb:
+  pgadmin:
