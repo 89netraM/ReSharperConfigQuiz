@@ -3,12 +3,14 @@ WORKDIR /app
 EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /app
 COPY ./ReSharperConfigQuiz/ReSharperConfigQuiz.csproj .
 RUN dotnet restore
-COPY ./ReSharperConfigQuiz/ .
+COPY ./ReSharperConfigQuiz .
 RUN dotnet publish -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=build /app/publish .
+COPY ./ReSharperConfigQuiz/appsettings.json .
 ENTRYPOINT dotnet ReSharperConfigQuiz.dll
