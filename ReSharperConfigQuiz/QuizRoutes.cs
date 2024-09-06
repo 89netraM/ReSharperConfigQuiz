@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Builder;
@@ -17,10 +16,11 @@ public static class QuizRoutes
         var group = routeBuilder.MapGroup(prefix);
         group.MapGet(pattern: "", GetAllQuizzes);
         group.MapGet(pattern: "{id}", GetQuiz);
-        group.MapPost(pattern: "", AddQuiz);
-        group.MapPost(pattern: "{quizId}/questions", AddQuestion);
-        group.MapDelete(pattern: "{quizId}/questions/{id}", RemoveQuestion);
-        group.MapDelete(pattern: "{id}", RemoveQuiz);
+
+        group.MapPost(pattern: "", AddQuiz).RequireAuthorization();
+        group.MapPost(pattern: "{quizId}/questions", AddQuestion).RequireAuthorization();
+        group.MapDelete(pattern: "{id}", RemoveQuiz).RequireAuthorization();
+        group.MapDelete(pattern: "{quizId}/questions/{id}", RemoveQuestion).RequireAuthorization();
     }
 
     private static IAsyncEnumerable<Quiz> GetAllQuizzes([FromServices] DbContext dbContext) =>
@@ -77,6 +77,20 @@ public static class QuizRoutes
         await dbContext.SaveChangesAsync();
     }
 
-    public static Task RemoveQuiz([FromServices] DbContext dbContext, [FromRoute] Guid id) =>
-        dbContext.Quizzes.Where(q => q.Id == id).ExecuteDeleteAsync();
+    public static async Task RemoveQuiz([FromServices] DbContext dbContext, [FromRoute] Guid id)
+    {
+        var quiz = await dbContext.Quizzes
+            .Include(q => q.Questions)
+            .ThenInclude(q => q.Answers)
+            .ThenInclude(a => a.Example)
+            .FirstOrDefaultAsync(q => q.Id == id);
+
+        if (quiz is null)
+        {
+            return;
+        }
+
+        dbContext.Quizzes.Remove(quiz);
+        await dbContext.SaveChangesAsync();
+    }
 }
