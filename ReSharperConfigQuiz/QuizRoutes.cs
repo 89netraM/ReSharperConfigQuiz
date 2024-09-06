@@ -18,6 +18,8 @@ public static class QuizRoutes
         group.MapGet(pattern: "", GetAllQuizzes);
         group.MapGet(pattern: "{id}", GetQuiz);
         group.MapPost(pattern: "", AddQuiz);
+        group.MapPost(pattern: "{quizId}/questions", AddQuestion);
+        group.MapDelete(pattern: "{quizId}/questions/{id}", RemoveQuestion);
         group.MapDelete(pattern: "{id}", RemoveQuiz);
     }
 
@@ -38,6 +40,41 @@ public static class QuizRoutes
         await dbContext.SaveChangesAsync();
 
         return entity.Entity;
+    }
+
+    public static async Task<Question?> AddQuestion(
+        [FromServices] DbContext dbContext,
+        [FromRoute] Guid quizId,
+        [FromBody] Question question)
+    {
+        var quiz = await dbContext.Quizzes.Include(q => q.Questions).FirstOrDefaultAsync(q => q.Id == quizId);
+
+        if (quiz is null)
+        {
+            return null;
+        }
+
+        dbContext.Add(question);
+        quiz.Questions.Add(question);
+        await dbContext.SaveChangesAsync();
+
+        return question;
+    }
+
+    public static async Task RemoveQuestion(
+        [FromServices] DbContext dbContext,
+        [FromRoute] Guid quizId,
+        [FromRoute] Guid id)
+    {
+        var quiz = await dbContext.Quizzes.Include(q => q.Questions).FirstOrDefaultAsync(q => q.Id == quizId);
+
+        if (quiz is null)
+        {
+            return;
+        }
+
+        quiz.Questions.RemoveAll(q => q.Id == id);
+        await dbContext.SaveChangesAsync();
     }
 
     public static Task RemoveQuiz([FromServices] DbContext dbContext, [FromRoute] Guid id) =>
