@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
@@ -23,42 +24,49 @@ public static class AnswerGroupRoutes
         group.MapPost(pattern: "{id}/submission", AddSubmission);
     }
 
-    private static Task<AnswerGroup?> GetAnswerGroup([FromServices] DbContext dbContext, [FromRoute] Guid id) =>
-        dbContext.AnswerGroups
+    private static async Task<IResult> GetAnswerGroup([FromServices] DbContext dbContext, [FromRoute] Guid id)
+    {
+        var answerGroup = await dbContext.AnswerGroups
             .AsNoTracking()
             .Include(ag => ag.Submissions)
             .ThenInclude(a => a.Answers)
             .FirstOrDefaultAsync(ag => ag.Id == id);
 
-    private static async Task<AnswerGroup?> AddAnswerGroup([FromServices] DbContext dbContext, [FromQuery] Guid quizId)
+        return answerGroup is not null ? Results.Json(answerGroup) : Results.NotFound();
+    }
+
+    private static async Task<IResult> AddAnswerGroup([FromServices] DbContext dbContext, [FromQuery] Guid quizId)
     {
         var quiz = await dbContext.Quizzes.FindAsync(quizId);
         if (quiz is null)
         {
-            return null;
+            return Results.NotFound(value: "Quiz not found");
         }
 
         var answerGroup = new AnswerGroup { Quiz = quiz, Submissions = [] };
         var entity = dbContext.AnswerGroups.Add(answerGroup);
         await dbContext.SaveChangesAsync();
 
-        return entity.Entity;
+        return Results.Json(entity.Entity);
     }
 
-    private static async Task RemoveAnswerGroup([FromServices] DbContext dbContext, [FromRoute] Guid id)
+    private static async Task<IResult> RemoveAnswerGroup([FromServices] DbContext dbContext, [FromRoute] Guid id)
     {
-        var quiz = await dbContext.AnswerGroups.Include(ag => ag.Submissions).FirstOrDefaultAsync(ag => ag.Id == id);
+        var answerGroup =
+            await dbContext.AnswerGroups.Include(ag => ag.Submissions).FirstOrDefaultAsync(ag => ag.Id == id);
 
-        if (quiz is null)
+        if (answerGroup is null)
         {
-            return;
+            return Results.NoContent();
         }
 
-        dbContext.AnswerGroups.Remove(quiz);
+        dbContext.AnswerGroups.Remove(answerGroup);
         await dbContext.SaveChangesAsync();
+
+        return Results.Ok();
     }
 
-    private static async Task<Submission?> AddSubmission(
+    private static async Task<IResult> AddSubmission(
         [FromServices] DbContext dbContext,
         [FromRoute] Guid id,
         [FromBody] SubmissionDto submissionDto)
@@ -73,7 +81,7 @@ public static class AnswerGroupRoutes
 
         if (answerGroup is null)
         {
-            return null;
+            return Results.NotFound(value: "Answer group not found");
         }
 
         var answerMap = answerGroup.Quiz.Questions.SelectMany(q => q.Answers).ToDictionary(a => a.Id);
@@ -84,7 +92,7 @@ public static class AnswerGroupRoutes
         {
             if (!answerMap.TryGetValue(answerId, out var answer))
             {
-                return null;
+                return Results.BadRequest(error: "Invalid answer ID");
             }
 
             submission.Answers.Add(answer);
@@ -93,12 +101,10 @@ public static class AnswerGroupRoutes
         answerGroup.Submissions.Add(submission);
         await dbContext.SaveChangesAsync();
 
-        return submission;
+        return Results.Json(submission);
     }
 
-    private static async Task<Dictionary<string, string>?> GetCommonConfig(
-        [FromServices] DbContext dbContext,
-        [FromRoute] Guid id)
+    private static async Task<IResult> GetCommonConfig([FromServices] DbContext dbContext, [FromRoute] Guid id)
     {
         var answerGroup = await dbContext.AnswerGroups
             .AsNoTracking()
@@ -110,7 +116,7 @@ public static class AnswerGroupRoutes
             .FirstOrDefaultAsync(ag => ag.Id == id);
         if (answerGroup is null)
         {
-            return null;
+            return Results.NotFound(value: "Answer group not found");
         }
 
         var answers = answerGroup.Submissions.SelectMany(s => s.Answers).ToLookup(a => a.Id);
@@ -125,6 +131,6 @@ public static class AnswerGroupRoutes
             }
         }
 
-        return commonConfig;
+        return Results.Json(commonConfig);
     }
 }

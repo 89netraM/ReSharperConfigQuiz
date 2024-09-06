@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
@@ -26,13 +27,17 @@ public static class QuizRoutes
     private static IAsyncEnumerable<Quiz> GetAllQuizzes([FromServices] DbContext dbContext) =>
         dbContext.Quizzes.AsNoTracking().AsAsyncEnumerable();
 
-    private static Task<Quiz?> GetQuiz([FromServices] DbContext dbContext, [FromRoute] Guid id) =>
-        dbContext.Quizzes
+    private static async Task<IResult> GetQuiz([FromServices] DbContext dbContext, [FromRoute] Guid id)
+    {
+        var quiz = await dbContext.Quizzes
             .AsNoTracking()
             .Include(q => q.Questions)
             .ThenInclude(q => q.Answers)
             .ThenInclude(a => a.Example)
             .FirstOrDefaultAsync(q => q.Id == id);
+
+        return quiz is not null ? Results.Json(quiz) : Results.NotFound();
+    }
 
     public static async Task<Quiz> AddQuiz([FromServices] DbContext dbContext, [FromBody] Quiz quiz)
     {
@@ -42,7 +47,7 @@ public static class QuizRoutes
         return entity.Entity;
     }
 
-    public static async Task<Question?> AddQuestion(
+    public static async Task<IResult> AddQuestion(
         [FromServices] DbContext dbContext,
         [FromRoute] Guid quizId,
         [FromBody] Question question)
@@ -51,17 +56,17 @@ public static class QuizRoutes
 
         if (quiz is null)
         {
-            return null;
+            return Results.NotFound(value: "Quiz not found");
         }
 
         dbContext.Add(question);
         quiz.Questions.Add(question);
         await dbContext.SaveChangesAsync();
 
-        return question;
+        return Results.Json(question);
     }
 
-    public static async Task RemoveQuestion(
+    public static async Task<IResult> RemoveQuestion(
         [FromServices] DbContext dbContext,
         [FromRoute] Guid quizId,
         [FromRoute] Guid id)
@@ -70,14 +75,16 @@ public static class QuizRoutes
 
         if (quiz is null)
         {
-            return;
+            return Results.NotFound(value: "Quiz not found");
         }
 
         quiz.Questions.RemoveAll(q => q.Id == id);
         await dbContext.SaveChangesAsync();
+
+        return Results.Ok();
     }
 
-    public static async Task RemoveQuiz([FromServices] DbContext dbContext, [FromRoute] Guid id)
+    public static async Task<IResult> RemoveQuiz([FromServices] DbContext dbContext, [FromRoute] Guid id)
     {
         var quiz = await dbContext.Quizzes
             .Include(q => q.Questions)
@@ -87,10 +94,12 @@ public static class QuizRoutes
 
         if (quiz is null)
         {
-            return;
+            return Results.NoContent();
         }
 
         dbContext.Quizzes.Remove(quiz);
         await dbContext.SaveChangesAsync();
+
+        return Results.Ok();
     }
 }
