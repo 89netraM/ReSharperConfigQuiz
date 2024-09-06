@@ -23,6 +23,8 @@ using (var scope = app.Services.CreateScope())
     await db.Database.MigrateAsync();
 }
 
-app.MapQuizRoutes(prefix: "api/quizzes");
+var apiGroup = app.MapGroup(prefix: "api");
+apiGroup.MapQuizRoutes(prefix: "quizzes");
+apiGroup.MapAnswerGroupRoutes(prefix: "answer-groups");
 
 app.Run();

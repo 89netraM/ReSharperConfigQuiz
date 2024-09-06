@@ -70,7 +70,8 @@ public class AnswerGroup
 
     public required Quiz Quiz { get; init; }
 
-    public List<Submission> Submissions { get; } = [];
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    public required List<Submission> Submissions { get; init; }
 }
 
 [PrimaryKey(nameof(Id))]
@@ -80,5 +81,5 @@ public class Submission
 
     public required string Name { get; init; }
 
-    public List<Answer> Answers { get; } = [];
+    public required List<Answer> Answers { get; init; }
 }
