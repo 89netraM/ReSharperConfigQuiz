@@ -1,0 +1,13 @@
+﻿@page
+@model IndexModel
+
+<h1>Config Quizzes</h1>
+
+<ul>
+    @foreach (var quiz in Model.Quizzes)
+    {
+        <li>
+            <a href="@Url.PageLink("Quiz", values: new { quizId = quiz.Id })">@quiz.Name</a>
+        </li>
+    }
+</ul>

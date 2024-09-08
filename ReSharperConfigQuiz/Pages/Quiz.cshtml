@@ -1,0 +1,81 @@
+@page "/{quizId}"
+@model QuizModel
+@{
+    ViewData["Title"] = Model.NotFound ? "Not found" : Model.Quiz.Name;
+}
+
+@if (Model.NotFound)
+{
+    <h1>Quiz not found</h1>
+    <p>Return to <a href="@Url.Page("Index")">the start page</a></p>
+    return;
+}
+
+<h1>@Model.Quiz.Name</h1>
+
+@if (Request.Method is "GET")
+{
+    <form method="post">
+        @foreach (var question in Model.Quiz.Questions)
+        {
+            <h2>@question.Name</h2>
+            <p>
+                <code>@question.PropertyName</code>
+            </p>
+            <ul>
+                @foreach (var answer in question.Answers)
+                {
+                    <li>
+                        <label>
+                            <input type="radio" name="answers[@question.PropertyName]" value="@answer.PropertyValue" required/>
+                            <p>@answer.Name</p>
+                            <p>
+                                <code>@answer.PropertyValue</code>
+                            </p>
+                            <p>
+                                <pre><code>@answer.Example</code></pre>
+                            </p>
+                        </label>
+                    </li>
+                }
+            </ul>
+        }
+
+        @if (Model.IsAnswerGroupQuiz)
+        {
+            <input text="text" name="name" placeholder="Name" required/>
+        }
+
+        <input type="submit" value="Submit"/>
+    </form>
+}
+else if (Request.Method is "POST")
+{
+    if (Model.Answers is not null)
+    {
+        <h2>
+            <code>.editorconfig</code>
+        </h2>
+        <p>
+            <pre><code>@(string.Join("\n", Model.Answers.Select(a => $"{a.Key} = {a.Value}")))</code></pre>
+        </p>
+        <p>
+            <a href="javascript:history.back()">Restart quiz</a>
+        </p>
+    }
+
+    if (Model.Errors is not null)
+    {
+        <h2>Errors</h2>
+        <p>These questions were not answered propperly</p>
+        <ul>
+            @foreach (var error in Model.Errors)
+            {
+                <li>@error</li>
+            }
+        </ul>
+        <p>
+            <a href="javascript:history.back()">Restart quiz</a>
+        </p>
+    }
+}

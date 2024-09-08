@@ -18,6 +18,8 @@ builder.Services.AddDbContext<DbContext>(o => o.UseNpgsql(quizDbConnectionString
 builder.Services.AddAuthorization();
 builder.Services.AddAuthentication(defaultScheme: "Bearer").AddJwtBearer();
 
+builder.Services.AddRazorPages();
+
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
@@ -31,5 +33,9 @@ app.UseAuthorization();
 var apiGroup = app.MapGroup(prefix: "api");
 apiGroup.MapQuizRoutes(prefix: "quizzes");
 apiGroup.MapAnswerGroupRoutes(prefix: "answer-groups");
+
+app.UseStaticFiles();
+app.UseRouting();
+app.MapRazorPages();
 
 app.Run();
