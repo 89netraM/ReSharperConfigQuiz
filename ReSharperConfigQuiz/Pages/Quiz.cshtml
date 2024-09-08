@@ -15,6 +15,14 @@
 
 @if (Request.Method is "GET")
 {
+    @if (!Model.IsAnswerGroupQuiz)
+    {
+        <form method="post" action="/group">
+            <input type="hidden" name="quizId" value="@Model.Quiz.Id">
+            <input type="submit" value="Create answer group">
+        </form>
+    }
+
     <form method="post">
         @foreach (var question in Model.Quiz.Questions)
         {

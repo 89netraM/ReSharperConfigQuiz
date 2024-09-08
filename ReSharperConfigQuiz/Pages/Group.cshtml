@@ -1,0 +1,45 @@
+@page "/group/{groupId}"
+@model GroupModel
+
+@if (Model.AnswerGroup is null)
+{
+    <h1>Group Not Found</h1>
+    ViewData["Title"] = "Not found";
+    return;
+}
+
+@{
+    ViewData["Title"] = "Group";
+}
+
+<h1>Group</h1>
+
+<p>
+    Take group quiz at <a href="@Url.Page("Quiz", new { quizId = Model.AnswerGroup.Quiz.Id, answerGroupId = Model.AnswerGroup.PublicId })">public quiz link</a>
+</p>
+
+@if (Model.AnswerGroup.Submissions.Count > 0)
+{
+    <h2>Common config</h2>
+
+    <p>
+        <pre><code>@Model.CommonConfig</code></pre>
+    </p>
+}
+
+<h2>Submissions</h2>
+
+
+@if (Model.AnswerGroup.Submissions.Count > 0)
+{
+    <ul>
+        @foreach (var submission in Model.AnswerGroup.Submissions)
+        {
+            <li>@submission.Name</li>
+        }
+    </ul>
+}
+else
+{
+    <p>No submissions yet</p>
+}

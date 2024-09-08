@@ -34,6 +34,8 @@ var apiGroup = app.MapGroup(prefix: "api");
 apiGroup.MapQuizRoutes(prefix: "quizzes");
 apiGroup.MapAnswerGroupRoutes(prefix: "answer-groups");
 
+app.MapCreateGroupPage();
+
 app.UseStaticFiles();
 app.UseRouting();
 app.MapRazorPages();
