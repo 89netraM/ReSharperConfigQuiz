@@ -18,7 +18,7 @@ public static class QuizRoutes
         group.MapGet(pattern: "", GetAllQuizzes);
         group.MapGet(pattern: "{id}", GetQuiz);
 
-        group.MapPost(pattern: "", AddQuiz).RequireAuthorization();
+        group.MapPost(pattern: "", AddQuiz);
         group.MapPost(pattern: "{quizId}/questions", AddQuestion).RequireAuthorization();
         group.MapDelete(pattern: "{id}", RemoveQuiz).RequireAuthorization();
         group.MapDelete(pattern: "{quizId}/questions/{id}", RemoveQuestion).RequireAuthorization();
