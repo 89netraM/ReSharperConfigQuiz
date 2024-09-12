@@ -1,0 +1,380 @@
+{
+    "Name": "ReSharper Generalized Config Quiz",
+    "Questions": [
+        {
+            "Name": "Braces layout style",
+            "PropertyName": "brace_style",
+            "Answers": [
+                {
+                    "Name": "At the end of line (K&R style)",
+                    "PropertyValue": "end_of_line",
+                    "Example": {
+                        "Code": "class MyClass {\n    int field;\n}"
+                    }
+                },
+                {
+                    "Name": "At the end of line (no space)",
+                    "PropertyValue": "end_of_line_no_space",
+                    "Example": {
+                        "Code": "class MyClass{\n    int field;\n}"
+                    }
+                },
+                {
+                    "Name": "At next line (BSD style)",
+                    "PropertyValue": "next_line",
+                    "Example": {
+                        "Code": "class MyClass\n{\n    int field;\n}"
+                    }
+                },
+                {
+                    "Name": "At next line indented (Whitesmiths style)",
+                    "PropertyValue": "next_line_shifted",
+                    "Example": {
+                        "Code": "class MyClass\n    {\n    int field;\n    }"
+                    }
+                },
+                {
+                    "Name": "At next line indented 2 (GNU style)",
+                    "PropertyValue": "next_line_shifted_2",
+                    "Example": {
+                        "Code": "class MyClass\n    {\n        int field;\n    }"
+                    }
+                },
+                {
+                    "Name": "Compact (Pico style)",
+                    "PropertyValue": "pico",
+                    "Example": {
+                        "Code": "class MyClass\n{ int field; }"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Align similar code in columns",
+            "PropertyName": "int_align",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "[Attribute]    private string  myString = \"x\";\n[Attribute(2)] public  MyClass y        = new();"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "[Attribute] private string myString = \"x\";\n[Attribute(2)] public MyClass y = new();"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place simple blocks on single line",
+            "PropertyName": "place_simple_blocks_on_single_line",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "if (condition) { return; }"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "if (condition)\n{\n    return;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place blocks from simple type members on single line",
+            "PropertyName": "place_simple_declaration_blocks_on_single_line",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "int Property { get; set; }"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "int Property {\n    get;\n    set;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place simple attribute on the same line with the owner",
+            "PropertyName": "place_attribute_on_same_line",
+            "Answers": [
+                {
+                    "Name": "Never",
+                    "PropertyValue": "never",
+                    "Example": {
+                        "Code": "[Attribute]\nint Method() => 0;\n\n[Attribute]\nint Method()\n{\n    // ...\n}"
+                    }
+                },
+                {
+                    "Name": "If owner is singleline",
+                    "PropertyValue": "if_owner_is_single_line",
+                    "Example": {
+                        "Code": "[Attribute] int Method() => 0;\n\n[Attribute]\nint Method()\n{\n    // ...\n}"
+                    }
+                },
+                {
+                    "Name": "Always",
+                    "PropertyValue": "always",
+                    "Example": {
+                        "Code": "[Attribute] int Method() => 0;\n\n[Attribute] int Method()\n{\n    // ...\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Space after unary operators (!, -, ~,...)",
+            "PropertyName": "space_after_unary_operator",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "! condition"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "!condition"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Space after comma",
+            "PropertyName": "space_after_comma",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "Method(a, b, c)"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "Method(a,b,c)"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Space around ternary operators (?, :)",
+            "PropertyName": "space_around_ternary_operator",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "condition ? expr1 : expr2"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "condition?expr1:expr2"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Space around binary operators (+, ||, =, ...)",
+            "PropertyName": "space_around_binary_operator",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "1 + 1"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "1+1"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Space around member access operators (., ->, ...)",
+            "PropertyName": "space_around_member_access_operator",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "object . Member"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "object.Member"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Space before brackets",
+            "PropertyName": "space_before_open_square_brackets",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "array [index]"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "array[index]"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Space before parenthesis of control flow statements",
+            "PropertyName": "space_after_keywords_in_control_flow_statements",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "if (condition)"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "if(condition)"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Space before comma",
+            "PropertyName": "space_before_comma",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "Method(a , b , c)"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "Method(a, b, c)"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Space before method call parenthesis",
+            "PropertyName": "space_between_method_call_name_and_opening_parenthesis",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "Method ()"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "Method()"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Space before method declaration parenthesis",
+            "PropertyName": "space_between_method_declaration_name_and_open_parenthesis",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "void Method ()"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "void Method()"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Space within brackets",
+            "PropertyName": "space_between_square_brackets",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "array[ index ]"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "array[index]"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Space within parenthesis of control flow statements",
+            "PropertyName": "space_between_parentheses_of_control_flow_statements",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "if ( condition )"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "if (condition)"
+                    }
+                }
+            ]
+        }
+    ]
+}
