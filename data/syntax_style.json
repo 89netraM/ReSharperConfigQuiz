@@ -1,0 +1,1208 @@
+{
+    "Name": "ReSharper Config Quiz Syntax Style",
+    "Questions": [
+        {
+            "Name": "Use 'var' for built-in types",
+            "PropertyName": "resharper_csharp_for_built_in_types",
+            "Answers": [
+                {
+                    "Name": "use_var",
+                    "PropertyValue": "use_var",
+                    "Example": {
+                        "Code": "int count = 42;\n\nvar builder = new StringBuilder();\nint length = builder.Length;\n\nDictionary<string, string> dictionary = new Dictionary<string, string>();\nbool hasValue = dictionary.TryGetValue(\"key\", out string value);"
+                    }
+                },
+                {
+                    "Name": "use_var_when_evident",
+                    "PropertyValue": "use_var_when_evident",
+                    "Example": {
+                        "Code": "int count = 42;\n\nvar builder = new StringBuilder();\nint length = builder.Length;\n\nDictionary<string, string> dictionary = new Dictionary<string, string>();\nbool hasValue = dictionary.TryGetValue(\"key\", out string value);"
+                    }
+                },
+                {
+                    "Name": "use_explicit_type",
+                    "PropertyValue": "use_explicit_type",
+                    "Example": {
+                        "Code": "int count = 42;\n\nvar builder = new StringBuilder();\nint length = builder.Length;\n\nDictionary<string, string> dictionary = new Dictionary<string, string>();\nbool hasValue = dictionary.TryGetValue(\"key\", out string value);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Use 'var' for simple types",
+            "PropertyName": "resharper_csharp_for_simple_types",
+            "Answers": [
+                {
+                    "Name": "use_var",
+                    "PropertyValue": "use_var",
+                    "Example": {
+                        "Code": "int count = 42;\n\nvar builder = new StringBuilder();\nint length = builder.Length;\n\nDictionary<string, string> dictionary = new Dictionary<string, string>();\nbool hasValue = dictionary.TryGetValue(\"key\", out string value);"
+                    }
+                },
+                {
+                    "Name": "use_var_when_evident",
+                    "PropertyValue": "use_var_when_evident",
+                    "Example": {
+                        "Code": "int count = 42;\n\nvar builder = new StringBuilder();\nint length = builder.Length;\n\nDictionary<string, string> dictionary = new Dictionary<string, string>();\nbool hasValue = dictionary.TryGetValue(\"key\", out string value);"
+                    }
+                },
+                {
+                    "Name": "use_explicit_type",
+                    "PropertyValue": "use_explicit_type",
+                    "Example": {
+                        "Code": "int count = 42;\n\nStringBuilder builder = new StringBuilder();\nint length = builder.Length;\n\nDictionary<string, string> dictionary = new Dictionary<string, string>();\nbool hasValue = dictionary.TryGetValue(\"key\", out string value);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Use 'var' elsewhere",
+            "PropertyName": "resharper_csharp_for_other_types",
+            "Answers": [
+                {
+                    "Name": "use_var",
+                    "PropertyValue": "use_var",
+                    "Example": {
+                        "Code": "int count = 42;\n\nvar builder = new StringBuilder();\nint length = builder.Length;\n\nDictionary<string, string> dictionary = new Dictionary<string, string>();\nbool hasValue = dictionary.TryGetValue(\"key\", out string value);"
+                    }
+                },
+                {
+                    "Name": "use_var_when_evident",
+                    "PropertyValue": "use_var_when_evident",
+                    "Example": {
+                        "Code": "int count = 42;\n\nvar builder = new StringBuilder();\nint length = builder.Length;\n\nDictionary<string, string> dictionary = new Dictionary<string, string>();\nbool hasValue = dictionary.TryGetValue(\"key\", out string value);"
+                    }
+                },
+                {
+                    "Name": "use_explicit_type",
+                    "PropertyValue": "use_explicit_type",
+                    "Example": {
+                        "Code": "int count = 42;\n\nvar builder = new StringBuilder();\nint length = builder.Length;\n\nDictionary<string, string> dictionary = new Dictionary<string, string>();\nbool hasValue = dictionary.TryGetValue(\"key\", out string value);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Prefer separate declarations for deconstructed variables",
+            "PropertyName": "resharper_csharp_prefer_separate_deconstructed_variables_declaration",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "void ApplySetting(KeyValuePair<string, object> setting, KeyValuePair<string, object>? optionalSetting)\n{\n    (var settingName, var value) = setting;\n    // apply\n\n    if (optionalSetting is (var optionalSettingName, var optionalSettingValue))\n    {\n        // apply\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "void ApplySetting(KeyValuePair<string, object> setting, KeyValuePair<string, object>? optionalSetting)\n{\n    var (settingName, value) = setting;\n    // apply\n\n    if (optionalSetting is var (optionalSettingName, optionalSettingValue))\n    {\n        // apply\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Use 'var' keyword for discards",
+            "PropertyName": "resharper_csharp_prefer_explicit_discard_declaration",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "bool RepresentsInteger(string value)\n{\n    return int.TryParse(value, out var _);\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "bool RepresentsInteger(string value)\n{\n    return int.TryParse(value, out _);\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Use 'this.' qualifier for",
+            "PropertyName": "resharper_csharp_instance_members_qualify_members",
+            "Answers": [
+                {
+                    "Name": "none",
+                    "PropertyValue": "none",
+                    "Example": {
+                        "Code": "using System;\n\ninternal class Person\n{\n    public Person(string name, int age)\n    {\n        _id = GenerateId();\n        Name = name;\n        Age = age;\n        AgeChanged += (_, newAge) => Age = newAge;\n    }\n\n    private readonly int _id;\n    public string Name { get; }\n    public int Age { get; private set; }\n    public event EventHandler<int> AgeChanged;\n\n    public int GenerateId()\n    {\n        return 42;\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "field",
+                    "PropertyValue": "field",
+                    "Example": {
+                        "Code": "using System;\n\ninternal class Person\n{\n    public Person(string name, int age)\n    {\n        this._id = GenerateId();\n        Name = name;\n        Age = age;\n        AgeChanged += (_, newAge) => Age = newAge;\n    }\n\n    private readonly int _id;\n    public string Name { get; }\n    public int Age { get; private set; }\n    public event EventHandler<int> AgeChanged;\n\n    public int GenerateId()\n    {\n        return 42;\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "property",
+                    "PropertyValue": "property",
+                    "Example": {
+                        "Code": "using System;\n\ninternal class Person\n{\n    public Person(string name, int age)\n    {\n        _id = GenerateId();\n        this.Name = name;\n        this.Age = age;\n        AgeChanged += (_, newAge) => this.Age = newAge;\n    }\n\n    private readonly int _id;\n    public string Name { get; }\n    public int Age { get; private set; }\n    public event EventHandler<int> AgeChanged;\n\n    public int GenerateId()\n    {\n        return 42;\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "event",
+                    "PropertyValue": "event",
+                    "Example": {
+                        "Code": "using System;\n\ninternal class Person\n{\n    public Person(string name, int age)\n    {\n        _id = GenerateId();\n        Name = name;\n        Age = age;\n        this.AgeChanged += (_, newAge) => Age = newAge;\n    }\n\n    private readonly int _id;\n    public string Name { get; }\n    public int Age { get; private set; }\n    public event EventHandler<int> AgeChanged;\n\n    public int GenerateId()\n    {\n        return 42;\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "method",
+                    "PropertyValue": "method",
+                    "Example": {
+                        "Code": "using System;\n\ninternal class Person\n{\n    public Person(string name, int age)\n    {\n        _id = this.GenerateId();\n        Name = name;\n        Age = age;\n        AgeChanged += (_, newAge) => Age = newAge;\n    }\n\n    private readonly int _id;\n    public string Name { get; }\n    public int Age { get; private set; }\n    public event EventHandler<int> AgeChanged;\n\n    public int GenerateId()\n    {\n        return 42;\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "all",
+                    "PropertyValue": "all",
+                    "Example": {
+                        "Code": "using System;\n\ninternal class Person\n{\n    public Person(string name, int age)\n    {\n        this._id = this.GenerateId();\n        this.Name = name;\n        this.Age = age;\n        this.AgeChanged += (_, newAge) => this.Age = newAge;\n    }\n\n    private readonly int _id;\n    public string Name { get; }\n    public int Age { get; private set; }\n    public event EventHandler<int> AgeChanged;\n\n    public int GenerateId()\n    {\n        return 42;\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Qualify members declared in",
+            "PropertyName": "resharper_csharp_instance_members_qualify_declared_in",
+            "Answers": [
+                {
+                    "Name": "this_class",
+                    "PropertyValue": "this_class",
+                    "Example": {
+                        "Code": "using System;\n\ninternal class Person\n{\n    public Person(string name, int age)\n    {\n        _id = GenerateId();\n        Name = name;\n        Age = age;\n        AgeChanged += (_, newAge) => Age = newAge;\n    }\n\n    private readonly int _id;\n    public string Name { get; }\n    public int Age { get; private set; }\n    public event EventHandler<int> AgeChanged;\n\n    public int GenerateId()\n    {\n        return 42;\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "base_class",
+                    "PropertyValue": "base_class",
+                    "Example": {
+                        "Code": "using System;\n\ninternal class Person\n{\n    public Person(string name, int age)\n    {\n        _id = GenerateId();\n        Name = name;\n        Age = age;\n        AgeChanged += (_, newAge) => Age = newAge;\n    }\n\n    private readonly int _id;\n    public string Name { get; }\n    public int Age { get; private set; }\n    public event EventHandler<int> AgeChanged;\n\n    public int GenerateId()\n    {\n        return 42;\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Qualify with the name of",
+            "PropertyName": "resharper_csharp_static_members_qualify_with",
+            "Answers": [
+                {
+                    "Name": "current_type",
+                    "PropertyValue": "current_type",
+                    "Example": {
+                        "Code": "using System;\n\ninternal class WeatherService\n{\n    static WeatherService()\n    {\n        Console.WriteLine(Name);\n        Console.WriteLine(Version);\n        GotRequest += (_, _) => { };\n    }\n\n    public static string Name = GetString();\n    public static Version Version => new(1, 2, 3);\n    public static EventHandler GotRequest;\n\n    public static string GetString()\n    {\n        return \"abc\";\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "declared_type",
+                    "PropertyValue": "declared_type",
+                    "Example": {
+                        "Code": "using System;\n\ninternal class WeatherService\n{\n    static WeatherService()\n    {\n        Console.WriteLine(Name);\n        Console.WriteLine(Version);\n        GotRequest += (_, _) => { };\n    }\n\n    public static string Name = GetString();\n    public static Version Version => new(1, 2, 3);\n    public static EventHandler GotRequest;\n\n    public static string GetString()\n    {\n        return \"abc\";\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Members to qualify",
+            "PropertyName": "resharper_csharp_static_members_qualify_members",
+            "Answers": [
+                {
+                    "Name": "none",
+                    "PropertyValue": "none",
+                    "Example": {
+                        "Code": "using System;\n\ninternal class WeatherService\n{\n    static WeatherService()\n    {\n        Console.WriteLine(Name);\n        Console.WriteLine(Version);\n        GotRequest += (_, _) => { };\n    }\n\n    public static string Name = GetString();\n    public static Version Version => new(1, 2, 3);\n    public static EventHandler GotRequest;\n\n    public static string GetString()\n    {\n        return \"abc\";\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "field",
+                    "PropertyValue": "field",
+                    "Example": {
+                        "Code": "using System;\n\ninternal class WeatherService\n{\n    static WeatherService()\n    {\n        Console.WriteLine(WeatherService.Name);\n        Console.WriteLine(Version);\n        WeatherService.GotRequest += (_, _) => { };\n    }\n\n    public static string Name = GetString();\n    public static Version Version => new(1, 2, 3);\n    public static EventHandler GotRequest;\n\n    public static string GetString()\n    {\n        return \"abc\";\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "property",
+                    "PropertyValue": "property",
+                    "Example": {
+                        "Code": "using System;\n\ninternal class WeatherService\n{\n    static WeatherService()\n    {\n        Console.WriteLine(Name);\n        Console.WriteLine(WeatherService.Version);\n        GotRequest += (_, _) => { };\n    }\n\n    public static string Name = GetString();\n    public static Version Version => new(1, 2, 3);\n    public static EventHandler GotRequest;\n\n    public static string GetString()\n    {\n        return \"abc\";\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "event",
+                    "PropertyValue": "event",
+                    "Example": {
+                        "Code": "using System;\n\ninternal class WeatherService\n{\n    static WeatherService()\n    {\n        Console.WriteLine(Name);\n        Console.WriteLine(Version);\n        GotRequest += (_, _) => { };\n    }\n\n    public static string Name = GetString();\n    public static Version Version => new(1, 2, 3);\n    public static EventHandler GotRequest;\n\n    public static string GetString()\n    {\n        return \"abc\";\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "method",
+                    "PropertyValue": "method",
+                    "Example": {
+                        "Code": "using System;\n\ninternal class WeatherService\n{\n    static WeatherService()\n    {\n        Console.WriteLine(Name);\n        Console.WriteLine(Version);\n        GotRequest += (_, _) => { };\n    }\n\n    public static string Name = WeatherService.GetString();\n    public static Version Version => new(1, 2, 3);\n    public static EventHandler GotRequest;\n\n    public static string GetString()\n    {\n        return \"abc\";\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "all",
+                    "PropertyValue": "all",
+                    "Example": {
+                        "Code": "using System;\n\ninternal class WeatherService\n{\n    static WeatherService()\n    {\n        Console.WriteLine(WeatherService.Name);\n        Console.WriteLine(WeatherService.Version);\n        WeatherService.GotRequest += (_, _) => { };\n    }\n\n    public static string Name = WeatherService.GetString();\n    public static Version Version => new(1, 2, 3);\n    public static EventHandler GotRequest;\n\n    public static string GetString()\n    {\n        return \"abc\";\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "In locals, members and parameters, prefer",
+            "PropertyName": "resharper_csharp_builtin_type_reference_style",
+            "Answers": [
+                {
+                    "Name": "use_keyword",
+                    "PropertyValue": "use_keyword",
+                    "Example": {
+                        "Code": "void SetFont(string fontFamily, int fontSize, byte[] fontData, bool useKerning)\n{\n    if (string.IsNullOrEmpty(fontFamily))\n        throw new ArgumentException(\"Invalid font family \", nameof(fontFamily));\n\n    if (int.IsNegative(fontSize))\n        throw new ArgumentOutOfRangeException(nameof(fontSize));\n}"
+                    }
+                },
+                {
+                    "Name": "use_clr_name",
+                    "PropertyValue": "use_clr_name",
+                    "Example": {
+                        "Code": "void SetFont(string fontFamily, int fontSize, byte[] fontData, bool useKerning)\n{\n    if (string.IsNullOrEmpty(fontFamily))\n        throw new ArgumentException(\"Invalid font family \", nameof(fontFamily));\n\n    if (int.IsNegative(fontSize))\n        throw new ArgumentOutOfRangeException(nameof(fontSize));\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "In member access expressions, prefer",
+            "PropertyName": "resharper_csharp_builtin_type_reference_for_member_access_style",
+            "Answers": [
+                {
+                    "Name": "use_keyword",
+                    "PropertyValue": "use_keyword",
+                    "Example": {
+                        "Code": "void SetFont(string fontFamily, int fontSize, byte[] fontData, bool useKerning)\n{\n    if (string.IsNullOrEmpty(fontFamily))\n        throw new ArgumentException(\"Invalid font family \", nameof(fontFamily));\n\n    if (int.IsNegative(fontSize))\n        throw new ArgumentOutOfRangeException(nameof(fontSize));\n}"
+                    }
+                },
+                {
+                    "Name": "use_clr_name",
+                    "PropertyValue": "use_clr_name",
+                    "Example": {
+                        "Code": "void SetFont(string fontFamily, int fontSize, byte[] fontData, bool useKerning)\n{\n    if (string.IsNullOrEmpty(fontFamily))\n        throw new ArgumentException(\"Invalid font family \", nameof(fontFamily));\n\n    if (int.IsNegative(fontSize))\n        throw new ArgumentOutOfRangeException(nameof(fontSize));\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Also apply to native-sized integer types",
+            "PropertyName": "resharper_csharp_builtin_type_apply_to_native_integer",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "using System;\n\ninternal struct Buffer\n{\n    public IntPtr Pointer;\n    public int SizeInBytes;\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "using System;\n\ninternal struct Buffer\n{\n    public IntPtr Pointer;\n    public int SizeInBytes;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Prefer explicit/implicit private modifier for type members",
+            "PropertyName": "resharper_csharp_default_private_modifier",
+            "Answers": [
+                {
+                    "Name": "explicit",
+                    "PropertyValue": "explicit",
+                    "Example": {
+                        "Code": "internal class C\n{\n    private int a;\n    private int b;\n}"
+                    }
+                },
+                {
+                    "Name": "implicit",
+                    "PropertyValue": "implicit",
+                    "Example": {
+                        "Code": "internal class C\n{\n    int a;\n    int b;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Prefer explicit/implicit internal modifier for types",
+            "PropertyName": "resharper_csharp_default_internal_modifier",
+            "Answers": [
+                {
+                    "Name": "explicit",
+                    "PropertyValue": "explicit",
+                    "Example": {
+                        "Code": "namespace N;\n\ninternal class C\n{\n}\n\ninternal class D\n{\n}"
+                    }
+                },
+                {
+                    "Name": "implicit",
+                    "PropertyValue": "implicit",
+                    "Example": {
+                        "Code": "namespace N;\n\nclass C\n{\n}\n\nclass D\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Literal values",
+            "PropertyName": "resharper_csharp_arguments_literal",
+            "Answers": [
+                {
+                    "Name": "positional",
+                    "PropertyValue": "positional",
+                    "Example": {
+                        "Code": "public class Arguments\n{\n    public void Style()\n    {\n        Bar(1, d, true, \"abc\", Fx.F1, () => Bar(1));\n        Bar(1, d, true, \"abc\", Fx.F1, action: () => Bar(1));\n        Bar(1, d, true, \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, d, true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, y: d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(x: 1, y: d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n    }\n\n    public void Bar(int x, int y, bool b, string s, Fx e, Action action = null)\n    {\n    }\n\n    private enum Fx\n    {\n        F1,\n        F2,\n        F3\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "named",
+                    "PropertyValue": "named",
+                    "Example": {
+                        "Code": "public class Arguments\n{\n    public void Style()\n    {\n        Bar(x: 1, d, b: true, \"abc\", Fx.F1, () => Bar(x: 1));\n        Bar(x: 1, d, b: true, \"abc\", Fx.F1, action: () => Bar(x: 1));\n        Bar(x: 1, d, b: true, \"abc\", e: Fx.F1, action: () => Bar(x: 1));\n        Bar(x: 1, d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(x: 1));\n        Bar(x: 1, d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(x: 1));\n        Bar(x: 1, y: d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(x: 1));\n        Bar(x: 1, y: d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(x: 1));\n    }\n\n    public void Bar(int x, int y, bool b, string s, Fx e, Action action = null)\n    {\n    }\n\n    private enum Fx\n    {\n        F1,\n        F2,\n        F3\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "String literal values",
+            "PropertyName": "resharper_csharp_arguments_string_literal",
+            "Answers": [
+                {
+                    "Name": "positional",
+                    "PropertyValue": "positional",
+                    "Example": {
+                        "Code": "public class Arguments\n{\n    public void Style()\n    {\n        Bar(1, d, true, \"abc\", Fx.F1, () => Bar(1));\n        Bar(1, d, true, \"abc\", Fx.F1, action: () => Bar(1));\n        Bar(1, d, true, \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, d, true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, y: d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(x: 1, y: d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n    }\n\n    public void Bar(int x, int y, bool b, string s, Fx e, Action action = null)\n    {\n    }\n\n    private enum Fx\n    {\n        F1,\n        F2,\n        F3\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "named",
+                    "PropertyValue": "named",
+                    "Example": {
+                        "Code": "public class Arguments\n{\n    public void Style()\n    {\n        Bar(1, d, true, s: \"abc\", Fx.F1, () => Bar(1));\n        Bar(1, d, true, s: \"abc\", Fx.F1, action: () => Bar(1));\n        Bar(1, d, true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, d, true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, y: d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(x: 1, y: d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n    }\n\n    public void Bar(int x, int y, bool b, string s, Fx e, Action action = null)\n    {\n    }\n\n    private enum Fx\n    {\n        F1,\n        F2,\n        F3\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Named expressions (variables, properties, methods, etc.)",
+            "PropertyName": "resharper_csharp_arguments_named",
+            "Answers": [
+                {
+                    "Name": "positional",
+                    "PropertyValue": "positional",
+                    "Example": {
+                        "Code": "public class Arguments\n{\n    public void Style()\n    {\n        Bar(1, d, true, \"abc\", Fx.F1, () => Bar(1));\n        Bar(1, d, true, \"abc\", Fx.F1, action: () => Bar(1));\n        Bar(1, d, true, \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, d, true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, y: d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(x: 1, y: d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n    }\n\n    public void Bar(int x, int y, bool b, string s, Fx e, Action action = null)\n    {\n    }\n\n    private enum Fx\n    {\n        F1,\n        F2,\n        F3\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "named",
+                    "PropertyValue": "named",
+                    "Example": {
+                        "Code": "public class Arguments\n{\n    public void Style()\n    {\n        Bar(1, y: d, true, \"abc\", e: Fx.F1, () => Bar(1));\n        Bar(1, y: d, true, \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, y: d, true, \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, y: d, true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, y: d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, y: d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(x: 1, y: d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n    }\n\n    public void Bar(int x, int y, bool b, string s, Fx e, Action action = null)\n    {\n    }\n\n    private enum Fx\n    {\n        F1,\n        F2,\n        F3\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Anonymous methods (delegates and lambdas)",
+            "PropertyName": "resharper_csharp_arguments_anonymous_function",
+            "Answers": [
+                {
+                    "Name": "positional",
+                    "PropertyValue": "positional",
+                    "Example": {
+                        "Code": "public class Arguments\n{\n    public void Style()\n    {\n        Bar(1, d, true, \"abc\", Fx.F1, () => Bar(1));\n        Bar(1, d, true, \"abc\", Fx.F1, action: () => Bar(1));\n        Bar(1, d, true, \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, d, true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, y: d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(x: 1, y: d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n    }\n\n    public void Bar(int x, int y, bool b, string s, Fx e, Action action = null)\n    {\n    }\n\n    private enum Fx\n    {\n        F1,\n        F2,\n        F3\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "named",
+                    "PropertyValue": "named",
+                    "Example": {
+                        "Code": "public class Arguments\n{\n    public void Style()\n    {\n        Bar(1, d, true, \"abc\", Fx.F1, action: () => Bar(1));\n        Bar(1, d, true, \"abc\", Fx.F1, action: () => Bar(1));\n        Bar(1, d, true, \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, d, true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, y: d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(x: 1, y: d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n    }\n\n    public void Bar(int x, int y, bool b, string s, Fx e, Action action = null)\n    {\n    }\n\n    private enum Fx\n    {\n        F1,\n        F2,\n        F3\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Other",
+            "PropertyName": "resharper_csharp_arguments_other",
+            "Answers": [
+                {
+                    "Name": "positional",
+                    "PropertyValue": "positional",
+                    "Example": {
+                        "Code": "public class Arguments\n{\n    public void Style()\n    {\n        Bar(1, d, true, \"abc\", Fx.F1, () => Bar(1));\n        Bar(1, d, true, \"abc\", Fx.F1, action: () => Bar(1));\n        Bar(1, d, true, \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, d, true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, y: d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(x: 1, y: d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n    }\n\n    public void Bar(int x, int y, bool b, string s, Fx e, Action action = null)\n    {\n    }\n\n    private enum Fx\n    {\n        F1,\n        F2,\n        F3\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "named",
+                    "PropertyValue": "named",
+                    "Example": {
+                        "Code": "public class Arguments\n{\n    public void Style()\n    {\n        Bar(1, d, true, \"abc\", Fx.F1, () => Bar(1));\n        Bar(1, d, true, \"abc\", Fx.F1, action: () => Bar(1));\n        Bar(1, d, true, \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, d, true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(1, y: d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n        Bar(x: 1, y: d, b: true, s: \"abc\", e: Fx.F1, action: () => Bar(1));\n    }\n\n    public void Bar(int x, int y, bool b, string s, Fx e, Action action = null)\n    {\n    }\n\n    private enum Fx\n    {\n        F1,\n        F2,\n        F3\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Remove redundant parentheses",
+            "PropertyName": "resharper_csharp_parentheses_redundancy_style",
+            "Answers": [
+                {
+                    "Name": "remove",
+                    "PropertyValue": "remove",
+                    "Example": {
+                        "Code": "internal void Calculate()\n{\n    var x = 12 - 3 % 4 * 12;\n    var y = 9 >> 12 + x - 1 << 2 + 1 & 6 + 4 * 12 - 1;\n    var z = (2 | 7) + 1 & y;\n\n    var a = 12 - 3 % 4 * 12;\n    var b = 9 >> 12 + a - 1 << 2 + 1 & 6 + 4 * 12 - 1;\n    var c = (2 | 7) + 1 & b;\n}"
+                    }
+                },
+                {
+                    "Name": "remove_if_not_clarifies_precedence",
+                    "PropertyValue": "remove_if_not_clarifies_precedence",
+                    "Example": {
+                        "Code": "internal void Calculate()\n{\n    var x = 12 - 3 % 4 * 12;\n    var y = ((9 >> (12 + x - 1)) << (2 + 1)) & (6 + 4 * 12 - 1);\n    var z = ((2 | 7) + 1) & y;\n\n    var a = 12 - 3 % 4 * 12;\n    var b = ((9 >> (12 + a - 1)) << (2 + 1)) & (6 + 4 * 12 - 1);\n    var c = ((2 | 7) + 1) & b;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Add parenthesis to avoid non-obvious precedence",
+            "PropertyName": "resharper_csharp_parentheses_non_obvious_operations",
+            "Answers": [
+                {
+                    "Name": "none",
+                    "PropertyValue": "none",
+                    "Example": {
+                        "Code": "internal void Calculate()\n{\n    var x = 12 - 3 % 4 * 12;\n    var y = 9 >> 12 + x - 1 << 2 + 1 & 6 + 4 * 12 - 1;\n    var z = (2 | 7) + 1 & y;\n\n    var a = 12 - 3 % 4 * 12;\n    var b = 9 >> 12 + a - 1 << 2 + 1 & 6 + 4 * 12 - 1;\n    var c = (2 | 7) + 1 & b;\n    var d = (x > 5 && y < 6) || z == 7;\n}"
+                    }
+                },
+                {
+                    "Name": "multiplicative",
+                    "PropertyValue": "multiplicative",
+                    "Example": {
+                        "Code": "internal void Calculate()\n{\n    var x = 12 - (3 % 4) * 12;\n    var y = 9 >> 12 + x - 1 << 2 + 1 & 6 + 4 * 12 - 1;\n    var z = (2 | 7) + 1 & y;\n\n    var a = 12 - (3 % 4) * 12;\n    var b = 9 >> 12 + a - 1 << 2 + 1 & 6 + 4 * 12 - 1;\n    var c = (2 | 7) + 1 & b;\n    var d = (x > 5 && y < 6) || z == 7;\n}"
+                    }
+                },
+                {
+                    "Name": "additive",
+                    "PropertyValue": "additive",
+                    "Example": {
+                        "Code": "internal void Calculate()\n{\n    var x = 12 - (3 % 4 * 12);\n    var y = 9 >> (12 + x) - 1 << 2 + 1 & (6 + (4 * 12)) - 1;\n    var z = (2 | 7) + 1 & y;\n\n    var a = 12 - (3 % 4 * 12);\n    var b = 9 >> (12 + a) - 1 << 2 + 1 & (6 + (4 * 12)) - 1;\n    var c = (2 | 7) + 1 & b;\n    var d = (x > 5 && y < 6) || z == 7;\n}"
+                    }
+                },
+                {
+                    "Name": "arithmetic",
+                    "PropertyValue": "arithmetic",
+                    "Example": {
+                        "Code": "internal void Calculate()\n{\n    var x = 12 - ((3 % 4) * 12);\n    var y = 9 >> (12 + x) - 1 << 2 + 1 & (6 + (4 * 12)) - 1;\n    var z = (2 | 7) + 1 & y;\n\n    var a = 12 - ((3 % 4) * 12);\n    var b = 9 >> (12 + a) - 1 << 2 + 1 & (6 + (4 * 12)) - 1;\n    var c = (2 | 7) + 1 & b;\n    var d = (x > 5 && y < 6) || z == 7;\n}"
+                    }
+                },
+                {
+                    "Name": "shift",
+                    "PropertyValue": "shift",
+                    "Example": {
+                        "Code": "internal void Calculate()\n{\n    var x = 12 - 3 % 4 * 12;\n    var y = (9 >> (12 + x - 1)) << (2 + 1) & 6 + 4 * 12 - 1;\n    var z = (2 | 7) + 1 & y;\n\n    var a = 12 - 3 % 4 * 12;\n    var b = (9 >> (12 + a - 1)) << (2 + 1) & 6 + 4 * 12 - 1;\n    var c = (2 | 7) + 1 & b;\n    var d = (x > 5 && y < 6) || z == 7;\n}"
+                    }
+                },
+                {
+                    "Name": "relational",
+                    "PropertyValue": "relational",
+                    "Example": {
+                        "Code": "internal void Calculate()\n{\n    var x = 12 - 3 % 4 * 12;\n    var y = 9 >> 12 + x - 1 << 2 + 1 & 6 + 4 * 12 - 1;\n    var z = (2 | 7) + 1 & y;\n\n    var a = 12 - 3 % 4 * 12;\n    var b = 9 >> 12 + a - 1 << 2 + 1 & 6 + 4 * 12 - 1;\n    var c = (2 | 7) + 1 & b;\n    var d = (x > 5 && y < 6) || z == 7;\n}"
+                    }
+                },
+                {
+                    "Name": "equality",
+                    "PropertyValue": "equality",
+                    "Example": {
+                        "Code": "internal void Calculate()\n{\n    var x = 12 - 3 % 4 * 12;\n    var y = 9 >> 12 + x - 1 << 2 + 1 & 6 + 4 * 12 - 1;\n    var z = (2 | 7) + 1 & y;\n\n    var a = 12 - 3 % 4 * 12;\n    var b = 9 >> 12 + a - 1 << 2 + 1 & 6 + 4 * 12 - 1;\n    var c = (2 | 7) + 1 & b;\n    var d = (x > 5 && y < 6) || z == 7;\n}"
+                    }
+                },
+                {
+                    "Name": "bitwise_and",
+                    "PropertyValue": "bitwise_and",
+                    "Example": {
+                        "Code": "internal void Calculate()\n{\n    var x = 12 - 3 % 4 * 12;\n    var y = (9 >> 12 + x - 1 << 2 + 1) & (6 + 4 * 12 - 1);\n    var z = ((2 | 7) + 1) & y;\n\n    var a = 12 - 3 % 4 * 12;\n    var b = (9 >> 12 + a - 1 << 2 + 1) & (6 + 4 * 12 - 1);\n    var c = ((2 | 7) + 1) & b;\n    var d = (x > 5 && y < 6) || z == 7;\n}"
+                    }
+                },
+                {
+                    "Name": "bitwise_exclusive_or",
+                    "PropertyValue": "bitwise_exclusive_or",
+                    "Example": {
+                        "Code": "internal void Calculate()\n{\n    var x = 12 - 3 % 4 * 12;\n    var y = 9 >> 12 + x - 1 << 2 + 1 & 6 + 4 * 12 - 1;\n    var z = (2 | 7) + 1 & y;\n\n    var a = 12 - 3 % 4 * 12;\n    var b = 9 >> 12 + a - 1 << 2 + 1 & 6 + 4 * 12 - 1;\n    var c = (2 | 7) + 1 & b;\n    var d = (x > 5 && y < 6) || z == 7;\n}"
+                    }
+                },
+                {
+                    "Name": "bitwise_inclusive_or",
+                    "PropertyValue": "bitwise_inclusive_or",
+                    "Example": {
+                        "Code": "internal void Calculate()\n{\n    var x = 12 - 3 % 4 * 12;\n    var y = 9 >> 12 + x - 1 << 2 + 1 & 6 + 4 * 12 - 1;\n    var z = (2 | 7) + 1 & y;\n\n    var a = 12 - 3 % 4 * 12;\n    var b = 9 >> 12 + a - 1 << 2 + 1 & 6 + 4 * 12 - 1;\n    var c = (2 | 7) + 1 & b;\n    var d = (x > 5 && y < 6) || z == 7;\n}"
+                    }
+                },
+                {
+                    "Name": "bitwise",
+                    "PropertyValue": "bitwise",
+                    "Example": {
+                        "Code": "internal void Calculate()\n{\n    var x = 12 - 3 % 4 * 12;\n    var y = (9 >> 12 + x - 1 << 2 + 1) & (6 + 4 * 12 - 1);\n    var z = ((2 | 7) + 1) & y;\n\n    var a = 12 - 3 % 4 * 12;\n    var b = (9 >> 12 + a - 1 << 2 + 1) & (6 + 4 * 12 - 1);\n    var c = ((2 | 7) + 1) & b;\n    var d = (x > 5 && y < 6) || z == 7;\n}"
+                    }
+                },
+                {
+                    "Name": "conditional_and",
+                    "PropertyValue": "conditional_and",
+                    "Example": {
+                        "Code": "internal void Calculate()\n{\n    var x = 12 - 3 % 4 * 12;\n    var y = 9 >> 12 + x - 1 << 2 + 1 & 6 + 4 * 12 - 1;\n    var z = (2 | 7) + 1 & y;\n\n    var a = 12 - 3 % 4 * 12;\n    var b = 9 >> 12 + a - 1 << 2 + 1 & 6 + 4 * 12 - 1;\n    var c = (2 | 7) + 1 & b;\n    var d = ((x > 5) && (y < 6)) || z == 7;\n}"
+                    }
+                },
+                {
+                    "Name": "conditional_or",
+                    "PropertyValue": "conditional_or",
+                    "Example": {
+                        "Code": "internal void Calculate()\n{\n    var x = 12 - 3 % 4 * 12;\n    var y = 9 >> 12 + x - 1 << 2 + 1 & 6 + 4 * 12 - 1;\n    var z = (2 | 7) + 1 & y;\n\n    var a = 12 - 3 % 4 * 12;\n    var b = 9 >> 12 + a - 1 << 2 + 1 & 6 + 4 * 12 - 1;\n    var c = (2 | 7) + 1 & b;\n    var d = (x > 5 && y < 6) || (z == 7);\n}"
+                    }
+                },
+                {
+                    "Name": "conditional",
+                    "PropertyValue": "conditional",
+                    "Example": {
+                        "Code": "internal void Calculate()\n{\n    var x = 12 - 3 % 4 * 12;\n    var y = 9 >> 12 + x - 1 << 2 + 1 & 6 + 4 * 12 - 1;\n    var z = (2 | 7) + 1 & y;\n\n    var a = 12 - 3 % 4 * 12;\n    var b = 9 >> 12 + a - 1 << 2 + 1 & 6 + 4 * 12 - 1;\n    var c = (2 | 7) + 1 & b;\n    var d = ((x > 5) && (y < 6)) || (z == 7);\n}"
+                    }
+                },
+                {
+                    "Name": "null_coalescing",
+                    "PropertyValue": "null_coalescing",
+                    "Example": {
+                        "Code": "internal void Calculate()\n{\n    var x = 12 - 3 % 4 * 12;\n    var y = 9 >> 12 + x - 1 << 2 + 1 & 6 + 4 * 12 - 1;\n    var z = (2 | 7) + 1 & y;\n\n    var a = 12 - 3 % 4 * 12;\n    var b = 9 >> 12 + a - 1 << 2 + 1 & 6 + 4 * 12 - 1;\n    var c = (2 | 7) + 1 & b;\n    var d = (x > 5 && y < 6) || z == 7;\n}"
+                    }
+                },
+                {
+                    "Name": "range",
+                    "PropertyValue": "range",
+                    "Example": {
+                        "Code": "internal void Calculate()\n{\n    var x = 12 - 3 % 4 * 12;\n    var y = 9 >> 12 + x - 1 << 2 + 1 & 6 + 4 * 12 - 1;\n    var z = (2 | 7) + 1 & y;\n\n    var a = 12 - 3 % 4 * 12;\n    var b = 9 >> 12 + a - 1 << 2 + 1 & 6 + 4 * 12 - 1;\n    var c = (2 | 7) + 1 & b;\n    var d = (x > 5 && y < 6) || z == 7;\n}"
+                    }
+                },
+                {
+                    "Name": "none",
+                    "PropertyValue": "none",
+                    "Example": {
+                        "Code": "internal void Calculate()\n{\n    var x = 12 - 3 % 4 * 12;\n    var y = ((9 >> (12 + x - 1)) << (2 + 1)) & (6 + 4 * 12 - 1);\n    var z = ((2 | 7) + 1) & y;\n\n    var a = 12 - 3 % 4 * 12;\n    var b = ((9 >> (12 + a - 1)) << (2 + 1)) & (6 + 4 * 12 - 1);\n    var c = ((2 | 7) + 1) & b;\n    var d = x > 5 && y < 6 || z == 7;\n    var e = x > 6 != y > 6 && x != null == (y != null);\n}"
+                    }
+                },
+                {
+                    "Name": "arithmetic",
+                    "PropertyValue": "arithmetic",
+                    "Example": {
+                        "Code": "internal void Calculate()\n{\n    var x = 12 - (3 % 4 * 12);\n    var y = ((9 >> (12 + x - 1)) << (2 + 1)) & (6 + (4 * 12) - 1);\n    var z = ((2 | 7) + 1) & y;\n\n    var a = 12 - (3 % 4 * 12);\n    var b = ((9 >> (12 + a - 1)) << (2 + 1)) & (6 + (4 * 12) - 1);\n    var c = ((2 | 7) + 1) & b;\n    var d = x > 5 && y < 6 || z == 7;\n    var e = x > 6 != y > 6 && x != null == (y != null);\n}"
+                    }
+                },
+                {
+                    "Name": "relational",
+                    "PropertyValue": "relational",
+                    "Example": {
+                        "Code": "internal void Calculate()\n{\n    var x = 12 - 3 % 4 * 12;\n    var y = ((9 >> (12 + x - 1)) << (2 + 1)) & (6 + 4 * 12 - 1);\n    var z = ((2 | 7) + 1) & y;\n\n    var a = 12 - 3 % 4 * 12;\n    var b = ((9 >> (12 + a - 1)) << (2 + 1)) & (6 + 4 * 12 - 1);\n    var c = ((2 | 7) + 1) & b;\n    var d = x > 5 && y < 6 || z == 7;\n    var e = (x > 6) != (y > 6) && x != null == (y != null);\n}"
+                    }
+                },
+                {
+                    "Name": "conditional",
+                    "PropertyValue": "conditional",
+                    "Example": {
+                        "Code": "internal void Calculate()\n{\n    var x = 12 - 3 % 4 * 12;\n    var y = ((9 >> (12 + x - 1)) << (2 + 1)) & (6 + 4 * 12 - 1);\n    var z = ((2 | 7) + 1) & y;\n\n    var a = 12 - 3 % 4 * 12;\n    var b = ((9 >> (12 + a - 1)) << (2 + 1)) & (6 + 4 * 12 - 1);\n    var c = ((2 | 7) + 1) & b;\n    var d = (x > 5 && y < 6) || z == 7;\n    var e = x > 6 != y > 6 && x != null == (y != null);\n}"
+                    }
+                },
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "internal void Calculate()\n{\n    var x = 5 + 3 - 2 * 3 / 4;\n    var e = x != null == (y != null);\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "internal void Calculate()\n{\n    var x = 5 + 3 - 2 * 3 / 4;\n    var e = x != null == (y != null);\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "In 'if' statement",
+            "PropertyName": "resharper_csharp_braces_for_ifelse",
+            "Answers": [
+                {
+                    "Name": "not_required",
+                    "PropertyValue": "not_required",
+                    "Example": {
+                        "Code": "public void Preview(int a, int b)\n{\n    int c;\n    if (a > b)\n        c = a * b;\n    else if (a == b)\n        c = a + b;\n    else\n        c = a / b;\n}"
+                    }
+                },
+                {
+                    "Name": "not_required_for_both",
+                    "PropertyValue": "not_required_for_both",
+                    "Example": {
+                        "Code": "public void Preview(int a, int b)\n{\n    int c;\n    if (a > b)\n        c = a * b;\n    else if (a == b)\n        c = a + b;\n    else\n        c = a / b;\n}"
+                    }
+                },
+                {
+                    "Name": "required",
+                    "PropertyValue": "required",
+                    "Example": {
+                        "Code": "public void Preview(int a, int b)\n{\n    int c;\n    if (a > b)\n    {\n        c = a * b;\n    }\n    else if (a == b)\n    {\n        c = a + b;\n    }\n    else\n    {\n        c = a / b;\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "required_for_multiline",
+                    "PropertyValue": "required_for_multiline",
+                    "Example": {
+                        "Code": "public void Preview(int a, int b)\n{\n    int c;\n    if (a > b)\n        c = a * b;\n    else if (a == b)\n        c = a + b;\n    else\n        c = a / b;\n}"
+                    }
+                },
+                {
+                    "Name": "required_for_multiline_statement",
+                    "PropertyValue": "required_for_multiline_statement",
+                    "Example": {
+                        "Code": "public void Preview(int a, int b)\n{\n    int c;\n    if (a > b)\n    {\n        c = a * b;\n    }\n    else if (a == b)\n    {\n        c = a + b;\n    }\n    else\n    {\n        c = a / b;\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "In 'for' statement",
+            "PropertyName": "resharper_csharp_braces_for_for",
+            "Answers": [
+                {
+                    "Name": "not_required",
+                    "PropertyValue": "not_required",
+                    "Example": {
+                        "Code": "public void Preview(int a, int b)\n{\n    var c = 0;\n    for (var i = a; i < b; i++)\n        c += System.Linq.Enumerable.Range(i, a + b).Sum();\n\n    for (var i = a; i < b; i++)\n        c += System.Linq.Enumerable\n            .Range(i, a + b)\n            .Sum();\n}"
+                    }
+                },
+                {
+                    "Name": "required",
+                    "PropertyValue": "required",
+                    "Example": {
+                        "Code": "public void Preview(int a, int b)\n{\n    var c = 0;\n    for (var i = a; i < b; i++)\n    {\n        c += System.Linq.Enumerable.Range(i, a + b).Sum();\n    }\n\n    for (var i = a; i < b; i++)\n    {\n        c += System.Linq.Enumerable\n            .Range(i, a + b)\n            .Sum();\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "required_for_multiline",
+                    "PropertyValue": "required_for_multiline",
+                    "Example": {
+                        "Code": "public void Preview(int a, int b)\n{\n    var c = 0;\n    for (var i = a; i < b; i++)\n        c += System.Linq.Enumerable.Range(i, a + b).Sum();\n\n    for (var i = a; i < b; i++)\n    {\n        c += System.Linq.Enumerable\n            .Range(i, a + b)\n            .Sum();\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "required_for_multiline_statement",
+                    "PropertyValue": "required_for_multiline_statement",
+                    "Example": {
+                        "Code": "public void Preview(int a, int b)\n{\n    var c = 0;\n    for (var i = a; i < b; i++)\n    {\n        c += System.Linq.Enumerable.Range(i, a + b).Sum();\n    }\n\n    for (var i = a; i < b; i++)\n    {\n        c += System.Linq.Enumerable\n            .Range(i, a + b)\n            .Sum();\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "In 'foreach' statement",
+            "PropertyName": "resharper_csharp_braces_for_foreach",
+            "Answers": [
+                {
+                    "Name": "not_required",
+                    "PropertyValue": "not_required",
+                    "Example": {
+                        "Code": "public void Preview(int a, int b)\n{\n    var c = 0;\n    foreach (var num in System.Linq.Enumerable.Range(a, b))\n        c += System.Linq.Enumerable.Range(a, b).Sum();\n\n    foreach (var num in System.Linq.Enumerable.Range(a, b))\n        c += System.Linq.Enumerable\n            .Range(a, b)\n            .Sum();\n}"
+                    }
+                },
+                {
+                    "Name": "required",
+                    "PropertyValue": "required",
+                    "Example": {
+                        "Code": "public void Preview(int a, int b)\n{\n    var c = 0;\n    foreach (var num in System.Linq.Enumerable.Range(a, b))\n    {\n        c += System.Linq.Enumerable.Range(a, b).Sum();\n    }\n\n    foreach (var num in System.Linq.Enumerable.Range(a, b))\n    {\n        c += System.Linq.Enumerable\n            .Range(a, b)\n            .Sum();\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "required_for_multiline",
+                    "PropertyValue": "required_for_multiline",
+                    "Example": {
+                        "Code": "public void Preview(int a, int b)\n{\n    var c = 0;\n    foreach (var num in System.Linq.Enumerable.Range(a, b))\n        c += System.Linq.Enumerable.Range(a, b).Sum();\n\n    foreach (var num in System.Linq.Enumerable.Range(a, b))\n    {\n        c += System.Linq.Enumerable\n            .Range(a, b)\n            .Sum();\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "required_for_multiline_statement",
+                    "PropertyValue": "required_for_multiline_statement",
+                    "Example": {
+                        "Code": "public void Preview(int a, int b)\n{\n    var c = 0;\n    foreach (var num in System.Linq.Enumerable.Range(a, b))\n    {\n        c += System.Linq.Enumerable.Range(a, b).Sum();\n    }\n\n    foreach (var num in System.Linq.Enumerable.Range(a, b))\n    {\n        c += System.Linq.Enumerable\n            .Range(a, b)\n            .Sum();\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "In 'while' statement",
+            "PropertyName": "resharper_csharp_braces_for_while",
+            "Answers": [
+                {
+                    "Name": "not_required",
+                    "PropertyValue": "not_required",
+                    "Example": {
+                        "Code": "public void Preview(int a, int b)\n{\n    while (a > b)\n        b += System.Linq.Enumerable.Range(a, b).Sum();\n\n    while (a > b)\n        b += System.Linq.Enumerable\n            .Range(a, b)\n            .Sum();\n}"
+                    }
+                },
+                {
+                    "Name": "required",
+                    "PropertyValue": "required",
+                    "Example": {
+                        "Code": "public void Preview(int a, int b)\n{\n    while (a > b)\n    {\n        b += System.Linq.Enumerable.Range(a, b).Sum();\n    }\n\n    while (a > b)\n    {\n        b += System.Linq.Enumerable\n            .Range(a, b)\n            .Sum();\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "required_for_multiline",
+                    "PropertyValue": "required_for_multiline",
+                    "Example": {
+                        "Code": "public void Preview(int a, int b)\n{\n    while (a > b)\n        b += System.Linq.Enumerable.Range(a, b).Sum();\n\n    while (a > b)\n    {\n        b += System.Linq.Enumerable\n            .Range(a, b)\n            .Sum();\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "required_for_multiline_statement",
+                    "PropertyValue": "required_for_multiline_statement",
+                    "Example": {
+                        "Code": "public void Preview(int a, int b)\n{\n    while (a > b)\n    {\n        b += System.Linq.Enumerable.Range(a, b).Sum();\n    }\n\n    while (a > b)\n    {\n        b += System.Linq.Enumerable\n            .Range(a, b)\n            .Sum();\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "In 'do-while' statement",
+            "PropertyName": "resharper_csharp_braces_for_dowhile",
+            "Answers": [
+                {
+                    "Name": "not_required",
+                    "PropertyValue": "not_required",
+                    "Example": {
+                        "Code": "public void Preview(int a, int b)\n{\n    do\n        b += System.Linq.Enumerable.Range(a, b).Sum();\n    while (a > b);\n\n    do\n        b += System.Linq.Enumerable\n            .Range(a, b)\n            .Sum();\n    while (a > b);\n}"
+                    }
+                },
+                {
+                    "Name": "required",
+                    "PropertyValue": "required",
+                    "Example": {
+                        "Code": "public void Preview(int a, int b)\n{\n    do\n    {\n        b += System.Linq.Enumerable.Range(a, b).Sum();\n    } while (a > b);\n\n    do\n    {\n        b += System.Linq.Enumerable\n            .Range(a, b)\n            .Sum();\n    } while (a > b);\n}"
+                    }
+                },
+                {
+                    "Name": "required_for_multiline",
+                    "PropertyValue": "required_for_multiline",
+                    "Example": {
+                        "Code": "public void Preview(int a, int b)\n{\n    do\n        b += System.Linq.Enumerable.Range(a, b).Sum();\n    while (a > b);\n\n    do\n    {\n        b += System.Linq.Enumerable\n            .Range(a, b)\n            .Sum();\n    } while (a > b);\n}"
+                    }
+                },
+                {
+                    "Name": "required_for_multiline_statement",
+                    "PropertyValue": "required_for_multiline_statement",
+                    "Example": {
+                        "Code": "public void Preview(int a, int b)\n{\n    do\n    {\n        b += System.Linq.Enumerable.Range(a, b).Sum();\n    } while (a > b);\n\n    do\n    {\n        b += System.Linq.Enumerable\n            .Range(a, b)\n            .Sum();\n    } while (a > b);\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "In 'using' statement",
+            "PropertyName": "resharper_csharp_braces_for_using",
+            "Answers": [
+                {
+                    "Name": "not_required",
+                    "PropertyValue": "not_required",
+                    "Example": {
+                        "Code": "public void Preview(System.IDisposable disposable)\n{\n    var c = 0;\n    using (disposable)\n        c += System.Linq.Enumerable.Range(1, 42).Sum();\n\n    for (var i = a; i < b; i++)\n        c += System.Linq.Enumerable\n            .Range(1, 42)\n            .Sum();\n}"
+                    }
+                },
+                {
+                    "Name": "required",
+                    "PropertyValue": "required",
+                    "Example": {
+                        "Code": "public void Preview(System.IDisposable disposable)\n{\n    var c = 0;\n    using (disposable)\n    {\n        c += System.Linq.Enumerable.Range(1, 42).Sum();\n    }\n\n    for (var i = a; i < b; i++)\n        c += System.Linq.Enumerable\n            .Range(1, 42)\n            .Sum();\n}"
+                    }
+                },
+                {
+                    "Name": "required_for_multiline",
+                    "PropertyValue": "required_for_multiline",
+                    "Example": {
+                        "Code": "public void Preview(System.IDisposable disposable)\n{\n    var c = 0;\n    using (disposable)\n        c += System.Linq.Enumerable.Range(1, 42).Sum();\n\n    for (var i = a; i < b; i++)\n        c += System.Linq.Enumerable\n            .Range(1, 42)\n            .Sum();\n}"
+                    }
+                },
+                {
+                    "Name": "required_for_multiline_statement",
+                    "PropertyValue": "required_for_multiline_statement",
+                    "Example": {
+                        "Code": "public void Preview(System.IDisposable disposable)\n{\n    var c = 0;\n    using (disposable)\n    {\n        c += System.Linq.Enumerable.Range(1, 42).Sum();\n    }\n\n    for (var i = a; i < b; i++)\n        c += System.Linq.Enumerable\n            .Range(1, 42)\n            .Sum();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "In 'lock' statement",
+            "PropertyName": "resharper_csharp_braces_for_lock",
+            "Answers": [
+                {
+                    "Name": "not_required",
+                    "PropertyValue": "not_required",
+                    "Example": {
+                        "Code": "public void Preview(object lockObject)\n{\n    var c = 0;\n    lock (lockObject)\n        c += System.Linq.Enumerable.Range(1, 42).Sum();\n\n    lock (lockObject)\n        c += System.Linq.Enumerable\n            .Range(1, 42)\n            .Sum();\n}"
+                    }
+                },
+                {
+                    "Name": "required",
+                    "PropertyValue": "required",
+                    "Example": {
+                        "Code": "public void Preview(object lockObject)\n{\n    var c = 0;\n    lock (lockObject)\n    {\n        c += System.Linq.Enumerable.Range(1, 42).Sum();\n    }\n\n    lock (lockObject)\n    {\n        c += System.Linq.Enumerable\n            .Range(1, 42)\n            .Sum();\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "required_for_multiline",
+                    "PropertyValue": "required_for_multiline",
+                    "Example": {
+                        "Code": "public void Preview(object lockObject)\n{\n    var c = 0;\n    lock (lockObject)\n        c += System.Linq.Enumerable.Range(1, 42).Sum();\n\n    lock (lockObject)\n    {\n        c += System.Linq.Enumerable\n            .Range(1, 42)\n            .Sum();\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "required_for_multiline_statement",
+                    "PropertyValue": "required_for_multiline_statement",
+                    "Example": {
+                        "Code": "public void Preview(object lockObject)\n{\n    var c = 0;\n    lock (lockObject)\n    {\n        c += System.Linq.Enumerable.Range(1, 42).Sum();\n    }\n\n    lock (lockObject)\n    {\n        c += System.Linq.Enumerable\n            .Range(1, 42)\n            .Sum();\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "In 'fixed' statement",
+            "PropertyName": "resharper_csharp_braces_for_fixed",
+            "Answers": [
+                {
+                    "Name": "not_required",
+                    "PropertyValue": "not_required",
+                    "Example": {
+                        "Code": "public unsafe void Preview(string str)\n{\n    var c = 0;\n    fixed (char* p = str)\n        p[42] = 'c';\n\n    fixed (char* p = str)\n        p[42]\n            =\n            'c';\n}"
+                    }
+                },
+                {
+                    "Name": "required",
+                    "PropertyValue": "required",
+                    "Example": {
+                        "Code": "public unsafe void Preview(string str)\n{\n    var c = 0;\n    fixed (char* p = str)\n    {\n        p[42] = 'c';\n    }\n\n    fixed (char* p = str)\n    {\n        p[42]\n            =\n            'c';\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "required_for_multiline",
+                    "PropertyValue": "required_for_multiline",
+                    "Example": {
+                        "Code": "public unsafe void Preview(string str)\n{\n    var c = 0;\n    fixed (char* p = str)\n        p[42] = 'c';\n\n    fixed (char* p = str)\n    {\n        p[42]\n            =\n            'c';\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "required_for_multiline_statement",
+                    "PropertyValue": "required_for_multiline_statement",
+                    "Example": {
+                        "Code": "public unsafe void Preview(string str)\n{\n    var c = 0;\n    fixed (char* p = str)\n    {\n        p[42] = 'c';\n    }\n\n    fixed (char* p = str)\n    {\n        p[42]\n            =\n            'c';\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Methods and operators",
+            "PropertyName": "resharper_csharp_method_or_operator_body",
+            "Answers": [
+                {
+                    "Name": "expression_body",
+                    "PropertyValue": "expression_body",
+                    "Example": {
+                        "Code": "internal class Preview\n{\n    private int Add(int a, int b) => a + b;\n\n    private void SideEffect(DB db)\n    {\n        Drop(db);\n    }\n\n    static bool operator true(Preview p) => false;\n}"
+                    }
+                },
+                {
+                    "Name": "block_body",
+                    "PropertyValue": "block_body",
+                    "Example": {
+                        "Code": "internal class Preview\n{\n    private int Add(int a, int b)\n    {\n        return a + b;\n    }\n\n    private void SideEffect(DB db)\n    {\n        Drop(db);\n    }\n\n    static bool operator true(Preview p)\n    {\n        return false;\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Local functions",
+            "PropertyName": "resharper_csharp_local_function_body",
+            "Answers": [
+                {
+                    "Name": "expression_body",
+                    "PropertyValue": "expression_body",
+                    "Example": {
+                        "Code": "internal class Demo\n{\n    public void Preview()\n    {\n        int CalculateTheAnswer() => 42;\n\n        int answer = CalculateTheAnswer();\n        Output(answer);\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "block_body",
+                    "PropertyValue": "block_body",
+                    "Example": {
+                        "Code": "internal class Demo\n{\n    public void Preview()\n    {\n        int CalculateTheAnswer()\n        {\n            return 42;\n        }\n\n        int answer = CalculateTheAnswer();\n        Output(answer);\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Constructors and destructors",
+            "PropertyName": "resharper_csharp_constructor_or_destructor_body",
+            "Answers": [
+                {
+                    "Name": "expression_body",
+                    "PropertyValue": "expression_body",
+                    "Example": {
+                        "Code": "internal class Preview\n{\n    public Preview(string message) => Message = message;\n\n    ~Preview() => throw new Exception();\n}"
+                    }
+                },
+                {
+                    "Name": "block_body",
+                    "PropertyValue": "block_body",
+                    "Example": {
+                        "Code": "internal class Preview\n{\n    public Preview(string message)\n    {\n        Message = message;\n    }\n\n    ~Preview()\n    {\n        throw new Exception();\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Properties, indexers, and events",
+            "PropertyName": "resharper_csharp_accessor_owner_body",
+            "Answers": [
+                {
+                    "Name": "expression_body",
+                    "PropertyValue": "expression_body",
+                    "Example": {
+                        "Code": "internal class Preview\n{\n    private int PropertyA\n    {\n        get => field;\n        set => field = value;\n    }\n\n    private int PropertyB => field;\n\n    private int this[int i]\n    {\n        get => array[i];\n        set => array[i] = value;\n    }\n\n    private event EventHandler MissionComplete\n    {\n        add => action += value;\n        remove => action -= value;\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "accessors_with_expression_body",
+                    "PropertyValue": "accessors_with_expression_body",
+                    "Example": {
+                        "Code": "internal class Preview\n{\n    private int PropertyA\n    {\n        get => field;\n        set => field = value;\n    }\n\n    private int PropertyB\n    {\n        get => field;\n    }\n\n    private int this[int i]\n    {\n        get => array[i];\n        set => array[i] = value;\n    }\n\n    private event EventHandler MissionComplete\n    {\n        add => action += value;\n        remove => action -= value;\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "accessors_with_block_body",
+                    "PropertyValue": "accessors_with_block_body",
+                    "Example": {
+                        "Code": "internal class Preview\n{\n    private int PropertyA\n    {\n        get { return field; }\n        set { field = value; }\n    }\n\n    private int PropertyB\n    {\n        get { return field; }\n    }\n\n    private int this[int i]\n    {\n        get { return array[i]; }\n        set { array[i] = value; }\n    }\n\n    private event EventHandler MissionComplete\n    {\n        add { action += value; }\n        remove { action -= value; }\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Namespaces",
+            "PropertyName": "resharper_csharp_namespace_body",
+            "Answers": [
+                {
+                    "Name": "file_scoped",
+                    "PropertyValue": "file_scoped",
+                    "Example": {
+                        "Code": "namespace PreviewNamespace;\n\npublic class C\n{\n}"
+                    }
+                },
+                {
+                    "Name": "block_scoped",
+                    "PropertyValue": "block_scoped",
+                    "Example": {
+                        "Code": "namespace PreviewNamespace\n{\n    public class C\n    {\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Apply style heuristics",
+            "PropertyName": "resharper_csharp_use_heuristics_for_body_style",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "internal class Preview\n{\n    private void VoidReturningMethod(DB db)\n    {\n        Drop(db);\n    }\n\n    private int Assignment(int value)\n    {\n        return Property = value;\n    }\n\n    private Action ReturnStatementBodiedLambda()\n    {\n        return () => { Foo(); };\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "internal class Preview\n{\n    private void VoidReturningMethod(DB db)\n    {\n        Drop(db);\n    }\n\n    private int Assignment(int value)\n    {\n        return Property = value;\n    }\n\n    private Action ReturnStatementBodiedLambda()\n    {\n        return () => { Foo(); };\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Join or separate attributes in section",
+            "PropertyName": "resharper_csharp_force_attribute_style",
+            "Answers": [
+                {
+                    "Name": "join",
+                    "PropertyValue": "join",
+                    "Example": {
+                        "Code": "namespace N;\n\n[Attr1, Attr2, Attr3]\ninternal class C\n{\n}"
+                    }
+                },
+                {
+                    "Name": "separate",
+                    "PropertyValue": "separate",
+                    "Example": {
+                        "Code": "namespace N;\n\n[Attr1]\n[Attr2]\n[Attr3]\ninternal class C\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Before a new line in multiline lists",
+            "PropertyName": "resharper_csharp_trailing_comma_in_multiline_lists",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "var myArray = new[]\n{\n    item1,\n    item2,\n};"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "var myArray = new[]\n{\n    item1,\n    item2\n};"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "When the last element is not followed by a new line",
+            "PropertyName": "resharper_csharp_trailing_comma_in_singleline_lists",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "var myArray = new[] { item1, item2, };"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "var myArray = new[] { item1, item2 };"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "When created type is evident from usage",
+            "PropertyName": "resharper_csharp_object_creation_when_type_evident",
+            "Answers": [
+                {
+                    "Name": "target_typed",
+                    "PropertyValue": "target_typed",
+                    "Example": {
+                        "Code": "using System;\n\ninternal class MyService : ServiceBase\n{\n    public override Version Version => new Version(1, 2, 3);\n}"
+                    }
+                },
+                {
+                    "Name": "explicitly_typed",
+                    "PropertyValue": "explicitly_typed",
+                    "Example": {
+                        "Code": "using System;\n\ninternal class MyService : ServiceBase\n{\n    public override Version Version => new Version(1, 2, 3);\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "When created type is not evident from usage",
+            "PropertyName": "resharper_csharp_object_creation_when_type_not_evident",
+            "Answers": [
+                {
+                    "Name": "target_typed",
+                    "PropertyValue": "target_typed",
+                    "Example": {
+                        "Code": "using System;\n\nVersion GetVersion()\n{\n    // many lines of code\n    // ...\n    return new Version(1, 2, 3);\n}"
+                    }
+                },
+                {
+                    "Name": "explicitly_typed",
+                    "PropertyValue": "explicitly_typed",
+                    "Example": {
+                        "Code": "using System;\n\nVersion GetVersion()\n{\n    // many lines of code\n    // ...\n    return new Version(1, 2, 3);\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "When type is evident from usage",
+            "PropertyName": "resharper_csharp_default_value_when_type_evident",
+            "Answers": [
+                {
+                    "Name": "default_literal",
+                    "PropertyValue": "default_literal",
+                    "Example": {
+                        "Code": "using System;\n\ninternal class MyService : ServiceBase\n{\n    public override Guid Guid => default(Guid);\n}"
+                    }
+                },
+                {
+                    "Name": "default_expression",
+                    "PropertyValue": "default_expression",
+                    "Example": {
+                        "Code": "using System;\n\ninternal class MyService : ServiceBase\n{\n    public override Guid Guid => default(Guid);\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "When type is not evident from usage",
+            "PropertyName": "resharper_csharp_default_value_when_type_not_evident",
+            "Answers": [
+                {
+                    "Name": "default_literal",
+                    "PropertyValue": "default_literal",
+                    "Example": {
+                        "Code": "using System;\n\nGuid GetGuid()\n{\n    // many lines of code\n    // ...\n    return default(Guid);\n}"
+                    }
+                },
+                {
+                    "Name": "default_expression",
+                    "PropertyValue": "default_expression",
+                    "Example": {
+                        "Code": "using System;\n\nGuid GetGuid()\n{\n    // many lines of code\n    // ...\n    return default(Guid);\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Null checking pattern style",
+            "PropertyName": "resharper_csharp_null_checking_pattern_style",
+            "Answers": [
+                {
+                    "Name": "empty_recursive_pattern",
+                    "PropertyValue": "empty_recursive_pattern",
+                    "Example": {
+                        "Code": "public void Log(string? text)\n{\n    if (text is { })\n        Console.WriteLine(text);\n}"
+                    }
+                },
+                {
+                    "Name": "not_null_pattern",
+                    "PropertyValue": "not_null_pattern",
+                    "Example": {
+                        "Code": "public void Log(string? text)\n{\n    if (text is not null)\n        Console.WriteLine(text);\n}"
+                    }
+                }
+            ]
+        }
+    ]
+}

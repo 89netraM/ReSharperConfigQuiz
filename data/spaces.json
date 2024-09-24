@@ -1,0 +1,2119 @@
+{
+    "Name": "ReSharper Config Quiz Spaces",
+    "Questions": [
+        {
+            "Name": "Extra spaces inside",
+            "PropertyName": "resharper_csharp_extra_spaces",
+            "Answers": [
+                {
+                    "Name": "remove_all",
+                    "PropertyValue": "remove_all",
+                    "Example": {
+                        "Code": "{\n    var x = foo(5);\n    var xx = foo(5 + 6);\n    var xxx = foo(5 + 6 + 7);\n    var tab = foo(5);\n    var tabx = foo(5 + 6);\n    var tabxx = foo(5 + 6 + 7);\n}"
+                    }
+                },
+                {
+                    "Name": "leave_tabs",
+                    "PropertyValue": "leave_tabs",
+                    "Example": {
+                        "Code": "{\n    var x = foo(5);\n    var xx = foo(5 + 6);\n    var xxx = foo(5 + 6 + 7);\n    var tab\t=\tfoo\t(\t5\t)\t;\n    var tabx\t=\tfoo\t(\t5\t+\t6\t)\t;\n    var tabxx\t=\tfoo\t(\t5\t+\t6\t+\t7\t)\t;\n}"
+                    }
+                },
+                {
+                    "Name": "leave_multiple",
+                    "PropertyValue": "leave_multiple",
+                    "Example": {
+                        "Code": "{\n    var x   = foo(5         );\n    var xx  = foo(5 + 6     );\n    var xxx = foo(5 + 6 + 7);\n    var tab = foo(5);\n    var tabx = foo(5 + 6);\n    var tabxx = foo(5 + 6 + 7);\n}"
+                    }
+                },
+                {
+                    "Name": "leave_all",
+                    "PropertyValue": "leave_all",
+                    "Example": {
+                        "Code": "{\n    var x   = foo ( 5         ) ;\n    var xx  = foo ( 5 + 6     ) ;\n    var xxx = foo ( 5 + 6 + 7 ) ;\n    var tab\t=\tfoo\t(\t5\t)\t;\n    var tabx\t=\tfoo\t(\t5\t+\t6\t)\t;\n    var tabxx\t=\tfoo\t(\t5\t+\t6\t+\t7\t)\t;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'if' parentheses",
+            "PropertyName": "resharper_space_before_if_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "if (condition)\n{\n    foo();\n}\nelse\n{\n    foo();\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "if(condition)\n{\n    foo();\n}\nelse\n{\n    foo();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'while' parentheses",
+            "PropertyName": "resharper_space_before_while_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "while (condition)\n{\n    do\n    {\n        foo();\n    } while (condition);\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "while(condition)\n{\n    do\n    {\n        foo();\n    } while(condition);\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'catch' parentheses",
+            "PropertyName": "resharper_space_before_catch_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "try\n{\n    foo();\n}\ncatch (Exception e)\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "try\n{\n    foo();\n}\ncatch(Exception e)\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'switch' parentheses",
+            "PropertyName": "resharper_space_before_switch_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "switch (expr)\n{\n    case 0:\n        break;\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "switch(expr)\n{\n    case 0:\n        break;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'for' parentheses",
+            "PropertyName": "resharper_space_before_for_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "for (int i = 0; i < 10; i++)\n{\n    foo();\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "for(int i = 0; i < 10; i++)\n{\n    foo();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'foreach' parentheses",
+            "PropertyName": "resharper_space_before_foreach_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "foreach (object o in collection)\n{\n    foo();\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "foreach(object o in collection)\n{\n    foo();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'using' parentheses",
+            "PropertyName": "resharper_space_before_using_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "using (C c = new C())\n{\n    foo();\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "using(C c = new C())\n{\n    foo();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'lock' parentheses",
+            "PropertyName": "resharper_space_before_lock_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "lock (this)\n{\n    foo();\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "lock(this)\n{\n    foo();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'fixed' parentheses",
+            "PropertyName": "resharper_space_before_fixed_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "fixed (int* fib = new int[1])\n{\n    foo();\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "fixed(int* fib = new int[1])\n{\n    foo();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Method call parentheses",
+            "PropertyName": "resharper_csharp_space_before_method_call_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "void Method()\n{\n    foo1 (\"string\", true);\n    foo2();\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "void Method()\n{\n    foo1(\"string\", true);\n    foo2();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Method call empty parentheses",
+            "PropertyName": "resharper_csharp_space_before_empty_method_call_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "void Method()\n{\n    foo1(\"string\", true);\n    foo2 ();\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "void Method()\n{\n    foo1(\"string\", true);\n    foo2();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Method declaration parentheses",
+            "PropertyName": "resharper_csharp_space_before_method_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class C\n{\n    public abstract void Method1 (string str);\n    public abstract void Method2();\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class C\n{\n    public abstract void Method1(string str);\n    public abstract void Method2();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Method declaration empty parentheses",
+            "PropertyName": "resharper_csharp_space_before_empty_method_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class C\n{\n    public abstract void Method1(string str);\n    public abstract void Method2 ();\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class C\n{\n    public abstract void Method1(string str);\n    public abstract void Method2();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'typeof' parentheses",
+            "PropertyName": "resharper_csharp_space_before_typeof_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "Type t = typeof (bool);"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "Type t = typeof(bool);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'default' parentheses",
+            "PropertyName": "resharper_csharp_space_before_default_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "return default (int);"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "return default(int);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'checked' and 'unchecked' parentheses",
+            "PropertyName": "resharper_csharp_space_before_checked_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "return checked (100000 * 10000) + unchecked (10000 * 10000);"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "return checked(100000 * 10000) + unchecked(10000 * 10000);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'sizeof' parentheses",
+            "PropertyName": "resharper_csharp_space_before_sizeof_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "int size = sizeof (bool);"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "int size = sizeof(bool);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'nameof' parentheses",
+            "PropertyName": "resharper_csharp_space_before_nameof_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "return nameof (myField);"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "return nameof(myField);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'new' parentheses",
+            "PropertyName": "resharper_csharp_space_before_new_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "List<int> x = new ();"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "List<int> x = new();"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Between keyword and expression",
+            "PropertyName": "resharper_csharp_space_between_keyword_and_expression",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "public SomeType A(object a)\n{\n    return (SomeType)a ?? throw (new Exception());\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "public SomeType A(object a)\n{\n    return(SomeType)a ?? throw(new Exception());\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Between keyword and type",
+            "PropertyName": "resharper_csharp_space_between_keyword_and_type",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "public (int, int) A(ref (int, int) a)\n{\n    return a;\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "public(int, int) A(ref(int, int) a)\n{\n    return a;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'if' parentheses",
+            "PropertyName": "resharper_csharp_space_within_if_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "if ( condition )\n{\n    foo();\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "if (condition)\n{\n    foo();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'while' parentheses",
+            "PropertyName": "resharper_csharp_space_within_while_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "while ( condition )\n{\n    do\n    {\n        foo();\n    } while ( condition );\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "while (condition)\n{\n    do\n    {\n        foo();\n    } while (condition);\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'catch' parentheses",
+            "PropertyName": "resharper_csharp_space_within_catch_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "try\n{\n    foo();\n}\ncatch ( Exception e )\n{\n}\nfinally\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "try\n{\n    foo();\n}\ncatch (Exception e)\n{\n}\nfinally\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'switch' parentheses",
+            "PropertyName": "resharper_csharp_space_within_switch_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "switch ( expression )\n{\n    default:\n        break;\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "switch (expression)\n{\n    default:\n        break;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'for' parentheses",
+            "PropertyName": "resharper_csharp_space_within_for_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "for ( int i = 0; i < 10; i++ )\n{\n    foo();\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "for (int i = 0; i < 10; i++)\n{\n    foo();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'foreach' parentheses",
+            "PropertyName": "resharper_csharp_space_within_foreach_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "foreach ( object o in collection )\n{\n    foo();\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "foreach (object o in collection)\n{\n    foo();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'using' parentheses",
+            "PropertyName": "resharper_csharp_space_within_using_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "using ( C c = new C() )\n{\n    foo();\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "using (C c = new C())\n{\n    foo();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'lock' parentheses",
+            "PropertyName": "resharper_csharp_space_within_lock_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "lock ( this )\n{\n    foo();\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "lock (this)\n{\n    foo();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'fixed' parentheses",
+            "PropertyName": "resharper_csharp_space_within_fixed_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "fixed ( int* fib = new int[1] )\n{\n    foo();\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "fixed (int* fib = new int[1])\n{\n    foo();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Parentheses",
+            "PropertyName": "resharper_csharp_space_within_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "a = b * ( c + d );"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "a = b * (c + d);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Type cast parentheses",
+            "PropertyName": "resharper_csharp_space_between_typecast_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "int a = ( int )b;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "int a = (int)b;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Method declaration parentheses",
+            "PropertyName": "csharp_space_between_method_declaration_parameter_list_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class C\n{\n    public abstract void Method1( string str );\n    public abstract void Method2();\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class C\n{\n    public abstract void Method1(string str);\n    public abstract void Method2();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Method declaration empty parentheses",
+            "PropertyName": "csharp_space_between_method_declaration_empty_parameter_list_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class C\n{\n    public abstract void Method1(string str);\n    public abstract void Method2( );\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class C\n{\n    public abstract void Method1(string str);\n    public abstract void Method2();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Method call parentheses",
+            "PropertyName": "csharp_space_between_method_call_parameter_list_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "void Method()\n{\n    foo1( \"string\", true );\n    foo2();\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "void Method()\n{\n    foo1(\"string\", true);\n    foo2();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Method call empty parentheses",
+            "PropertyName": "csharp_space_between_method_call_empty_parameter_list_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "void Method()\n{\n    foo1(\"string\", true);\n    foo2( );\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "void Method()\n{\n    foo1(\"string\", true);\n    foo2();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'typeof' parentheses",
+            "PropertyName": "resharper_csharp_space_within_typeof_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "Type t = typeof( bool );"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "Type t = typeof(bool);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'default' parentheses",
+            "PropertyName": "resharper_csharp_space_within_default_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "return default( int );"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "return default(int);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'checked' and 'unchecked' parentheses",
+            "PropertyName": "resharper_csharp_space_within_checked_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "return checked( 100000 * 10000 ) + unchecked( 10000 * 10000 );"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "return checked(100000 * 10000) + unchecked(10000 * 10000);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'sizeof' parentheses",
+            "PropertyName": "resharper_csharp_space_within_sizeof_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "int size = sizeof( bool );"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "int size = sizeof(bool);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'nameof' parentheses",
+            "PropertyName": "resharper_csharp_space_within_nameof_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "return nameof( myField );"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "return nameof(myField);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'new' parentheses",
+            "PropertyName": "resharper_csharp_space_within_new_parentheses",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "List<int> x = new( 5 );"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "List<int> x = new(5);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Before array access brackets",
+            "PropertyName": "resharper_csharp_space_before_array_access_brackets",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "array [i] = array [i + 1];"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "array[i] = array[i + 1];"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Before array rank brackets",
+            "PropertyName": "resharper_csharp_space_before_array_rank_brackets",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "int [] [,] x = null;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "int[][,] x = null;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Within array access brackets",
+            "PropertyName": "resharper_csharp_space_within_array_access_brackets",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "array[ i ] = array[ i + 1 ];"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "array[i] = array[i + 1];"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Within list pattern and collection expression brackets",
+            "PropertyName": "resharper_csharp_space_within_list_pattern_brackets",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "int[] collection = [ 1, 2, 3 ];\nvar matches = collection is [ 1, > 0, not 42 ];"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "int[] collection = [1, 2, 3];\nvar matches = collection is [1, > 0, not 42];"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Within array rank brackets",
+            "PropertyName": "resharper_csharp_space_within_array_rank_brackets",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "int[ , ] x = new int[ 1, 2 ];"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "int[,] x = new int[1, 2];"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Within array rank empty brackets",
+            "PropertyName": "resharper_csharp_space_within_array_rank_empty_brackets",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "int[ ][,] x = null;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "int[][,] x = null;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Before opening angle bracket of type parameters list",
+            "PropertyName": "resharper_csharp_space_before_type_parameter_angle",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class C <T1, T2>\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class C<T1, T2>\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Before opening angle bracket of type arguments list",
+            "PropertyName": "resharper_csharp_space_before_type_argument_angle",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "foo <int>();"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "foo<int>();"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Type parameter angles",
+            "PropertyName": "resharper_csharp_space_within_type_parameter_angles",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class C< T1, T2 >\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class C<T1, T2>\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Type argument angles",
+            "PropertyName": "resharper_csharp_space_within_type_argument_angles",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "foo< int >();"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "foo<int>();"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Before single line accessors block",
+            "PropertyName": "resharper_csharp_space_before_singleline_accessorholder",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "int Property { get; set; }"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "int Property{ get; set; }"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Within single line accessor",
+            "PropertyName": "resharper_csharp_space_in_singleline_accessorholder",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "int Property\n{\n    get { return x; }\n    set { x = value; }\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "int Property\n{\n    get {return x;}\n    set {x = value;}\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Between accessors in single line property/event",
+            "PropertyName": "resharper_csharp_space_between_accessors_in_singleline_property",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "int Property { get; set; }"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "int Property { get;set; }"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Space between empty braces",
+            "PropertyName": "resharper_csharp_space_within_empty_braces",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class C { }"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class C {}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Within single line method",
+            "PropertyName": "resharper_csharp_space_in_singleline_method",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "void Foo() { DoSomething(); }"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "void Foo() {DoSomething();}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Within single line anonymous method",
+            "PropertyName": "resharper_csharp_space_in_singleline_anonymous_method",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "EventHandler e = delegate { return; };"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "EventHandler e = delegate {return;};"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Within single-line expression braces",
+            "PropertyName": "resharper_csharp_space_within_single_line_array_initializer_braces",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "int[] x = new int[] { 0, 1, 2 };"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "int[] x = new int[] {0, 1, 2};"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Assignment operators (such as '=' and '+=')",
+            "PropertyName": "resharper_csharp_space_around_assignment_op",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "a += 1;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "a+=1;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Logical operators (&&,||)",
+            "PropertyName": "resharper_csharp_space_around_logical_op",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "if (a && b || c)\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "if (a&&b||c)\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Equality operators (==,!=)",
+            "PropertyName": "resharper_csharp_space_around_equality_op",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "if (a == b)\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "if (a==b)\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Relational operators (<,>,<=,>=)",
+            "PropertyName": "resharper_csharp_space_around_relational_op",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "bool condition = a < b;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "bool condition = a<b;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Bitwise operators (&,|,^)",
+            "PropertyName": "resharper_csharp_space_around_bitwise_op",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "int a = b ^ c;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "int a = b^c;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Additive operators (+,-)",
+            "PropertyName": "resharper_csharp_space_around_additive_op",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "a = a + b - c;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "a = a+b-c;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Multiplicative operators (*,/,%)",
+            "PropertyName": "resharper_csharp_space_around_multiplicative_op",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "a = a * b / c;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "a = a*b/c;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Shift operators (<<,>>,>>>)",
+            "PropertyName": "resharper_csharp_space_around_shift_op",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "x = x << 1;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "x = x<<1;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Null coalescing operator (??)",
+            "PropertyName": "resharper_csharp_space_around_nullcoalescing_op",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "x = a ?? b;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "x = a??b;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Unsafe arrow operator (->)",
+            "PropertyName": "resharper_csharp_space_around_arrow_op",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "int b = ptr -> x;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "int b = ptr->x;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Logical not operator (!)",
+            "PropertyName": "resharper_csharp_space_after_logical_not_op",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "if (! x) return;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "if (!x) return;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Unary minus operator (-)",
+            "PropertyName": "resharper_csharp_space_after_unary_minus_op",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "int x = - 5;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "int x = -5;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Unary plus operator (+)",
+            "PropertyName": "resharper_csharp_space_after_unary_plus_op",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "int x = + 5;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "int x = +5;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Unsafe addressof operator (&)",
+            "PropertyName": "resharper_csharp_space_after_ampersand_op",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "int* b = & x;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "int* b = &x;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Unsafe asterisk operator (*)",
+            "PropertyName": "resharper_csharp_space_after_asterik_op",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "int p = * ptr;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "int p = *ptr;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Before/after ++ and --",
+            "PropertyName": "resharper_csharp_space_near_postfix_and_prefix_op",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "void Method(int p)\n{\n    p ++;\n    -- p;\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "void Method(int p)\n{\n    p++;\n    --p;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Before '?'",
+            "PropertyName": "resharper_csharp_space_before_ternary_quest",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "bool b = condition ? expr1 : expr2;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "bool b = condition? expr1 : expr2;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "After '?'",
+            "PropertyName": "resharper_csharp_space_after_ternary_quest",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "bool b = condition ? expr1 : expr2;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "bool b = condition ?expr1 : expr2;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Before ':'",
+            "PropertyName": "resharper_csharp_space_before_ternary_colon",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "bool b = condition ? expr1 : expr2;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "bool b = condition ? expr1: expr2;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "After ':'",
+            "PropertyName": "resharper_csharp_space_after_ternary_colon",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "bool b = condition ? expr1 : expr2;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "bool b = condition ? expr1 :expr2;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Before comma",
+            "PropertyName": "resharper_space_before_comma",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "foo(a , b , c);"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "foo(a, b, c);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "After comma",
+            "PropertyName": "resharper_space_after_comma",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "foo(a, b, c);"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "foo(a,b,c);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Before 'for' semicolon",
+            "PropertyName": "csharp_space_before_semicolon_in_for_statement",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "for (int i = 1 ; i < 10 ; i++)\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "for (int i = 1; i < 10; i++)\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "After 'for' semicolon",
+            "PropertyName": "csharp_space_after_semicolon_in_for_statement",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "for (int i = 1; i < 10; i++)\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "for (int i = 1;i < 10;i++)\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Before semicolon",
+            "PropertyName": "resharper_csharp_space_before_semicolon",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "a = b ;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "a = b;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Before base types list colon",
+            "PropertyName": "csharp_space_before_colon_in_inheritance_clause",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class Derived : BaseClass, Interface\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class Derived: BaseClass, Interface\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "After base types list colon",
+            "PropertyName": "csharp_space_after_colon_in_inheritance_clause",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class Derived : BaseClass, Interface\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class Derived :BaseClass, Interface\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Before type parameter constraint colon",
+            "PropertyName": "resharper_csharp_space_before_type_parameter_constraint_colon",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class C<T1> where T1 : I\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class C<T1> where T1: I\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "After type parameter constraint colon",
+            "PropertyName": "resharper_csharp_space_after_type_parameter_constraint_colon",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class C<T1> where T1 : I\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class C<T1> where T1 :I\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Before colon in 'case' statement",
+            "PropertyName": "resharper_csharp_space_before_colon_in_case",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "switch (expr)\n{\n    case 0 :\n        break;\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "switch (expr)\n{\n    case 0:\n        break;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "After colon in 'case' statement",
+            "PropertyName": "resharper_csharp_space_after_colon_in_case",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "switch (expr)\n{\n    case 0: return A;\n    case 1: return B;\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "switch (expr)\n{\n    case 0:return A;\n    case 1:return B;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Before other colons",
+            "PropertyName": "resharper_csharp_space_before_attribute_colon",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "[return : Description(\"returns A\")]\npublic A b()\n{\n    Method(arg1 : 1, arg2 : 3);\n    var y = (tuple1 : 1, tuple2 : 2);\n    return null;\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "[return: Description(\"returns A\")]\npublic A b()\n{\n    Method(arg1: 1, arg2: 3);\n    var y = (tuple1: 1, tuple2: 2);\n    return null;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "After other colons",
+            "PropertyName": "resharper_csharp_space_after_attribute_colon",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "[return: Description(\"returns A\")]\npublic A b()\n{\n    Method(arg1: 1, arg2: 3);\n    var y = (tuple1: 1, tuple2: 2);\n    return null;\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "[return:Description(\"returns A\")]\npublic A b()\n{\n    Method(arg1:1, arg2:3);\n    var y = (tuple1:1, tuple2:2);\n    return null;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Between attribute sections",
+            "PropertyName": "resharper_csharp_space_between_attribute_sections",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "void Method([NotNull] [ItemNotNull] IList<string> items);"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "void Method([NotNull][ItemNotNull] IList<string> items);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Within attribute brackets",
+            "PropertyName": "csharp_space_between_square_brackets",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "[ Attr1, Attr2(true) ]\nclass C\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "[Attr1, Attr2(true)]\nclass C\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "After attributes",
+            "PropertyName": "resharper_csharp_space_after_attributes",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "void Method([NotNull] [ItemNotNull] IList<string> items);"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "void Method([NotNull] [ItemNotNull]IList<string> items);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "After type cast parentheses",
+            "PropertyName": "csharp_space_after_cast",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "int a = (int) b;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "int a = (int)b;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Around dot",
+            "PropertyName": "resharper_csharp_space_around_dot",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "a . b . foo();"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "a.b.foo();"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Around lambda arrow",
+            "PropertyName": "resharper_csharp_space_around_lambda_arrow",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "Action a = x => x + 1;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "Action a = x=>x + 1;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Before unsafe pointer declaration",
+            "PropertyName": "resharper_csharp_space_before_pointer_asterik_declaration",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "int * x;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "int* x;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Before nullable mark",
+            "PropertyName": "resharper_csharp_space_before_nullable_mark",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "int ? i = null;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "int? i = null;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Around '=' in namespace alias directive",
+            "PropertyName": "resharper_csharp_space_around_alias_eq",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "using X = A.B;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "using X=A.B;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Before end of line comment",
+            "PropertyName": "resharper_csharp_space_before_trailing_comment",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "var x = 4; // x = 4"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "var x = 4;// x = 4"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "After operator keyword",
+            "PropertyName": "resharper_csharp_space_after_operator_keyword",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "public static bool operator ==(C x, C y)\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "public static bool operator==(C x, C y)\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "After '..' in slice pattern",
+            "PropertyName": "resharper_csharp_space_within_slice_pattern",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "bool matches = sourceObject is [1, 2, .. var tail];"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "bool matches = sourceObject is [1, 2, ..var tail];"
+                    }
+                }
+            ]
+        }
+    ]
+}

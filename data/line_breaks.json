@@ -1,0 +1,2331 @@
+{
+    "Name": "ReSharper Config Quiz Line Breaks",
+    "Questions": [
+        {
+            "Name": "Keep existing line breaks",
+            "PropertyName": "resharper_csharp_keep_user_linebreaks",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "int var = condition\n    ? SomeFunc1()\n    : SomeFunc2();"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "int var = condition ? SomeFunc1() : SomeFunc2();"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Prefer to wrap before ','",
+            "PropertyName": "resharper_csharp_wrap_before_comma",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "CallMethod(arg1\n    , arg2\n    , arg3\n    , arg4\n    , arg5\n    , arg6\n    , arg7);"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "CallMethod(arg1,\n    arg2,\n    arg3,\n    arg4,\n    arg5,\n    arg6,\n    arg7);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Prefer to wrap before '='",
+            "PropertyName": "resharper_csharp_wrap_before_eq",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "myObject.ImportantField\n    += someRatherLongExpression;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "myObject.ImportantField +=\n    someRatherLongExpression;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Special 'else if' treatment",
+            "PropertyName": "resharper_csharp_special_else_if_treatment",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "if (condition)\n{\n    foo();\n}\nelse if (condition)\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "if (condition)\n{\n    foo();\n}\nelse\n    if (condition)\n    {\n    }"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Keep existing arrangement of attributes",
+            "PropertyName": "resharper_csharp_keep_existing_attribute_arrangement",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "[Attribute]\nclass C { }\n\n[Attribute] class C1 { }"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "[Attribute]\nclass C { }\n\n[Attribute]\nclass C1 { }"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place type attribute on the same line",
+            "PropertyName": "resharper_csharp_place_type_attribute_on_same_line",
+            "Answers": [
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "[Attribute]\nclass C { }\n\n[Attribute]\nclass C1\n{\n    // comment\n}"
+                    }
+                },
+                {
+                    "Name": "never",
+                    "PropertyValue": "never",
+                    "Example": {
+                        "Code": "[Attribute]\nclass C { }\n\n[Attribute]\nclass C1\n{\n    // comment\n}"
+                    }
+                },
+                {
+                    "Name": "if_owner_is_single_line",
+                    "PropertyValue": "if_owner_is_single_line",
+                    "Example": {
+                        "Code": "[Attribute] class C { }\n\n[Attribute]\nclass C1\n{\n    // comment\n}"
+                    }
+                },
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "[Attribute] class C { }\n\n[Attribute] class C1\n{\n    // comment\n}"
+                    }
+                },
+                {
+                    "Name": "always",
+                    "PropertyValue": "always",
+                    "Example": {
+                        "Code": "[Attribute] class C { }\n\n[Attribute] class C1\n{\n    // comment\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place method attribute on the same line",
+            "PropertyName": "resharper_csharp_place_method_attribute_on_same_line",
+            "Answers": [
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "interface I\n{\n    [Attribute]\n    void foo();\n}\n\nclass C\n{\n    [Attribute]\n    void foo()\n    {\n        // comment\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "never",
+                    "PropertyValue": "never",
+                    "Example": {
+                        "Code": "interface I\n{\n    [Attribute]\n    void foo();\n}\n\nclass C\n{\n    [Attribute]\n    void foo()\n    {\n        // comment\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "if_owner_is_single_line",
+                    "PropertyValue": "if_owner_is_single_line",
+                    "Example": {
+                        "Code": "interface I\n{\n    [Attribute] void foo();\n}\n\nclass C\n{\n    [Attribute]\n    void foo()\n    {\n        // comment\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "interface I\n{\n    [Attribute] void foo();\n}\n\nclass C\n{\n    [Attribute] void foo()\n    {\n        // comment\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "always",
+                    "PropertyValue": "always",
+                    "Example": {
+                        "Code": "interface I\n{\n    [Attribute] void foo();\n}\n\nclass C\n{\n    [Attribute] void foo()\n    {\n        // comment\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place property/indexer/event attribute on the same line",
+            "PropertyName": "resharper_csharp_place_accessorholder_attribute_on_same_line",
+            "Answers": [
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "interface I\n{\n    [Attribute]\n    int Property { get; }\n}\n\nclass C\n{\n    [Attribute]\n    int Property\n    {\n        get\n        {\n            // comment\n            return x;\n        }\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "never",
+                    "PropertyValue": "never",
+                    "Example": {
+                        "Code": "interface I\n{\n    [Attribute]\n    int Property { get; }\n}\n\nclass C\n{\n    [Attribute]\n    int Property\n    {\n        get\n        {\n            // comment\n            return x;\n        }\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "if_owner_is_single_line",
+                    "PropertyValue": "if_owner_is_single_line",
+                    "Example": {
+                        "Code": "interface I\n{\n    [Attribute] int Property { get; }\n}\n\nclass C\n{\n    [Attribute]\n    int Property\n    {\n        get\n        {\n            // comment\n            return x;\n        }\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "interface I\n{\n    [Attribute] int Property { get; }\n}\n\nclass C\n{\n    [Attribute] int Property\n    {\n        get\n        {\n            // comment\n            return x;\n        }\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "always",
+                    "PropertyValue": "always",
+                    "Example": {
+                        "Code": "interface I\n{\n    [Attribute] int Property { get; }\n}\n\nclass C\n{\n    [Attribute] int Property\n    {\n        get\n        {\n            // comment\n            return x;\n        }\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place accessor attribute on the same line",
+            "PropertyName": "resharper_csharp_place_accessor_attribute_on_same_line",
+            "Answers": [
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "interface I\n{\n    int Property\n    {\n        [Attribute]\n        get;\n    }\n}\n\nclass C\n{\n    int Property\n    {\n        [Attribute]\n        get { return x; }\n        [Attribute]\n        set\n        {\n            x = value;\n            NotifySomething();\n        }\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "never",
+                    "PropertyValue": "never",
+                    "Example": {
+                        "Code": "interface I\n{\n    int Property\n    {\n        [Attribute]\n        get;\n    }\n}\n\nclass C\n{\n    int Property\n    {\n        [Attribute]\n        get { return x; }\n        [Attribute]\n        set\n        {\n            x = value;\n            NotifySomething();\n        }\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "if_owner_is_single_line",
+                    "PropertyValue": "if_owner_is_single_line",
+                    "Example": {
+                        "Code": "interface I\n{\n    int Property { [Attribute] get; }\n}\n\nclass C\n{\n    int Property\n    {\n        [Attribute] get { return x; }\n        [Attribute]\n        set\n        {\n            x = value;\n            NotifySomething();\n        }\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "interface I\n{\n    int Property { [Attribute] get; }\n}\n\nclass C\n{\n    int Property\n    {\n        [Attribute] get { return x; }\n        [Attribute] set\n        {\n            x = value;\n            NotifySomething();\n        }\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "always",
+                    "PropertyValue": "always",
+                    "Example": {
+                        "Code": "interface I\n{\n    int Property { [Attribute] get; }\n}\n\nclass C\n{\n    int Property\n    {\n        [Attribute] get { return x; }\n        [Attribute] set\n        {\n            x = value;\n            NotifySomething();\n        }\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place field attribute on the same line",
+            "PropertyName": "resharper_csharp_place_field_attribute_on_same_line",
+            "Answers": [
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class C\n{\n    [Attribute]\n    int x;\n\n    [Attribute]\n    MyObj y = // comment\n        new MyObj();\n}"
+                    }
+                },
+                {
+                    "Name": "never",
+                    "PropertyValue": "never",
+                    "Example": {
+                        "Code": "class C\n{\n    [Attribute]\n    int x;\n\n    [Attribute]\n    MyObj y = // comment\n        new MyObj();\n}"
+                    }
+                },
+                {
+                    "Name": "if_owner_is_single_line",
+                    "PropertyValue": "if_owner_is_single_line",
+                    "Example": {
+                        "Code": "class C\n{\n    [Attribute] int x;\n\n    [Attribute]\n    MyObj y = // comment\n        new MyObj();\n}"
+                    }
+                },
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class C\n{\n    [Attribute] int x;\n\n    [Attribute] MyObj y = // comment\n        new MyObj();\n}"
+                    }
+                },
+                {
+                    "Name": "always",
+                    "PropertyValue": "always",
+                    "Example": {
+                        "Code": "class C\n{\n    [Attribute] int x;\n\n    [Attribute] MyObj y = // comment\n        new MyObj();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place record field attribute on the same line",
+            "PropertyName": "resharper_csharp_place_record_field_attribute_on_same_line",
+            "Answers": [
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "record MyRecord(\n    [Attribute]\n    int Field);"
+                    }
+                },
+                {
+                    "Name": "never",
+                    "PropertyValue": "never",
+                    "Example": {
+                        "Code": "record MyRecord(\n    [Attribute]\n    int Field);"
+                    }
+                },
+                {
+                    "Name": "if_owner_is_single_line",
+                    "PropertyValue": "if_owner_is_single_line",
+                    "Example": {
+                        "Code": "record MyRecord([Attribute] int Field);"
+                    }
+                },
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "record MyRecord([Attribute] int Field);"
+                    }
+                },
+                {
+                    "Name": "always",
+                    "PropertyValue": "always",
+                    "Example": {
+                        "Code": "record MyRecord([Attribute] int Field);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Wrap formal parameters",
+            "PropertyName": "resharper_csharp_wrap_parameters_style",
+            "Answers": [
+                {
+                    "Name": "wrap_if_long",
+                    "PropertyValue": "wrap_if_long",
+                    "Example": {
+                        "Code": "interface IA\n{\n    void M(int p1, int p2);\n\n    void SomeMethod(int p1,\n        int p2, int p3,\n        int p4);\n}"
+                    }
+                },
+                {
+                    "Name": "chop_if_long",
+                    "PropertyValue": "chop_if_long",
+                    "Example": {
+                        "Code": "interface IA\n{\n    void M(int p1, int p2);\n\n    void SomeMethod(int p1,\n        int p2,\n        int p3,\n        int p4);\n}"
+                    }
+                },
+                {
+                    "Name": "chop_always",
+                    "PropertyValue": "chop_always",
+                    "Example": {
+                        "Code": "interface IA\n{\n    void M(int p1,\n        int p2);\n\n    void SomeMethod(int p1,\n        int p2,\n        int p3,\n        int p4);\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Max formal parameters on a single line",
+            "PropertyName": "resharper_csharp_max_formal_parameters_on_line",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "interface IA\n{\n    void M(int arg1);\n\n    void M(int arg1,\n        int arg2);\n\n    void M(int arg1,\n        int arg2,\n        int arg3);\n\n    void M(int arg1,\n        int arg2,\n        int arg3,\n        int arg4);\n\n    void M(int arg1,\n        int arg2,\n        int arg3,\n        int arg4,\n        int arg5);\n\n    void M(int arg1,\n        int arg2,\n        int arg3,\n        int arg4,\n        int arg5,\n        int arg6);\n\n    void M(int arg1,\n        int arg2,\n        int arg3,\n        int arg4,\n        int arg5,\n        int arg6,\n        int arg7);\n\n    void M(int arg1,\n        int arg2,\n        int arg3,\n        int arg4,\n        int arg5,\n        int arg6,\n        int arg7,\n        int arg8);\n\n    void M(int arg1,\n        int arg2,\n        int arg3,\n        int arg4,\n        int arg5,\n        int arg6,\n        int arg7,\n        int arg8,\n        int arg9);\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "interface IA\n{\n    void M(int arg1);\n\n    void M(int arg1,\n        int arg2);\n\n    void M(int arg1,\n        int arg2,\n        int arg3);\n\n    void M(int arg1,\n        int arg2,\n        int arg3,\n        int arg4);\n\n    void M(int arg1,\n        int arg2,\n        int arg3,\n        int arg4,\n        int arg5);\n\n    void M(int arg1,\n        int arg2,\n        int arg3,\n        int arg4,\n        int arg5,\n        int arg6);\n\n    void M(int arg1,\n        int arg2,\n        int arg3,\n        int arg4,\n        int arg5,\n        int arg6,\n        int arg7);\n\n    void M(int arg1,\n        int arg2,\n        int arg3,\n        int arg4,\n        int arg5,\n        int arg6,\n        int arg7,\n        int arg8);\n\n    void M(int arg1,\n        int arg2,\n        int arg3,\n        int arg4,\n        int arg5,\n        int arg6,\n        int arg7,\n        int arg8,\n        int arg9);\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "interface IA\n{\n    void M(int arg1);\n    void M(int arg1, int arg2);\n\n    void M(int arg1, int arg2,\n        int arg3);\n\n    void M(int arg1, int arg2,\n        int arg3, int arg4);\n\n    void M(int arg1, int arg2,\n        int arg3, int arg4,\n        int arg5);\n\n    void M(int arg1, int arg2,\n        int arg3, int arg4,\n        int arg5, int arg6);\n\n    void M(int arg1, int arg2,\n        int arg3, int arg4,\n        int arg5, int arg6,\n        int arg7);\n\n    void M(int arg1, int arg2,\n        int arg3, int arg4,\n        int arg5, int arg6,\n        int arg7, int arg8);\n\n    void M(int arg1, int arg2,\n        int arg3, int arg4,\n        int arg5, int arg6,\n        int arg7, int arg8,\n        int arg9);\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Keep existing arrangement of parenthesis in declaration",
+            "PropertyName": "resharper_csharp_keep_existing_declaration_parens_arrangement",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "void SomeMethod\n(\n    int p1, int p2,\n    int p3, int p4\n)\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "void SomeMethod(int p1, int p2,\n    int p3, int p4)\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Prefer to wrap before '(' in declaration",
+            "PropertyName": "resharper_csharp_wrap_before_declaration_lpar",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "void SomeMethod\n(int p1, int p2,\n    int p3, int p4)\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "void SomeMethod(int p1, int p2,\n    int p3, int p4)\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Prefer to wrap after '(' in declaration",
+            "PropertyName": "resharper_csharp_wrap_after_declaration_lpar",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "void SomeMethod(\n    int p1, int p2,\n    int p3, int p4)\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "void SomeMethod(int p1, int p2,\n    int p3, int p4)\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Prefer to wrap before ')' in declaration",
+            "PropertyName": "resharper_csharp_wrap_before_declaration_rpar",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "void SomeMethod(int p1, int p2,\n    int p3, int p4\n)\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "void SomeMethod(int p1, int p2,\n    int p3, int p4)\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Allow constructor initializer on the same line",
+            "PropertyName": "resharper_csharp_place_constructor_initializer_on_same_line",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class C\n{\n    public C() : base()\n    {\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class C\n{\n    public C()\n        : base()\n    {\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Wrap primary constructor parameters",
+            "PropertyName": "resharper_csharp_wrap_primary_constructor_parameters_style",
+            "Answers": [
+                {
+                    "Name": "wrap_if_long",
+                    "PropertyValue": "wrap_if_long",
+                    "Example": {
+                        "Code": "public record Person(string Name, int Age);\n\npublic partial class Parameter(\n    string name, IParametersOwner owner, int parameterIndex,\n    ParameterKind kind, ScopedKind parameterScope,\n    IType type) : IParameter;"
+                    }
+                },
+                {
+                    "Name": "chop_if_long",
+                    "PropertyValue": "chop_if_long",
+                    "Example": {
+                        "Code": "public record Person(string Name, int Age);\n\npublic partial class Parameter(\n    string name,\n    IParametersOwner owner,\n    int parameterIndex,\n    ParameterKind kind,\n    ScopedKind parameterScope,\n    IType type) : IParameter;"
+                    }
+                },
+                {
+                    "Name": "chop_always",
+                    "PropertyValue": "chop_always",
+                    "Example": {
+                        "Code": "public record Person(\n    string Name,\n    int Age);\n\npublic partial class Parameter(\n    string name,\n    IParametersOwner owner,\n    int parameterIndex,\n    ParameterKind kind,\n    ScopedKind parameterScope,\n    IType type) : IParameter;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Max primary constructor parameters on a single line",
+            "PropertyName": "resharper_csharp_max_primary_constructor_parameters_on_line",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "public record Person(\n    string Name,\n    int Age);\n\npublic partial class Parameter(\n    string name,\n    IParametersOwner owner,\n    int parameterIndex,\n    ParameterKind kind,\n    ScopedKind parameterScope,\n    IType type) : IParameter;"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "public record Person(\n    string Name,\n    int Age);\n\npublic partial class Parameter(\n    string name,\n    IParametersOwner owner,\n    int parameterIndex,\n    ParameterKind kind,\n    ScopedKind parameterScope,\n    IType type) : IParameter;"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "public record Person(string Name, int Age);\n\npublic partial class Parameter(\n    string name,\n    IParametersOwner owner,\n    int parameterIndex,\n    ParameterKind kind,\n    ScopedKind parameterScope,\n    IType type) : IParameter;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Keep existing arrangement of parenthesis in declaration",
+            "PropertyName": "resharper_csharp_keep_existing_primary_constructor_declaration_parens_arrangement",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "public record Person(string Name, int Age);\n\npublic partial class Parameter(\n    string name,\n    IParametersOwner owner,\n    int parameterIndex,\n    ParameterKind kind,\n    ScopedKind parameterScope,\n    IType type\n) : IParameter;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "public record Person(string Name, int Age);\n\npublic partial class Parameter(\n    string name,\n    IParametersOwner owner,\n    int parameterIndex,\n    ParameterKind kind,\n    ScopedKind parameterScope,\n    IType type) : IParameter;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Prefer to wrap before '(' in declaration",
+            "PropertyName": "resharper_csharp_wrap_before_primary_constructor_declaration_lpar",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "public record Person(string Name, int Age);\n\npublic partial class Parameter\n(\n    string name,\n    IParametersOwner owner,\n    int parameterIndex,\n    ParameterKind kind,\n    ScopedKind parameterScope,\n    IType type) : IParameter;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "public record Person(string Name, int Age);\n\npublic partial class Parameter(\n    string name,\n    IParametersOwner owner,\n    int parameterIndex,\n    ParameterKind kind,\n    ScopedKind parameterScope,\n    IType type) : IParameter;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Prefer to wrap after '(' in declaration",
+            "PropertyName": "resharper_csharp_wrap_after_primary_constructor_declaration_lpar",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "public record Person(string Name, int Age);\n\npublic partial class Parameter(\n    string name,\n    IParametersOwner owner,\n    int parameterIndex,\n    ParameterKind kind,\n    ScopedKind parameterScope,\n    IType type) : IParameter;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "public record Person(string Name, int Age);\n\npublic partial class Parameter(string name,\n    IParametersOwner owner,\n    int parameterIndex,\n    ParameterKind kind,\n    ScopedKind parameterScope,\n    IType type) : IParameter;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Prefer to wrap before ')' in declaration",
+            "PropertyName": "resharper_csharp_wrap_before_primary_constructor_declaration_rpar",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "public record Person(string Name, int Age);\n\npublic partial class Parameter(\n    string name,\n    int parameterIndex,\n    ParameterKind kind,\n    IType type\n) : IParameter;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "public record Person(string Name, int Age);\n\npublic partial class Parameter(\n    string name,\n    int parameterIndex,\n    ParameterKind kind,\n    IType type) : IParameter;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Keep existing arrangement of expression bodied members",
+            "PropertyName": "resharper_csharp_keep_existing_expr_member_arrangement",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class A\n{\n    public int Foo() => 0;\n\n    public int Foo1()\n        => 1;\n\n    public int Foo2() =>\n        2;\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class A\n{\n    public int Foo() => 0;\n    public int Foo1() => 1;\n    public int Foo2() => 2;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place method expression body on the same line",
+            "PropertyName": "resharper_csharp_place_expr_method_on_single_line",
+            "Answers": [
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class A\n{\n    public int Foo() =>\n        0;\n\n    public int // comment\n        Foo1() =>\n        1;\n\n    public int Foo2() =>\n        1 + // comment\n        2;\n}"
+                    }
+                },
+                {
+                    "Name": "never",
+                    "PropertyValue": "never",
+                    "Example": {
+                        "Code": "class A\n{\n    public int Foo() =>\n        0;\n\n    public int // comment\n        Foo1() =>\n        1;\n\n    public int Foo2() =>\n        1 + // comment\n        2;\n}"
+                    }
+                },
+                {
+                    "Name": "if_owner_is_single_line",
+                    "PropertyValue": "if_owner_is_single_line",
+                    "Example": {
+                        "Code": "class A\n{\n    public int Foo() => 0;\n\n    public int // comment\n        Foo1() =>\n        1;\n\n    public int Foo2() =>\n        1 + // comment\n        2;\n}"
+                    }
+                },
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class A\n{\n    public int Foo() => 0;\n\n    public int // comment\n        Foo1() => 1;\n\n    public int Foo2() => 1 + // comment\n                         2;\n}"
+                    }
+                },
+                {
+                    "Name": "always",
+                    "PropertyValue": "always",
+                    "Example": {
+                        "Code": "class A\n{\n    public int Foo() => 0;\n\n    public int // comment\n        Foo1() => 1;\n\n    public int Foo2() => 1 + // comment\n                         2;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place property expression body on the same line",
+            "PropertyName": "resharper_csharp_place_expr_property_on_single_line",
+            "Answers": [
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class A\n{\n    public int Foo =>\n        0;\n\n    public int // comment\n        Foo1 =>\n        1;\n\n    public int Foo2 =>\n        1 + // comment\n        2;\n}"
+                    }
+                },
+                {
+                    "Name": "never",
+                    "PropertyValue": "never",
+                    "Example": {
+                        "Code": "class A\n{\n    public int Foo =>\n        0;\n\n    public int // comment\n        Foo1 =>\n        1;\n\n    public int Foo2 =>\n        1 + // comment\n        2;\n}"
+                    }
+                },
+                {
+                    "Name": "if_owner_is_single_line",
+                    "PropertyValue": "if_owner_is_single_line",
+                    "Example": {
+                        "Code": "class A\n{\n    public int Foo => 0;\n\n    public int // comment\n        Foo1 =>\n        1;\n\n    public int Foo2 =>\n        1 + // comment\n        2;\n}"
+                    }
+                },
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class A\n{\n    public int Foo => 0;\n\n    public int // comment\n        Foo1 => 1;\n\n    public int Foo2 => 1 + // comment\n                       2;\n}"
+                    }
+                },
+                {
+                    "Name": "always",
+                    "PropertyValue": "always",
+                    "Example": {
+                        "Code": "class A\n{\n    public int Foo => 0;\n\n    public int // comment\n        Foo1 => 1;\n\n    public int Foo2 => 1 + // comment\n                       2;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place property accessor expression body on the same line",
+            "PropertyName": "resharper_csharp_place_expr_accessor_on_single_line",
+            "Answers": [
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class A\n{\n    public int Foo\n    {\n        get =>\n            0;\n    }\n\n    public int Foo1\n    {\n        get =>\n            1 + // comment\n            2;\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "never",
+                    "PropertyValue": "never",
+                    "Example": {
+                        "Code": "class A\n{\n    public int Foo\n    {\n        get =>\n            0;\n    }\n\n    public int Foo1\n    {\n        get =>\n            1 + // comment\n            2;\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "if_owner_is_single_line",
+                    "PropertyValue": "if_owner_is_single_line",
+                    "Example": {
+                        "Code": "class A\n{\n    public int Foo\n    {\n        get => 0;\n    }\n\n    public int Foo1\n    {\n        get =>\n            1 + // comment\n            2;\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class A\n{\n    public int Foo\n    {\n        get => 0;\n    }\n\n    public int Foo1\n    {\n        get => 1 + // comment\n               2;\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "always",
+                    "PropertyValue": "always",
+                    "Example": {
+                        "Code": "class A\n{\n    public int Foo\n    {\n        get => 0;\n    }\n\n    public int Foo1\n    {\n        get => 1 + // comment\n               2;\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Prefer to wrap before '=>' followed by expressions",
+            "PropertyName": "resharper_csharp_wrap_before_arrow_with_expressions",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class A\n{\n    public int Foo(int y)\n        => Br(y * y + y <<\n              y + y);\n\n    Func<int, int, int>\n        Method2()\n    {\n        return (xxx, yyy)\n            => Br(xxx * yyy);\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class A\n{\n    public int Foo(int y) =>\n        Br(y * y + y << y + y);\n\n    Func<int, int, int>\n        Method2()\n    {\n        return (xxx, yyy) =>\n            Br(xxx * yyy);\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Allow type constraints on the same line",
+            "PropertyName": "resharper_csharp_place_type_constraints_on_same_line",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class C<T> where T : IEnumerable\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class C<T>\n    where T : IEnumerable\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Prefer to wrap before first constraint",
+            "PropertyName": "resharper_csharp_wrap_before_first_type_parameter_constraint",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class C<T1, T2, T3>\n    where T1 : I1\n    where T2 : new()\n    where T3 : class"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class C<T1, T2, T3> where T1 : I1\n    where T2 : new()\n    where T3 : class"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Wrap multiple type parameter constraints",
+            "PropertyName": "resharper_csharp_wrap_multiple_type_parameter_constraints_style",
+            "Answers": [
+                {
+                    "Name": "wrap_if_long",
+                    "PropertyValue": "wrap_if_long",
+                    "Example": {
+                        "Code": "class C<T1, T2, T3> where T1 : I1 where T2 : new()\n    where T3 : class"
+                    }
+                },
+                {
+                    "Name": "chop_if_long",
+                    "PropertyValue": "chop_if_long",
+                    "Example": {
+                        "Code": "class C<T1, T2, T3> where T1 : I1\n    where T2 : new()\n    where T3 : class"
+                    }
+                },
+                {
+                    "Name": "chop_always",
+                    "PropertyValue": "chop_always",
+                    "Example": {
+                        "Code": "class C<T1, T2, T3> where T1 : I1\n    where T2 : new()\n    where T3 : class"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Prefer to wrap before opening angle bracket in type parameters list",
+            "PropertyName": "resharper_csharp_wrap_before_type_parameter_langle",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class C\n<Type1, Type2,\n    Type3, Type4>\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class C<Type1, Type2,\n    Type3, Type4>\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Prefer to wrap before ':'",
+            "PropertyName": "resharper_csharp_wrap_before_extends_colon",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class Derived\n    : BaseClass, I1, I2,\n        I3, I4\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class Derived : BaseClass, I1,\n    I2,\n    I3, I4\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Wrap extends/implements list",
+            "PropertyName": "resharper_csharp_wrap_extends_list_style",
+            "Answers": [
+                {
+                    "Name": "wrap_if_long",
+                    "PropertyValue": "wrap_if_long",
+                    "Example": {
+                        "Code": "class Derived : BaseClass, I1,\n    I2, I3, I4\n{\n}"
+                    }
+                },
+                {
+                    "Name": "chop_if_long",
+                    "PropertyValue": "chop_if_long",
+                    "Example": {
+                        "Code": "class Derived : BaseClass,\n    I1,\n    I2,\n    I3,\n    I4\n{\n}"
+                    }
+                },
+                {
+                    "Name": "chop_always",
+                    "PropertyValue": "chop_always",
+                    "Example": {
+                        "Code": "class Derived : BaseClass,\n    I1,\n    I2,\n    I3,\n    I4\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Keep existing arrangement of declaration blocks",
+            "PropertyName": "resharper_csharp_keep_existing_declaration_block_arrangement",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "interface I\n{\n    int Property\n    {\n        get;\n        set;\n    }\n}\n\ninterface I\n{\n    int Property { get; set; }\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "interface I\n{\n    int Property { get; set; }\n}\n\ninterface I\n{\n    int Property { get; set; }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place abstract/auto property/indexer/event declaration on single line",
+            "PropertyName": "resharper_csharp_place_abstract_accessorholder_on_single_line",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "interface I\n{\n    int Property { get; set; }\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "interface I\n{\n    int Property\n    {\n        get;\n        set;\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place simple property/indexer/event declaration on single line",
+            "PropertyName": "resharper_csharp_place_simple_accessorholder_on_single_line",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class C\n{\n    int Property { get { return x; } set { x = value; } }\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class C\n{\n    int Property\n    {\n        get { return x; }\n        set { x = value; }\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place it on single line even when it has attributes on accessors",
+            "PropertyName": "resharper_csharp_place_accessor_with_attrs_holder_on_single_line",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class C\n{\n    int Property\n    {\n        [Attr] get { return x; }\n        [Attr] set { x = value; }\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class C\n{\n    int Property\n    {\n        [Attr] get { return x; }\n        [Attr] set { x = value; }\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place simple accessor on single line",
+            "PropertyName": "resharper_csharp_place_simple_accessor_on_single_line",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class C\n{\n    int Property\n    {\n        get { return x; }\n        set\n        {\n            if (value == null) throw new Exception();\n        }\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class C\n{\n    int Property\n    {\n        get\n        {\n            return x;\n        }\n        set\n        {\n            if (value == null) throw new Exception();\n        }\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place simple method on single line",
+            "PropertyName": "resharper_csharp_place_simple_method_on_single_line",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class C\n{\n    void Foo() { DoSomethingSimple(); }\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class C\n{\n    void Foo()\n    {\n        DoSomethingSimple();\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Keep existing arrangement of enumeration",
+            "PropertyName": "resharper_csharp_keep_existing_enum_arrangement",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "public enum Enum1 { a, b, c }\n\npublic enum Enum2\n{\n    a,\n    b,\n    c\n}\n\npublic enum Enum3\n{\n    a, b,\n    c, d\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "public enum Enum1\n{\n    a,\n    b,\n    c\n}\n\npublic enum Enum2\n{\n    a,\n    b,\n    c\n}\n\npublic enum Enum3\n{\n    a,\n    b,\n    c,\n    d\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Max enumeration members on a single line",
+            "PropertyName": "resharper_csharp_max_enum_members_on_line",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "public enum Enum1\n{\n    val1\n}\n\npublic enum Enum2\n{\n    val1,\n    val2\n}\n\npublic enum Enum3\n{\n    val1,\n    val2,\n    val3\n}\n\npublic enum Enum4\n{\n    val1,\n    val2,\n    val3,\n    val4\n}\n\npublic enum Enum5\n{\n    val1,\n    val2,\n    val3,\n    val4,\n    val5\n}\n\npublic enum Enum6\n{\n    val1,\n    val2,\n    val3,\n    val4,\n    val5,\n    val6\n}\n\npublic enum Enum7\n{\n    val1,\n    val2,\n    val3,\n    val4,\n    val5,\n    val6,\n    val7\n}\n\npublic enum Enum8\n{\n    val1,\n    val2,\n    val3,\n    val4,\n    val5,\n    val6,\n    val7,\n    val8\n}\n\npublic enum Enum9\n{\n    val1,\n    val2,\n    val3,\n    val4,\n    val5,\n    val6,\n    val7,\n    val8,\n    val9\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "public enum Enum1\n{\n    val1\n}\n\npublic enum Enum2\n{\n    val1,\n    val2\n}\n\npublic enum Enum3\n{\n    val1,\n    val2,\n    val3\n}\n\npublic enum Enum4\n{\n    val1,\n    val2,\n    val3,\n    val4\n}\n\npublic enum Enum5\n{\n    val1,\n    val2,\n    val3,\n    val4,\n    val5\n}\n\npublic enum Enum6\n{\n    val1,\n    val2,\n    val3,\n    val4,\n    val5,\n    val6\n}\n\npublic enum Enum7\n{\n    val1,\n    val2,\n    val3,\n    val4,\n    val5,\n    val6,\n    val7\n}\n\npublic enum Enum8\n{\n    val1,\n    val2,\n    val3,\n    val4,\n    val5,\n    val6,\n    val7,\n    val8\n}\n\npublic enum Enum9\n{\n    val1,\n    val2,\n    val3,\n    val4,\n    val5,\n    val6,\n    val7,\n    val8,\n    val9\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "public enum Enum1\n{\n    val1\n}\n\npublic enum Enum2\n{\n    val1, val2\n}\n\npublic enum Enum3\n{\n    val1, val2,\n    val3\n}\n\npublic enum Enum4\n{\n    val1, val2,\n    val3, val4\n}\n\npublic enum Enum5\n{\n    val1, val2,\n    val3, val4,\n    val5\n}\n\npublic enum Enum6\n{\n    val1, val2,\n    val3, val4,\n    val5, val6\n}\n\npublic enum Enum7\n{\n    val1, val2,\n    val3, val4,\n    val5, val6,\n    val7\n}\n\npublic enum Enum8\n{\n    val1, val2,\n    val3, val4,\n    val5, val6,\n    val7, val8\n}\n\npublic enum Enum9\n{\n    val1, val2,\n    val3, val4,\n    val5, val6,\n    val7, val8,\n    val9\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place simple enumeration on single line",
+            "PropertyName": "resharper_csharp_place_simple_enum_on_single_line",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "public enum Enum1 { a, b, c }"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "public enum Enum1\n{\n    a, b, c\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Wrap enumeration declaration",
+            "PropertyName": "resharper_csharp_wrap_enum_declaration",
+            "Answers": [
+                {
+                    "Name": "wrap_if_long",
+                    "PropertyValue": "wrap_if_long",
+                    "Example": {
+                        "Code": "public enum Enum1\n{\n    a, b, c\n}\n\npublic enum Enum2\n{\n    aaaaa, bbbbb, ccccc,\n    ddddd, eeeee, fffff\n}"
+                    }
+                },
+                {
+                    "Name": "chop_if_long",
+                    "PropertyValue": "chop_if_long",
+                    "Example": {
+                        "Code": "public enum Enum1\n{\n    a, b, c\n}\n\npublic enum Enum2\n{\n    aaaaa,\n    bbbbb,\n    ccccc,\n    ddddd,\n    eeeee,\n    fffff\n}"
+                    }
+                },
+                {
+                    "Name": "chop_always",
+                    "PropertyValue": "chop_always",
+                    "Example": {
+                        "Code": "public enum Enum1\n{\n    a,\n    b,\n    c\n}\n\npublic enum Enum2\n{\n    aaaaa,\n    bbbbb,\n    ccccc,\n    ddddd,\n    eeeee,\n    fffff\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place 'else' on a new line",
+            "PropertyName": "csharp_new_line_before_else",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "if (condition)\n{\n    foo();\n}\nelse\n{\n    foo();\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "if (condition)\n{\n    foo();\n} else\n{\n    foo();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place 'while' on a new line",
+            "PropertyName": "resharper_csharp_new_line_before_while",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "do\n{\n    foo();\n}\nwhile (condition);"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "do\n{\n    foo();\n} while (condition);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place 'catch' on a new line",
+            "PropertyName": "csharp_new_line_before_catch",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "try\n{\n    foo();\n}\ncatch (Exception e)\n{\n    foo();\n}\nfinally\n{\n    foo();\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "try\n{\n    foo();\n} catch (Exception e)\n{\n    foo();\n}\nfinally\n{\n    foo();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place 'finally' on a new line",
+            "PropertyName": "csharp_new_line_before_finally",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "try\n{\n    foo();\n}\ncatch (Exception e)\n{\n    foo();\n}\nfinally\n{\n    foo();\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "try\n{\n    foo();\n}\ncatch (Exception e)\n{\n    foo();\n} finally\n{\n    foo();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Wrap 'for' statement header",
+            "PropertyName": "resharper_csharp_wrap_for_stmt_header_style",
+            "Answers": [
+                {
+                    "Name": "wrap_if_long",
+                    "PropertyValue": "wrap_if_long",
+                    "Example": {
+                        "Code": "for (int i = initial;\n     i < loopLimit; i++)\n{\n}"
+                    }
+                },
+                {
+                    "Name": "chop_if_long",
+                    "PropertyValue": "chop_if_long",
+                    "Example": {
+                        "Code": "for (int i = initial;\n     i < loopLimit;\n     i++)\n{\n}"
+                    }
+                },
+                {
+                    "Name": "chop_always",
+                    "PropertyValue": "chop_always",
+                    "Example": {
+                        "Code": "for (int i = initial;\n     i < loopLimit;\n     i++)\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Wrap multiple declaration",
+            "PropertyName": "resharper_csharp_wrap_multiple_declaration_style",
+            "Answers": [
+                {
+                    "Name": "wrap_if_long",
+                    "PropertyValue": "wrap_if_long",
+                    "Example": {
+                        "Code": "class C\n{\n    public int i = 0, j = 0,\n        k = 2, l = 3, m = 4,\n        n = 5;\n}"
+                    }
+                },
+                {
+                    "Name": "chop_if_long",
+                    "PropertyValue": "chop_if_long",
+                    "Example": {
+                        "Code": "class C\n{\n    public int i = 0,\n        j = 0,\n        k = 2,\n        l = 3,\n        m = 4,\n        n = 5;\n}"
+                    }
+                },
+                {
+                    "Name": "chop_always",
+                    "PropertyValue": "chop_always",
+                    "Example": {
+                        "Code": "class C\n{\n    public int i = 0,\n        j = 0,\n        k = 2,\n        l = 3,\n        m = 4,\n        n = 5;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Keep existing arrangement of embedded statements",
+            "PropertyName": "resharper_csharp_keep_existing_embedded_arrangement",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "{\n    if (condition) DoSomething();\n    if (condition1)\n        DoSomething1();\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "{\n    if (condition) DoSomething();\n    if (condition1) DoSomething1();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place simple embedded statement on the same line",
+            "PropertyName": "resharper_csharp_place_simple_embedded_statement_on_same_line",
+            "Answers": [
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "{\n    if (condition)\n        DoSomething();\n    if (condition && // comment\n        condition1)\n        DoSomething();\n}"
+                    }
+                },
+                {
+                    "Name": "never",
+                    "PropertyValue": "never",
+                    "Example": {
+                        "Code": "{\n    if (condition)\n        DoSomething();\n    if (condition && // comment\n        condition1)\n        DoSomething();\n}"
+                    }
+                },
+                {
+                    "Name": "if_owner_is_single_line",
+                    "PropertyValue": "if_owner_is_single_line",
+                    "Example": {
+                        "Code": "{\n    if (condition) DoSomething();\n    if (condition && // comment\n        condition1)\n        DoSomething();\n}"
+                    }
+                },
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "{\n    if (condition) DoSomething();\n    if (condition && // comment\n        condition1) DoSomething();\n}"
+                    }
+                },
+                {
+                    "Name": "always",
+                    "PropertyValue": "always",
+                    "Example": {
+                        "Code": "{\n    if (condition) DoSomething();\n    if (condition && // comment\n        condition1) DoSomething();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place simple 'case' statement on the same line",
+            "PropertyName": "resharper_csharp_place_simple_case_statement_on_same_line",
+            "Answers": [
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "switch (foo)\n{\n    case 1:\n        return a;\n    case 2:\n    case 3:\n        return a;\n}"
+                    }
+                },
+                {
+                    "Name": "never",
+                    "PropertyValue": "never",
+                    "Example": {
+                        "Code": "switch (foo)\n{\n    case 1:\n        return a;\n    case 2:\n    case 3:\n        return a;\n}"
+                    }
+                },
+                {
+                    "Name": "if_owner_is_single_line",
+                    "PropertyValue": "if_owner_is_single_line",
+                    "Example": {
+                        "Code": "switch (foo)\n{\n    case 1: return a;\n    case 2:\n    case 3:\n        return a;\n}"
+                    }
+                },
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "switch (foo)\n{\n    case 1: return a;\n    case 2:\n    case 3: return a;\n}"
+                    }
+                },
+                {
+                    "Name": "always",
+                    "PropertyValue": "always",
+                    "Example": {
+                        "Code": "switch (foo)\n{\n    case 1: return a;\n    case 2:\n    case 3: return a;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Keep existing arrangement of embedded blocks",
+            "PropertyName": "resharper_csharp_keep_existing_embedded_block_arrangement",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "{\n    if (condition) { DoSomething(); }\n\n    if (condition1)\n    {\n        DoSomething1();\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "{\n    if (condition)\n    {\n        DoSomething();\n    }\n\n    if (condition1)\n    {\n        DoSomething1();\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place a block with a single simple statement on the same line",
+            "PropertyName": "resharper_csharp_place_simple_embedded_block_on_same_line",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "if (condition) { DoSomething(); }"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "if (condition)\n{\n    DoSomething();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place simple anonymous method on single line",
+            "PropertyName": "resharper_csharp_place_simple_anonymousmethod_on_single_line",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "EventHandler e = delegate { return; };"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "EventHandler e = delegate\n{\n    return;\n};"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Keep existing arrangement of switch expressions",
+            "PropertyName": "resharper_csharp_keep_existing_switch_expression_arrangement",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "{\n    var result = x switch\n    {\n        T.A => 0, T.B => 1\n    };\n    var result = x switch { T.A => 0, T.B => 1 };\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "{\n    var result = x switch\n    {\n        T.A => 0,\n        T.B => 1\n    };\n    var result = x switch\n    {\n        T.A => 0,\n        T.B => 1\n    };\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place simple switch expression on single line",
+            "PropertyName": "resharper_csharp_place_simple_switch_expression_on_single_line",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "var result = x switch { T.A => 0, T.B => 1 };"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "var result = x switch\n{\n    T.A => 0, T.B => 1\n};"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Wrap switch expression",
+            "PropertyName": "resharper_csharp_wrap_switch_expression",
+            "Answers": [
+                {
+                    "Name": "wrap_if_long",
+                    "PropertyValue": "wrap_if_long",
+                    "Example": {
+                        "Code": "(x switch\n    {\n        T.A => 0, T.B => 1, T.C => 2\n    }) +\n    (x switch\n    {\n        T.A => 0, T.B => 1 +\n                         2,\n        T.C => 2\n    })"
+                    }
+                },
+                {
+                    "Name": "chop_if_long",
+                    "PropertyValue": "chop_if_long",
+                    "Example": {
+                        "Code": "(x switch\n    {\n        T.A => 0, T.B => 1, T.C => 2\n    }) +\n    (x switch\n    {\n        T.A => 0,\n        T.B => 1 +\n               2,\n        T.C => 2\n    })"
+                    }
+                },
+                {
+                    "Name": "chop_always",
+                    "PropertyValue": "chop_always",
+                    "Example": {
+                        "Code": "(x switch\n    {\n        T.A => 0,\n        T.B => 1,\n        T.C => 2\n    }) +\n    (x switch\n    {\n        T.A => 0,\n        T.B => 1 +\n               2,\n        T.C => 2\n    })"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Keep existing arrangement of property patterns",
+            "PropertyName": "resharper_csharp_keep_existing_property_patterns_arrangement",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "bool matches = sourceObject is MyType\n               {\n                   F1: 1,\n                   F2: 2\n               } &&\n               sourceObject is MyType { F1: 1, F2: 2 };"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "bool matches = sourceObject is MyType { F1: 1, F2: 2 } &&\n               sourceObject is MyType { F1: 1, F2: 2 };"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place simple property pattern on single line",
+            "PropertyName": "resharper_csharp_place_simple_property_pattern_on_single_line",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "bool matches = sourceObject is MyType { F1: 1, F2: 2 };"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "bool matches = sourceObject is MyType\n{\n    F1: 1, F2: 2\n};"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Wrap property pattern",
+            "PropertyName": "resharper_csharp_wrap_property_pattern",
+            "Answers": [
+                {
+                    "Name": "wrap_if_long",
+                    "PropertyValue": "wrap_if_long",
+                    "Example": {
+                        "Code": "bool matches =\n    sourceObject is MyType\n    {\n        F1: 1, F2: 2\n    } &&\n    sourceObject is MyType\n    {\n        F1: 1, F2: 2, F3: 3, F4: 4,\n        F5: 5, F6: 6, F7: 7, F8: 8\n    };"
+                    }
+                },
+                {
+                    "Name": "chop_if_long",
+                    "PropertyValue": "chop_if_long",
+                    "Example": {
+                        "Code": "bool matches =\n    sourceObject is MyType\n    {\n        F1: 1, F2: 2\n    } &&\n    sourceObject is MyType\n    {\n        F1: 1,\n        F2: 2,\n        F3: 3,\n        F4: 4,\n        F5: 5,\n        F6: 6,\n        F7: 7,\n        F8: 8\n    };"
+                    }
+                },
+                {
+                    "Name": "chop_always",
+                    "PropertyValue": "chop_always",
+                    "Example": {
+                        "Code": "bool matches = sourceObject is MyType\n               {\n                   F1: 1,\n                   F2: 2\n               } &&\n               sourceObject is MyType\n               {\n                   F1: 1,\n                   F2: 2,\n                   F3: 3,\n                   F4: 4,\n                   F5: 5,\n                   F6: 6,\n                   F7: 7,\n                   F8: 8\n               };"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Keep existing arrangement of list patterns and collection expressions",
+            "PropertyName": "resharper_csharp_keep_existing_list_patterns_arrangement",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "int[] collection =\n[\n    1,\n    2,\n    3,\n    4,\n    5,\n    6\n];\nvar otherCollection = [1, 2, 3, 4, 5, 6];\n\nvar matches = collection is\n[\n    1,\n    > 0,\n    not 42,\n    4,\n    5,\n    6\n];\nvar otherMatches = otherCollection is [1, 2, 3, 4, 5, 6];"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "int[] collection = [1, 2, 3, 4, 5, 6];\nvar otherCollection = [1, 2, 3, 4, 5, 6];\n\nvar matches = collection is [1, > 0, not 42, 4, 5, 6];\nvar otherMatches = otherCollection is [1, 2, 3, 4, 5, 6];"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place simple list pattern and collection expression on a single line",
+            "PropertyName": "resharper_csharp_place_simple_list_pattern_on_single_line",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "int[] collection = [1, 2, 3, 4, 5, 6, 7, 8];\nvar matches = collection is [1, > 0, not 42, 4, 5, 6, 7, 8];"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "int[] collection =\n[\n    1, 2, 3, 4, 5, 6, 7, 8\n];\nvar matches = collection is\n[\n    1, > 0, not 42, 4, 5, 6, 7, 8\n];"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Wrap list pattern and collection expression",
+            "PropertyName": "resharper_csharp_wrap_list_pattern",
+            "Answers": [
+                {
+                    "Name": "wrap_if_long",
+                    "PropertyValue": "wrap_if_long",
+                    "Example": {
+                        "Code": "int[] collection =\n[\n    Element1, Element2, Element3,\n    Element4, Element5, Element6,\n    Element7\n];\n\nvar matches = collection is\n[\n    1, 2, > 0, 4, 5, 6, not 42, 8,\n    9, 10, 11, 12, 13\n];"
+                    }
+                },
+                {
+                    "Name": "chop_if_long",
+                    "PropertyValue": "chop_if_long",
+                    "Example": {
+                        "Code": "int[] collection =\n[\n    Element1,\n    Element2,\n    Element3,\n    Element4,\n    Element5,\n    Element6,\n    Element7\n];\n\nvar matches = collection is\n[\n    1,\n    2,\n    > 0,\n    4,\n    5,\n    6,\n    not 42,\n    8,\n    9,\n    10,\n    11,\n    12,\n    13\n];"
+                    }
+                },
+                {
+                    "Name": "chop_always",
+                    "PropertyValue": "chop_always",
+                    "Example": {
+                        "Code": "int[] collection =\n[\n    Element1,\n    Element2,\n    Element3,\n    Element4,\n    Element5,\n    Element6,\n    Element7\n];\n\nvar matches = collection is\n[\n    1,\n    2,\n    > 0,\n    4,\n    5,\n    6,\n    not 42,\n    8,\n    9,\n    10,\n    11,\n    12,\n    13\n];"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Keep existing arrangement of initializers",
+            "PropertyName": "resharper_csharp_keep_existing_initializer_arrangement",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "{\n    var result = new\n    {\n        A = 0\n    };\n    var result = new { A = 0 };\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "{\n    var result = new { A = 0 };\n    var result = new { A = 0 };\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place simple array, object and collection on single line",
+            "PropertyName": "resharper_csharp_place_simple_initializer_on_single_line",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "var result = new { A = 0 };"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "var result = new\n{\n    A = 0\n};"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Max object and collection initializer elements on a single line",
+            "PropertyName": "resharper_csharp_max_initializer_elements_on_line",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "{\n    x = new C() { Prop1 = 1 };\n    x = new C()\n    {\n        Prop1 = 1,\n        Prop2 = 1\n    };\n    x = new C()\n    {\n        Prop1 = 1,\n        Prop2 = 1,\n        Prop3 = 1\n    };\n    x = new C()\n    {\n        Prop1 = 1,\n        Prop2 = 1,\n        Prop3 = 1,\n        Prop4 = 1\n    };\n    x = new C()\n    {\n        Prop1 = 1,\n        Prop2 = 1,\n        Prop3 = 1,\n        Prop4 = 1,\n        Prop5 = 1\n    };\n    x = new C()\n    {\n        Prop1 = 1,\n        Prop2 = 1,\n        Prop3 = 1,\n        Prop4 = 1,\n        Prop5 = 1,\n        Prop6 = 1\n    };\n    x = new C()\n    {\n        Prop1 = 1,\n        Prop2 = 1,\n        Prop3 = 1,\n        Prop4 = 1,\n        Prop5 = 1,\n        Prop6 = 1,\n        Prop7 = 1\n    };\n    x = new C()\n    {\n        Prop1 = 1,\n        Prop2 = 1,\n        Prop3 = 1,\n        Prop4 = 1,\n        Prop5 = 1,\n        Prop6 = 1,\n        Prop7 = 1,\n        Prop8 = 1\n    };\n    x = new C()\n    {\n        Prop1 = 1,\n        Prop2 = 1,\n        Prop3 = 1,\n        Prop4 = 1,\n        Prop5 = 1,\n        Prop6 = 1,\n        Prop7 = 1,\n        Prop8 = 1,\n        Prop9 = 1\n    };\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "{\n    x = new C() { Prop1 = 1 };\n    x = new C()\n    {\n        Prop1 = 1,\n        Prop2 = 1\n    };\n    x = new C()\n    {\n        Prop1 = 1,\n        Prop2 = 1,\n        Prop3 = 1\n    };\n    x = new C()\n    {\n        Prop1 = 1,\n        Prop2 = 1,\n        Prop3 = 1,\n        Prop4 = 1\n    };\n    x = new C()\n    {\n        Prop1 = 1,\n        Prop2 = 1,\n        Prop3 = 1,\n        Prop4 = 1,\n        Prop5 = 1\n    };\n    x = new C()\n    {\n        Prop1 = 1,\n        Prop2 = 1,\n        Prop3 = 1,\n        Prop4 = 1,\n        Prop5 = 1,\n        Prop6 = 1\n    };\n    x = new C()\n    {\n        Prop1 = 1,\n        Prop2 = 1,\n        Prop3 = 1,\n        Prop4 = 1,\n        Prop5 = 1,\n        Prop6 = 1,\n        Prop7 = 1\n    };\n    x = new C()\n    {\n        Prop1 = 1,\n        Prop2 = 1,\n        Prop3 = 1,\n        Prop4 = 1,\n        Prop5 = 1,\n        Prop6 = 1,\n        Prop7 = 1,\n        Prop8 = 1\n    };\n    x = new C()\n    {\n        Prop1 = 1,\n        Prop2 = 1,\n        Prop3 = 1,\n        Prop4 = 1,\n        Prop5 = 1,\n        Prop6 = 1,\n        Prop7 = 1,\n        Prop8 = 1,\n        Prop9 = 1\n    };\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "{\n    x = new C() { Prop1 = 1 };\n    x = new C() { Prop1 = 1, Prop2 = 1 };\n    x = new C()\n    {\n        Prop1 = 1, Prop2 = 1,\n        Prop3 = 1\n    };\n    x = new C()\n    {\n        Prop1 = 1, Prop2 = 1,\n        Prop3 = 1, Prop4 = 1\n    };\n    x = new C()\n    {\n        Prop1 = 1, Prop2 = 1,\n        Prop3 = 1, Prop4 = 1,\n        Prop5 = 1\n    };\n    x = new C()\n    {\n        Prop1 = 1, Prop2 = 1,\n        Prop3 = 1, Prop4 = 1,\n        Prop5 = 1, Prop6 = 1\n    };\n    x = new C()\n    {\n        Prop1 = 1, Prop2 = 1,\n        Prop3 = 1, Prop4 = 1,\n        Prop5 = 1, Prop6 = 1,\n        Prop7 = 1\n    };\n    x = new C()\n    {\n        Prop1 = 1, Prop2 = 1,\n        Prop3 = 1, Prop4 = 1,\n        Prop5 = 1, Prop6 = 1,\n        Prop7 = 1, Prop8 = 1\n    };\n    x = new C()\n    {\n        Prop1 = 1, Prop2 = 1,\n        Prop3 = 1, Prop4 = 1,\n        Prop5 = 1, Prop6 = 1,\n        Prop7 = 1, Prop8 = 1,\n        Prop9 = 1\n    };\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Wrap object and collection initializer",
+            "PropertyName": "resharper_csharp_wrap_object_and_collection_initializer_style",
+            "Answers": [
+                {
+                    "Name": "wrap_if_long",
+                    "PropertyValue": "wrap_if_long",
+                    "Example": {
+                        "Code": "new C()\n{\n    PropertyX = 1, PropertyY = 2,\n    PropertyZ = 3\n}"
+                    }
+                },
+                {
+                    "Name": "chop_if_long",
+                    "PropertyValue": "chop_if_long",
+                    "Example": {
+                        "Code": "new C()\n{\n    PropertyX = 1,\n    PropertyY = 2,\n    PropertyZ = 3\n}"
+                    }
+                },
+                {
+                    "Name": "chop_always",
+                    "PropertyValue": "chop_always",
+                    "Example": {
+                        "Code": "new C()\n{\n    PropertyX = 1,\n    PropertyY = 2,\n    PropertyZ = 3\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Max array initializer and collection expression elements on a single line",
+            "PropertyName": "resharper_csharp_max_array_initializer_elements_on_line",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "{\n    x = new[] { val1 };\n    x = new[]\n    {\n        val1,\n        val2\n    };\n    x = new[]\n    {\n        val1,\n        val2,\n        val3\n    };\n    x = new[]\n    {\n        val1,\n        val2,\n        val3,\n        val4\n    };\n    x = new[]\n    {\n        val1,\n        val2,\n        val3,\n        val4,\n        val5\n    };\n    x = new[]\n    {\n        val1,\n        val2,\n        val3,\n        val4,\n        val5,\n        val6\n    };\n    x = new[]\n    {\n        val1,\n        val2,\n        val3,\n        val4,\n        val5,\n        val6,\n        val7\n    };\n    x = new[]\n    {\n        val1,\n        val2,\n        val3,\n        val4,\n        val5,\n        val6,\n        val7,\n        val8\n    };\n    x = new[]\n    {\n        val1,\n        val2,\n        val3,\n        val4,\n        val5,\n        val6,\n        val7,\n        val8,\n        val9\n    };\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "{\n    x = new[] { val1 };\n    x = new[]\n    {\n        val1,\n        val2\n    };\n    x = new[]\n    {\n        val1,\n        val2,\n        val3\n    };\n    x = new[]\n    {\n        val1,\n        val2,\n        val3,\n        val4\n    };\n    x = new[]\n    {\n        val1,\n        val2,\n        val3,\n        val4,\n        val5\n    };\n    x = new[]\n    {\n        val1,\n        val2,\n        val3,\n        val4,\n        val5,\n        val6\n    };\n    x = new[]\n    {\n        val1,\n        val2,\n        val3,\n        val4,\n        val5,\n        val6,\n        val7\n    };\n    x = new[]\n    {\n        val1,\n        val2,\n        val3,\n        val4,\n        val5,\n        val6,\n        val7,\n        val8\n    };\n    x = new[]\n    {\n        val1,\n        val2,\n        val3,\n        val4,\n        val5,\n        val6,\n        val7,\n        val8,\n        val9\n    };\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "{\n    x = new[] { val1 };\n    x = new[] { val1, val2 };\n    x = new[]\n    {\n        val1, val2,\n        val3\n    };\n    x = new[]\n    {\n        val1, val2,\n        val3, val4\n    };\n    x = new[]\n    {\n        val1, val2,\n        val3, val4,\n        val5\n    };\n    x = new[]\n    {\n        val1, val2,\n        val3, val4,\n        val5, val6\n    };\n    x = new[]\n    {\n        val1, val2,\n        val3, val4,\n        val5, val6,\n        val7\n    };\n    x = new[]\n    {\n        val1, val2,\n        val3, val4,\n        val5, val6,\n        val7, val8\n    };\n    x = new[]\n    {\n        val1, val2,\n        val3, val4,\n        val5, val6,\n        val7, val8,\n        val9\n    };\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Wrap array initializer",
+            "PropertyName": "resharper_csharp_wrap_array_initializer_style",
+            "Answers": [
+                {
+                    "Name": "wrap_if_long",
+                    "PropertyValue": "wrap_if_long",
+                    "Example": {
+                        "Code": "new C[]\n{\n    Element1, ElementX, ElementY,\n    ElementZ, ElementZzz\n}"
+                    }
+                },
+                {
+                    "Name": "chop_if_long",
+                    "PropertyValue": "chop_if_long",
+                    "Example": {
+                        "Code": "new C[]\n{\n    Element1,\n    ElementX,\n    ElementY,\n    ElementZ,\n    ElementZzz\n}"
+                    }
+                },
+                {
+                    "Name": "chop_always",
+                    "PropertyValue": "chop_always",
+                    "Example": {
+                        "Code": "new C[]\n{\n    Element1,\n    ElementX,\n    ElementY,\n    ElementZ,\n    ElementZzz\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Wrap invocation arguments",
+            "PropertyName": "resharper_csharp_wrap_arguments_style",
+            "Answers": [
+                {
+                    "Name": "wrap_if_long",
+                    "PropertyValue": "wrap_if_long",
+                    "Example": {
+                        "Code": "{\n    CallMethod(arg1, arg2);\n    CallMethod(arg1, arg2,\n        arg3, arg4, arg5);\n}"
+                    }
+                },
+                {
+                    "Name": "chop_if_long",
+                    "PropertyValue": "chop_if_long",
+                    "Example": {
+                        "Code": "{\n    CallMethod(arg1, arg2);\n    CallMethod(arg1,\n        arg2,\n        arg3,\n        arg4,\n        arg5);\n}"
+                    }
+                },
+                {
+                    "Name": "chop_always",
+                    "PropertyValue": "chop_always",
+                    "Example": {
+                        "Code": "{\n    CallMethod(arg1,\n        arg2);\n    CallMethod(arg1,\n        arg2,\n        arg3,\n        arg4,\n        arg5);\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Max invocation arguments on a single line",
+            "PropertyName": "resharper_csharp_max_invocation_arguments_on_line",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "{\n    CallMethod(arg1);\n    CallMethod(arg1,\n        arg2);\n    CallMethod(arg1,\n        arg2,\n        arg3);\n    CallMethod(arg1,\n        arg2,\n        arg3,\n        arg4);\n    CallMethod(arg1,\n        arg2,\n        arg3,\n        arg4,\n        arg5);\n    CallMethod(arg1,\n        arg2,\n        arg3,\n        arg4,\n        arg5,\n        arg6);\n    CallMethod(arg1,\n        arg2,\n        arg3,\n        arg4,\n        arg5,\n        arg6,\n        arg7);\n    CallMethod(arg1,\n        arg2,\n        arg3,\n        arg4,\n        arg5,\n        arg6,\n        arg7,\n        arg8);\n    CallMethod(arg1,\n        arg2,\n        arg3,\n        arg4,\n        arg5,\n        arg6,\n        arg7,\n        arg8,\n        arg9);\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "{\n    CallMethod(arg1);\n    CallMethod(arg1,\n        arg2);\n    CallMethod(arg1,\n        arg2,\n        arg3);\n    CallMethod(arg1,\n        arg2,\n        arg3,\n        arg4);\n    CallMethod(arg1,\n        arg2,\n        arg3,\n        arg4,\n        arg5);\n    CallMethod(arg1,\n        arg2,\n        arg3,\n        arg4,\n        arg5,\n        arg6);\n    CallMethod(arg1,\n        arg2,\n        arg3,\n        arg4,\n        arg5,\n        arg6,\n        arg7);\n    CallMethod(arg1,\n        arg2,\n        arg3,\n        arg4,\n        arg5,\n        arg6,\n        arg7,\n        arg8);\n    CallMethod(arg1,\n        arg2,\n        arg3,\n        arg4,\n        arg5,\n        arg6,\n        arg7,\n        arg8,\n        arg9);\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "{\n    CallMethod(arg1);\n    CallMethod(arg1, arg2);\n    CallMethod(arg1, arg2,\n        arg3);\n    CallMethod(arg1, arg2,\n        arg3, arg4);\n    CallMethod(arg1, arg2,\n        arg3, arg4,\n        arg5);\n    CallMethod(arg1, arg2,\n        arg3, arg4,\n        arg5, arg6);\n    CallMethod(arg1, arg2,\n        arg3, arg4,\n        arg5, arg6,\n        arg7);\n    CallMethod(arg1, arg2,\n        arg3, arg4,\n        arg5, arg6,\n        arg7, arg8);\n    CallMethod(arg1, arg2,\n        arg3, arg4,\n        arg5, arg6,\n        arg7, arg8,\n        arg9);\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Keep existing arrangement of parenthesis in invocation",
+            "PropertyName": "resharper_csharp_keep_existing_invocation_parens_arrangement",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "CallMethod\n(\n    arg1, arg2,\n    arg3, arg4, arg5\n);"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "CallMethod(arg1, arg2,\n    arg3, arg4, arg5);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Prefer to wrap before '(' in invocation",
+            "PropertyName": "resharper_csharp_wrap_before_invocation_lpar",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "CallMethod\n(arg1, arg2,\n    arg3, arg4, arg5);"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "CallMethod(arg1, arg2,\n    arg3, arg4, arg5);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Prefer to wrap after '(' in invocation",
+            "PropertyName": "resharper_csharp_wrap_after_invocation_lpar",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "CallMethod(\n    arg1, arg2,\n    arg3, arg4, arg5);"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "CallMethod(arg1, arg2,\n    arg3, arg4, arg5);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Prefer to wrap before ')' in invocation",
+            "PropertyName": "resharper_csharp_wrap_before_invocation_rpar",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "CallMethod(arg1, arg2,\n    arg3, arg4, arg5\n);"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "CallMethod(arg1, arg2,\n    arg3, arg4, arg5);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Prefer to wrap after '.'",
+            "PropertyName": "resharper_csharp_wrap_after_dot_in_method_calls",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "obj.Method().\n    Method().\n    Method().\n    Method().\n    Method().\n    Method().\n    Method().\n    Method().\n    Method().\n    Method();"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "obj.Method()\n    .Method()\n    .Method()\n    .Method()\n    .Method()\n    .Method()\n    .Method()\n    .Method()\n    .Method()\n    .Method();"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Wrap chained method calls",
+            "PropertyName": "resharper_csharp_wrap_chained_method_calls",
+            "Answers": [
+                {
+                    "Name": "wrap_if_long",
+                    "PropertyValue": "wrap_if_long",
+                    "Example": {
+                        "Code": "obj.Method().Method() +\n    obj.Method().Method()\n        .Method().Method()\n        .Method().Method()\n        .Method().Method()\n        .Method().Method();"
+                    }
+                },
+                {
+                    "Name": "chop_if_long",
+                    "PropertyValue": "chop_if_long",
+                    "Example": {
+                        "Code": "obj.Method().Method() +\n    obj.Method()\n        .Method()\n        .Method()\n        .Method()\n        .Method()\n        .Method()\n        .Method()\n        .Method()\n        .Method()\n        .Method();"
+                    }
+                },
+                {
+                    "Name": "chop_always",
+                    "PropertyValue": "chop_always",
+                    "Example": {
+                        "Code": "obj.Method()\n        .Method() +\n    obj.Method()\n        .Method()\n        .Method()\n        .Method()\n        .Method()\n        .Method()\n        .Method()\n        .Method()\n        .Method()\n        .Method();"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Prefer to wrap before first method call",
+            "PropertyName": "resharper_csharp_wrap_before_first_method_call",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "obj\n    .Method()\n    .Method()\n    .Method()\n    .Method()\n    .Method()\n    .Method()\n    .Method()\n    .Method()\n    .Method()\n    .Method();"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "obj.Method()\n    .Method()\n    .Method()\n    .Method()\n    .Method()\n    .Method()\n    .Method()\n    .Method()\n    .Method()\n    .Method();"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Prefer to wrap after properties and fields in chained method calls",
+            "PropertyName": "resharper_csharp_wrap_after_property_in_chained_method_calls",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "obj.Property\n    .Method()\n    .Property\n    .Method()\n    .Property\n    .Method()\n    .Property\n    .Method()\n    .Property\n    .Method();"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "obj.Property.Method()\n    .Property.Method()\n    .Property.Method()\n    .Property.Method()\n    .Property.Method();"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Prefer to wrap before operator in binary expression",
+            "PropertyName": "resharper_csharp_wrap_before_binary_opsign",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "myField1 = expression1\n           + expression2\n           + expression3\n           + expression4\n           + expression5\n           + expression6\n           + expression7;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "myField1 = expression1 +\n           expression2 +\n           expression3 +\n           expression4 +\n           expression5 +\n           expression6 +\n           expression7;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Wrap chained binary expressions",
+            "PropertyName": "resharper_csharp_wrap_chained_binary_expressions",
+            "Answers": [
+                {
+                    "Name": "wrap_if_long",
+                    "PropertyValue": "wrap_if_long",
+                    "Example": {
+                        "Code": "b = a != b && c != d && e &&\n    f.IsSumOf(g, h) &&\n    i.Value == j && k == l &&\n    m == n && o == p;"
+                    }
+                },
+                {
+                    "Name": "chop_if_long",
+                    "PropertyValue": "chop_if_long",
+                    "Example": {
+                        "Code": "b = a != b &&\n    c != d &&\n    e &&\n    f.IsSumOf(g, h) &&\n    i.Value == j &&\n    k == l &&\n    m == n &&\n    o == p;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Prefer to wrap before operator in binary pattern",
+            "PropertyName": "resharper_csharp_wrap_before_binary_pattern_op",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "b = foo is VeryLongName1\n    or VeryLongName2\n    or VeryLongName3\n    or VeryLongName4\n    or VeryLongName5;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "b = foo is VeryLongName1 or\n    VeryLongName2 or\n    VeryLongName3 or\n    VeryLongName4 or\n    VeryLongName5;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Wrap complex binary patterns",
+            "PropertyName": "resharper_csharp_wrap_chained_binary_patterns",
+            "Answers": [
+                {
+                    "Name": "wrap_if_long",
+                    "PropertyValue": "wrap_if_long",
+                    "Example": {
+                        "Code": "b = foo is C1 or C2 or C3 or C4\n    or C5 or VeryLongName1\n    or VeryLongName2\n    or VeryLongName3;"
+                    }
+                },
+                {
+                    "Name": "chop_if_long",
+                    "PropertyValue": "chop_if_long",
+                    "Example": {
+                        "Code": "b = foo is C1\n    or C2\n    or C3\n    or C4\n    or C5\n    or VeryLongName1\n    or VeryLongName2\n    or VeryLongName3;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Force chop compound condition in 'if' statement",
+            "PropertyName": "resharper_csharp_force_chop_compound_if_expression",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "if (var1 == null ||\n    var2 == null)\n    Foo();"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "if (var1 == null || var2 == null)\n    Foo();"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Force chop compound condition in 'while' statement",
+            "PropertyName": "resharper_csharp_force_chop_compound_while_expression",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "while (var1 == null ||\n       var2 == null)\n    Foo();"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "while (var1 == null || var2 == null)\n    Foo();"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Force chop compound condition in 'do' statement",
+            "PropertyName": "resharper_csharp_force_chop_compound_do_expression",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "do\n{\n    Foo();\n} while (var1 == null ||\n         var2 == null);"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "do\n{\n    Foo();\n} while (var1 == null || var2 == null);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Prefer to wrap before '?' and ':' in ternary expressions",
+            "PropertyName": "resharper_csharp_wrap_before_ternary_opsigns",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "return hereGoesSomeBoolExpression\n    ? returnThisIfTrue\n    : returnThatIfFalse;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "return hereGoesSomeBoolExpression ?\n    returnThisIfTrue :\n    returnThatIfFalse;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Wrap ternary expression",
+            "PropertyName": "resharper_csharp_wrap_ternary_expr_style",
+            "Answers": [
+                {
+                    "Name": "wrap_if_long",
+                    "PropertyValue": "wrap_if_long",
+                    "Example": {
+                        "Code": "myField = someCondition ? true\n    : false;"
+                    }
+                },
+                {
+                    "Name": "chop_if_long",
+                    "PropertyValue": "chop_if_long",
+                    "Example": {
+                        "Code": "myField = someCondition\n    ? true\n    : false;"
+                    }
+                },
+                {
+                    "Name": "chop_always",
+                    "PropertyValue": "chop_always",
+                    "Example": {
+                        "Code": "myField = someCondition\n    ? true\n    : false;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Nested ternary expression style",
+            "PropertyName": "resharper_csharp_nested_ternary_style",
+            "Answers": [
+                {
+                    "Name": "simple_wrap",
+                    "PropertyValue": "simple_wrap",
+                    "Example": {
+                        "Code": "{\n    a = i ? \"am\" : you ? \"are\"\n        : \"is\";\n\n    b = error ? red :\n        warning ? yellow :\n        green;\n\n    c = tiger\n        ? dangerous\n        : cat\n            ? cute\n            : boring;\n\n    d = roses ? red\n        : violets ? blue\n        : so_are_you;\n}"
+                    }
+                },
+                {
+                    "Name": "autodetect",
+                    "PropertyValue": "autodetect",
+                    "Example": {
+                        "Code": "{\n    a = i ? \"am\" :\n        you ? \"are\" : \"is\";\n\n    b = error ? red :\n        warning ? yellow :\n        green;\n\n    c = tiger\n        ? dangerous\n        : cat\n            ? cute\n            : boring;\n\n    d = roses ? red\n        : violets ? blue\n        : so_are_you;\n}"
+                    }
+                },
+                {
+                    "Name": "compact",
+                    "PropertyValue": "compact",
+                    "Example": {
+                        "Code": "{\n    a = i ? \"am\" :\n        you ? \"are\" : \"is\";\n\n    b = error ? red :\n        warning ? yellow :\n        green;\n\n    c = tiger ? dangerous :\n        cat ? cute : boring;\n\n    d = roses ? red :\n        violets ? blue :\n        so_are_you;\n}"
+                    }
+                },
+                {
+                    "Name": "expanded",
+                    "PropertyValue": "expanded",
+                    "Example": {
+                        "Code": "{\n    a = i\n        ? \"am\"\n        : you\n            ? \"are\"\n            : \"is\";\n\n    b = error\n        ? red\n        : warning\n            ? yellow\n            : green;\n\n    c = tiger\n        ? dangerous\n        : cat\n            ? cute\n            : boring;\n\n    d = roses\n        ? red\n        : violets\n            ? blue\n            : so_are_you;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Wrap LINQ expressions",
+            "PropertyName": "resharper_csharp_wrap_linq_expressions",
+            "Answers": [
+                {
+                    "Name": "wrap_if_long",
+                    "PropertyValue": "wrap_if_long",
+                    "Example": {
+                        "Code": "var result = from x in list\n    where cond(x) select x;"
+                    }
+                },
+                {
+                    "Name": "chop_if_long",
+                    "PropertyValue": "chop_if_long",
+                    "Example": {
+                        "Code": "var result = from x in list\n    where cond(x)\n    select x;"
+                    }
+                },
+                {
+                    "Name": "chop_always",
+                    "PropertyValue": "chop_always",
+                    "Example": {
+                        "Code": "var result = from x in list\n    where cond(x)\n    select x;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Prefer to wrap before multiline LINQ expressions",
+            "PropertyName": "resharper_csharp_wrap_before_linq_expression",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "var result =\n    from x in list\n    where cond(x)\n    select x;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "var result = from x in list\n    where cond(x)\n    select x;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Place 'into' on a new line in LINQ expressions",
+            "PropertyName": "resharper_csharp_place_linq_into_on_new_line",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "var q1 = from i in l\n    select i\n    into j\n    where j != 0\n    select j;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "var q1 = from i in l\n    select i into j\n    where j != 0\n    select j;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Wrap interpolated strings",
+            "PropertyName": "resharper_csharp_wrap_verbatim_interpolated_strings",
+            "Answers": [
+                {
+                    "Name": "wrap_if_long",
+                    "PropertyValue": "wrap_if_long",
+                    "Example": {
+                        "Code": "var s1 = $\"id={id} src={src\n} dest={dest}\";\nvar s2 = $@\"id={id} src={src\n} dest={dest}\";\nvar s3 = $\"\"\"\n          id={id} src={src\n          } dest={dest}\n          \"\"\";"
+                    }
+                },
+                {
+                    "Name": "chop_if_long",
+                    "PropertyValue": "chop_if_long",
+                    "Example": {
+                        "Code": "var s1 = $\"id={\n    id\n} src={\n    src\n} dest={\n    dest\n}\";\nvar s2 = $@\"id={\n    id\n} src={\n    src\n} dest={\n    dest\n}\";\nvar s3 = $\"\"\"\n          id={\n              id\n          } src={\n              src\n          } dest={\n              dest\n          }\n          \"\"\";"
+                    }
+                },
+                {
+                    "Name": "no_wrap",
+                    "PropertyValue": "no_wrap",
+                    "Example": {
+                        "Code": "var s1 =\n    $\"id={id} src={src} dest={dest}\";\nvar s2 =\n    $@\"id={id} src={src} dest={dest}\";\nvar s3 = $\"\"\"\n          id={id} src={src} dest={dest}\n          \"\"\";"
+                    }
+                }
+            ]
+        }
+    ]
+}

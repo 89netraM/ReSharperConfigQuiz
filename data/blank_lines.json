@@ -1,0 +1,923 @@
+{
+    "Name": "ReSharper Config Quiz Blank Lines",
+    "Questions": [
+        {
+            "Name": "Around region",
+            "PropertyName": "resharper_csharp_blank_lines_around_region",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "abstract class C\n{\n    protected abstract void Method1();\n    #region Region Description\n\n    protected abstract void Method2();\n\n    #endregion\n    protected abstract void Method3();\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "abstract class C\n{\n    protected abstract void Method1();\n\n    #region Region Description\n\n    protected abstract void Method2();\n\n    #endregion\n\n    protected abstract void Method3();\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "abstract class C\n{\n    protected abstract void Method1();\n\n\n    #region Region Description\n\n    protected abstract void Method2();\n\n    #endregion\n\n\n    protected abstract void Method3();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Inside region",
+            "PropertyName": "resharper_csharp_blank_lines_inside_region",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "abstract class C\n{\n    protected abstract void Method1();\n\n    #region Region Description\n    protected abstract void Method2();\n    #endregion\n\n    protected abstract void Method3();\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "abstract class C\n{\n    protected abstract void Method1();\n\n    #region Region Description\n\n    protected abstract void Method2();\n\n    #endregion\n\n    protected abstract void Method3();\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "abstract class C\n{\n    protected abstract void Method1();\n\n    #region Region Description\n\n\n    protected abstract void Method2();\n\n\n    #endregion\n\n    protected abstract void Method3();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Before single-line comment",
+            "PropertyName": "resharper_csharp_blank_lines_before_single_line_comment",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "void Foo()\n{\n    var x = 5;\n    // comment\n    Call();\n    ////CommentedCall();\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "void Foo()\n{\n    var x = 5;\n\n    // comment\n    Call();\n    ////CommentedCall();\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "void Foo()\n{\n    var x = 5;\n\n\n    // comment\n    Call();\n    ////CommentedCall();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "After file header comment",
+            "PropertyName": "resharper_csharp_blank_lines_after_start_comment",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "// Header text\nclass A\n{\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "// Header text\n\nclass A\n{\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "// Header text\n\n\nclass A\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Between different 'using' groups",
+            "PropertyName": "resharper_csharp_blank_lines_between_using_groups",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "using System;\nusing System.Collections;\nusing myNamespace;"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "using System;\nusing System.Collections;\n\nusing myNamespace;"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "using System;\nusing System.Collections;\n\n\nusing myNamespace;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "After 'using' list",
+            "PropertyName": "resharper_csharp_blank_lines_after_using_list",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "using System;\n\nnamespace N\n{\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "using System;\n\nnamespace N\n{\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "using System;\n\n\nnamespace N\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Around namespace",
+            "PropertyName": "resharper_csharp_blank_lines_around_namespace",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "namespace N1\n{\n}\nnamespace N2\n{\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "namespace N1\n{\n}\n\nnamespace N2\n{\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "namespace N1\n{\n}\n\n\nnamespace N2\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Inside namespace",
+            "PropertyName": "resharper_csharp_blank_lines_inside_namespace",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "namespace N1\n{\n    class C1\n    {\n    }\n\n    class C2\n    {\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "namespace N1\n{\n\n    class C1\n    {\n    }\n\n    class C2\n    {\n    }\n\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "namespace N1\n{\n\n\n    class C1\n    {\n    }\n\n    class C2\n    {\n    }\n\n\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "After file-scoped namespace directive",
+            "PropertyName": "resharper_csharp_blank_lines_after_file_scoped_namespace_directive",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "namespace N1;\nclass C1\n{\n}\n\nclass C2\n{\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "namespace N1;\n\nclass C1\n{\n}\n\nclass C2\n{\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "namespace N1;\n\n\nclass C1\n{\n}\n\nclass C2\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Around type",
+            "PropertyName": "resharper_csharp_blank_lines_around_type",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "class C1\n{\n    int a;\n}\nclass C2\n{\n    int a;\n}\nclass C3\n{\n    int a;\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "class C1\n{\n    int a;\n}\n\nclass C2\n{\n    int a;\n}\n\nclass C3\n{\n    int a;\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "class C1\n{\n    int a;\n}\n\n\nclass C2\n{\n    int a;\n}\n\n\nclass C3\n{\n    int a;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Around single-line type",
+            "PropertyName": "resharper_csharp_blank_lines_around_single_line_type",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "delegate int MyDelegate(int a);\ndelegate int MyDelegate2(int a);\ndelegate int MyDelegate3(int a);"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "delegate int MyDelegate(int a);\n\ndelegate int MyDelegate2(int a);\n\ndelegate int MyDelegate3(int a);"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "delegate int MyDelegate(int a);\n\n\ndelegate int MyDelegate2(int a);\n\n\ndelegate int MyDelegate3(int a);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Inside type",
+            "PropertyName": "resharper_csharp_blank_lines_inside_type",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "class C\n{\n    int x;\n    int y;\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "class C\n{\n\n    int x;\n    int y;\n\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "class C\n{\n\n\n    int x;\n    int y;\n\n\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Around field",
+            "PropertyName": "resharper_csharp_blank_lines_around_field",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "class C\n{\n    /// <summary>x description</summary>\n    int x;\n    /// <summary>y description</summary>\n    int y;\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "class C\n{\n    /// <summary>x description</summary>\n    int x;\n\n    /// <summary>y description</summary>\n    int y;\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "class C\n{\n    /// <summary>x description</summary>\n    int x;\n\n\n    /// <summary>y description</summary>\n    int y;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Around single line field",
+            "PropertyName": "resharper_csharp_blank_lines_around_single_line_field",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "class C\n{\n    int x;\n    int y;\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "class C\n{\n    int x;\n\n    int y;\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "class C\n{\n    int x;\n\n\n    int y;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Around property/event",
+            "PropertyName": "resharper_csharp_blank_lines_around_property",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "class C\n{\n    /// <summary>x description</summary>\n    public int X\n    {\n        get { return 1; }\n    }\n    /// <summary>y description</summary>\n    public int Y\n    {\n        get { return 2; }\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "class C\n{\n    /// <summary>x description</summary>\n    public int X\n    {\n        get { return 1; }\n    }\n\n    /// <summary>y description</summary>\n    public int Y\n    {\n        get { return 2; }\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "class C\n{\n    /// <summary>x description</summary>\n    public int X\n    {\n        get { return 1; }\n    }\n\n\n    /// <summary>y description</summary>\n    public int Y\n    {\n        get { return 2; }\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Around single line property/event",
+            "PropertyName": "resharper_csharp_blank_lines_around_single_line_property",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "class C\n{\n    public int X { get { return 1; } }\n    public int Y { get { return 2; } }\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "class C\n{\n    public int X { get { return 1; } }\n\n    public int Y { get { return 2; } }\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "class C\n{\n    public int X { get { return 1; } }\n\n\n    public int Y { get { return 2; } }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Around auto/abstract property/event",
+            "PropertyName": "resharper_csharp_blank_lines_around_auto_property",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "class C\n{\n    /// <summary>x description</summary>\n    public int X { get; set; }\n    /// <summary>x description</summary>\n    public int Y { get; set; }\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "class C\n{\n    /// <summary>x description</summary>\n    public int X { get; set; }\n\n    /// <summary>x description</summary>\n    public int Y { get; set; }\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "class C\n{\n    /// <summary>x description</summary>\n    public int X { get; set; }\n\n\n    /// <summary>x description</summary>\n    public int Y { get; set; }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Around single line auto/abstract property/event",
+            "PropertyName": "resharper_csharp_blank_lines_around_single_line_auto_property",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "class C\n{\n    public int X { get; set; }\n    public int Y { get; set; }\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "class C\n{\n    public int X { get; set; }\n\n    public int Y { get; set; }\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "class C\n{\n    public int X { get; set; }\n\n\n    public int Y { get; set; }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Around property/event accessor",
+            "PropertyName": "resharper_csharp_blank_lines_around_accessor",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "class C\n{\n    public int X\n    {\n        get\n        {\n            DoSomething();\n            return 1;\n        }\n        set\n        {\n            DoSomething();\n            myField = value;\n        }\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "class C\n{\n    public int X\n    {\n        get\n        {\n            DoSomething();\n            return 1;\n        }\n\n        set\n        {\n            DoSomething();\n            myField = value;\n        }\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "class C\n{\n    public int X\n    {\n        get\n        {\n            DoSomething();\n            return 1;\n        }\n\n\n        set\n        {\n            DoSomething();\n            myField = value;\n        }\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Around single line property/event accessor",
+            "PropertyName": "resharper_csharp_blank_lines_around_single_line_accessor",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "class C\n{\n    public int X\n    {\n        get { return 1; }\n        set { myField = value; }\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "class C\n{\n    public int X\n    {\n        get { return 1; }\n\n        set { myField = value; }\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "class C\n{\n    public int X\n    {\n        get { return 1; }\n\n\n        set { myField = value; }\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Around method",
+            "PropertyName": "resharper_csharp_blank_lines_around_invocable",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "class C\n{\n    void Method1()\n    {\n        foo();\n        foo2();\n    }\n    void Method2()\n    {\n        foo();\n        foo2();\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "class C\n{\n    void Method1()\n    {\n        foo();\n        foo2();\n    }\n\n    void Method2()\n    {\n        foo();\n        foo2();\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "class C\n{\n    void Method1()\n    {\n        foo();\n        foo2();\n    }\n\n\n    void Method2()\n    {\n        foo();\n        foo2();\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Around single line method",
+            "PropertyName": "resharper_csharp_blank_lines_around_single_line_invocable",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "abstract class C\n{\n    abstract void Method1();\n    abstract void Method2();\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "abstract class C\n{\n    abstract void Method1();\n\n    abstract void Method2();\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "abstract class C\n{\n    abstract void Method1();\n\n\n    abstract void Method2();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Around local function",
+            "PropertyName": "resharper_csharp_blank_lines_around_local_method",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "void Method()\n{\n    void LocalFunction1()\n    {\n        foo();\n        foo2();\n    }\n    void LocalFunction2()\n    {\n        foo();\n        foo2();\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "void Method()\n{\n    void LocalFunction1()\n    {\n        foo();\n        foo2();\n    }\n\n    void LocalFunction2()\n    {\n        foo();\n        foo2();\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "void Method()\n{\n    void LocalFunction1()\n    {\n        foo();\n        foo2();\n    }\n\n\n    void LocalFunction2()\n    {\n        foo();\n        foo2();\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Around single line local function",
+            "PropertyName": "resharper_csharp_blank_lines_around_single_line_local_method",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "void Method()\n{\n    void LocalFunction1() { }\n    void LocalFunction2() { }\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "void Method()\n{\n    void LocalFunction1() { }\n\n    void LocalFunction2() { }\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "void Method()\n{\n    void LocalFunction1() { }\n\n\n    void LocalFunction2() { }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Before statements with control transfer",
+            "PropertyName": "resharper_csharp_blank_lines_before_control_transfer_statements",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "void Foo(string arg)\n{\n    Logger.Log(\"Foo\");\n    if (arg == null) throw new ArgumentNullException();\n    var smth = arg.GetSomething();\n    if (smth == null) return null;\n    var smthElse = smth.GetSomethingElse();\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "void Foo(string arg)\n{\n    Logger.Log(\"Foo\");\n\n    if (arg == null) throw new ArgumentNullException();\n    var smth = arg.GetSomething();\n\n    if (smth == null) return null;\n    var smthElse = smth.GetSomethingElse();\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "void Foo(string arg)\n{\n    Logger.Log(\"Foo\");\n\n\n    if (arg == null) throw new ArgumentNullException();\n    var smth = arg.GetSomething();\n\n\n    if (smth == null) return null;\n    var smthElse = smth.GetSomethingElse();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "After statements with control transfer",
+            "PropertyName": "resharper_csharp_blank_lines_after_control_transfer_statements",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "void Foo(string arg)\n{\n    if (arg == null) throw new ArgumentNullException();\n    var smth = arg.GetSomething();\n    if (smth == null) return null;\n    var smthElse = smth.GetSomethingElse();\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "void Foo(string arg)\n{\n    if (arg == null) throw new ArgumentNullException();\n\n    var smth = arg.GetSomething();\n    if (smth == null) return null;\n\n    var smthElse = smth.GetSomethingElse();\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "void Foo(string arg)\n{\n    if (arg == null) throw new ArgumentNullException();\n\n\n    var smth = arg.GetSomething();\n    if (smth == null) return null;\n\n\n    var smthElse = smth.GetSomethingElse();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Before statements with child blocks",
+            "PropertyName": "resharper_csharp_blank_lines_before_block_statements",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "string Foo(string arg)\n{\n    Logger.Log(\"Foo\");\n    if (arg == \"A\")\n    {\n        DoSomething();\n        DoSomethingElse();\n    }\n\n    DoMoreThings();\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "string Foo(string arg)\n{\n    Logger.Log(\"Foo\");\n\n    if (arg == \"A\")\n    {\n        DoSomething();\n        DoSomethingElse();\n    }\n\n    DoMoreThings();\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "string Foo(string arg)\n{\n    Logger.Log(\"Foo\");\n\n\n    if (arg == \"A\")\n    {\n        DoSomething();\n        DoSomethingElse();\n    }\n\n    DoMoreThings();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "After statements with child blocks",
+            "PropertyName": "resharper_csharp_blank_lines_after_block_statements",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "string Foo(string arg)\n{\n    Logger.Log(\"Foo\");\n    if (arg == \"A\")\n    {\n        DoSomething();\n        DoSomethingElse();\n    }\n    DoMoreThings();\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "string Foo(string arg)\n{\n    Logger.Log(\"Foo\");\n    if (arg == \"A\")\n    {\n        DoSomething();\n        DoSomethingElse();\n    }\n\n    DoMoreThings();\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "string Foo(string arg)\n{\n    Logger.Log(\"Foo\");\n    if (arg == \"A\")\n    {\n        DoSomething();\n        DoSomethingElse();\n    }\n\n\n    DoMoreThings();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Before multiline statements",
+            "PropertyName": "resharper_csharp_blank_lines_before_multiline_statements",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "string Foo(string arg)\n{\n    DoSomething();\n    foreach (var x in y)\n    {\n        x.DoSomething();\n        x.DoSomethingElse();\n    }\n\n    DoSomething();\n    foreach (var x in y)\n        x.DoSomething();\n    DoSomething();\n    DoSomething(\n        1,\n        2);\n    DoSomething();\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "string Foo(string arg)\n{\n    DoSomething();\n\n    foreach (var x in y)\n    {\n        x.DoSomething();\n        x.DoSomethingElse();\n    }\n\n    DoSomething();\n\n    foreach (var x in y)\n        x.DoSomething();\n    DoSomething();\n\n    DoSomething(\n        1,\n        2);\n    DoSomething();\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "string Foo(string arg)\n{\n    DoSomething();\n\n\n    foreach (var x in y)\n    {\n        x.DoSomething();\n        x.DoSomethingElse();\n    }\n\n    DoSomething();\n\n\n    foreach (var x in y)\n        x.DoSomething();\n    DoSomething();\n\n\n    DoSomething(\n        1,\n        2);\n    DoSomething();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "After multiline statements",
+            "PropertyName": "resharper_csharp_blank_lines_after_multiline_statements",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "string Foo(string arg)\n{\n    DoSomething();\n    foreach (var x in y)\n    {\n        x.DoSomething();\n        x.DoSomethingElse();\n    }\n\n    DoSomething();\n    foreach (var x in y)\n        x.DoSomething();\n    DoSomething();\n    DoSomething(\n        1,\n        2);\n    DoSomething();\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "string Foo(string arg)\n{\n    DoSomething();\n    foreach (var x in y)\n    {\n        x.DoSomething();\n        x.DoSomethingElse();\n    }\n\n    DoSomething();\n    foreach (var x in y)\n        x.DoSomething();\n\n    DoSomething();\n    DoSomething(\n        1,\n        2);\n\n    DoSomething();\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "string Foo(string arg)\n{\n    DoSomething();\n    foreach (var x in y)\n    {\n        x.DoSomething();\n        x.DoSomethingElse();\n    }\n\n\n    DoSomething();\n    foreach (var x in y)\n        x.DoSomething();\n\n\n    DoSomething();\n    DoSomething(\n        1,\n        2);\n\n\n    DoSomething();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Around 'case' section with a block in switch statement",
+            "PropertyName": "resharper_csharp_blank_lines_around_block_case_section",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "switch (a)\n{\n    case 1:\n    {\n        DoThis();\n        DoThat();\n        break;\n    }\n    case 2:\n    {\n        DoIt();\n        DoItAgainWithLove();\n        break;\n    }\n    default:\n    {\n        DoNothing();\n        DoSomething();\n        break;\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "switch (a)\n{\n    case 1:\n    {\n        DoThis();\n        DoThat();\n        break;\n    }\n\n    case 2:\n    {\n        DoIt();\n        DoItAgainWithLove();\n        break;\n    }\n\n    default:\n    {\n        DoNothing();\n        DoSomething();\n        break;\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "switch (a)\n{\n    case 1:\n    {\n        DoThis();\n        DoThat();\n        break;\n    }\n\n\n    case 2:\n    {\n        DoIt();\n        DoItAgainWithLove();\n        break;\n    }\n\n\n    default:\n    {\n        DoNothing();\n        DoSomething();\n        break;\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Around multiline 'case' section in switch statement",
+            "PropertyName": "resharper_csharp_blank_lines_around_multiline_case_section",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "switch (a)\n{\n    case 1:\n        DoThis();\n        break;\n    case 2:\n        DoThat();\n        break;\n    default:\n        DoNothing();\n        break;\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "switch (a)\n{\n    case 1:\n        DoThis();\n        break;\n\n    case 2:\n        DoThat();\n        break;\n\n    default:\n        DoNothing();\n        break;\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "switch (a)\n{\n    case 1:\n        DoThis();\n        break;\n\n\n    case 2:\n        DoThat();\n        break;\n\n\n    default:\n        DoNothing();\n        break;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Before 'case' in switch statement",
+            "PropertyName": "resharper_csharp_blank_lines_before_case",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "switch (a)\n{\n    case 1: return x;\n    case 2: return y;\n    default: return 0;\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "switch (a)\n{\n    case 1: return x;\n\n    case 2: return y;\n\n    default: return 0;\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "switch (a)\n{\n    case 1: return x;\n\n\n    case 2: return y;\n\n\n    default: return 0;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "After 'case' in switch statement",
+            "PropertyName": "resharper_csharp_blank_lines_after_case",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "switch (a)\n{\n    case 1:\n        DoThis();\n        DoThat();\n        break;\n    case 2:\n        DoIt();\n        DoItAgainWithLove();\n        break;\n    default:\n        DoNothing();\n        DoSomething();\n        break;\n}"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "switch (a)\n{\n    case 1:\n\n        DoThis();\n        DoThat();\n        break;\n    case 2:\n\n        DoIt();\n        DoItAgainWithLove();\n        break;\n    default:\n\n        DoNothing();\n        DoSomething();\n        break;\n}"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "switch (a)\n{\n    case 1:\n\n\n        DoThis();\n        DoThat();\n        break;\n    case 2:\n\n\n        DoIt();\n        DoItAgainWithLove();\n        break;\n    default:\n\n\n        DoNothing();\n        DoSomething();\n        break;\n}"
+                    }
+                }
+            ]
+        }
+    ]
+}

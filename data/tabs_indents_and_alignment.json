@@ -1,0 +1,1426 @@
+{
+    "Name": "ReSharper Config Quiz Tabs, Indents, and Alignment",
+    "Questions": [
+        {
+            "Name": "Continuous line indent multiplier",
+            "PropertyName": "resharper_csharp_continuous_indent_multiplier",
+            "Answers": [
+                {
+                    "Name": "0",
+                    "PropertyValue": "0",
+                    "Example": {
+                        "Code": "int x = foo1() +\nfoo2();"
+                    }
+                },
+                {
+                    "Name": "1",
+                    "PropertyValue": "1",
+                    "Example": {
+                        "Code": "int x = foo1() +\n    foo2();"
+                    }
+                },
+                {
+                    "Name": "2",
+                    "PropertyValue": "2",
+                    "Example": {
+                        "Code": "int x = foo1() +\n        foo2();"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Indent nested 'using' statements",
+            "PropertyName": "resharper_csharp_indent_nested_usings_stmt",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "using (A a = new A())\n    using (B b = new B())\n        using (C c = new C())\n        {\n            foo();\n        }"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "using (A a = new A())\nusing (B b = new B())\nusing (C c = new C())\n{\n    foo();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Indent nested 'fixed' statements",
+            "PropertyName": "resharper_csharp_indent_nested_fixed_stmt",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "fixed (int* a = &x)\n    fixed (int* b = &y)\n        fixed (int* c = &z)\n        {\n            foo();\n        }"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "fixed (int* a = &x)\nfixed (int* b = &y)\nfixed (int* c = &z)\n{\n    foo();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Indent nested 'lock' statements",
+            "PropertyName": "resharper_csharp_indent_nested_lock_stmt",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "lock (a)\n    lock (b)\n        lock (c)\n        {\n            foo();\n        }"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "lock (a)\nlock (b)\nlock (c)\n{\n    foo();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Indent nested 'for' statements",
+            "PropertyName": "resharper_csharp_indent_nested_for_stmt",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "for (int a = 0; a < x; a++)\n    for (int b = 0; b < y; b++)\n        for (int c = 0; c < y; c++)\n        {\n            foo();\n        }"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "for (int a = 0; a < x; a++)\nfor (int b = 0; b < y; b++)\nfor (int c = 0; c < y; c++)\n{\n    foo();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Indent nested 'foreach' statements",
+            "PropertyName": "resharper_csharp_indent_nested_foreach_stmt",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "foreach (var a in x)\n    foreach (var b in y)\n        foreach (var c in z)\n        {\n            foo();\n        }"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "foreach (var a in x)\nforeach (var b in y)\nforeach (var c in z)\n{\n    foo();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Indent nested 'while' statements",
+            "PropertyName": "resharper_csharp_indent_nested_while_stmt",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "while (a)\n    while (b)\n        while (c)\n        {\n            foo();\n        }"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "while (a)\nwhile (b)\nwhile (c)\n{\n    foo();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Use continuous line indent inside parenthesis",
+            "PropertyName": "resharper_csharp_use_continuous_indent_inside_parens",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "var x = Method(\n    parameter1,\n    parameter2\n);"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "var x = Method(\n    parameter1,\n    parameter2\n);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Indent method declarations' parenthesis",
+            "PropertyName": "resharper_csharp_indent_method_decl_pars",
+            "Answers": [
+                {
+                    "Name": "inside",
+                    "PropertyValue": "inside",
+                    "Example": {
+                        "Code": "void Method(\n    int parameter1,\n    int parameter2\n);"
+                    }
+                },
+                {
+                    "Name": "outside",
+                    "PropertyValue": "outside",
+                    "Example": {
+                        "Code": "void Method(\n    int parameter1,\n    int parameter2\n    );"
+                    }
+                },
+                {
+                    "Name": "outside_and_inside",
+                    "PropertyValue": "outside_and_inside",
+                    "Example": {
+                        "Code": "void Method(\n        int parameter1,\n        int parameter2\n    );"
+                    }
+                },
+                {
+                    "Name": "none",
+                    "PropertyValue": "none",
+                    "Example": {
+                        "Code": "void Method(\nint parameter1,\nint parameter2\n);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Indent primary constructor declarations' parenthesis",
+            "PropertyName": "resharper_csharp_indent_primary_constructor_decl_pars",
+            "Answers": [
+                {
+                    "Name": "inside",
+                    "PropertyValue": "inside",
+                    "Example": {
+                        "Code": "record Person(\n    string Name,\n    int Age\n);"
+                    }
+                },
+                {
+                    "Name": "outside",
+                    "PropertyValue": "outside",
+                    "Example": {
+                        "Code": "record Person(\n    string Name,\n    int Age\n    );"
+                    }
+                },
+                {
+                    "Name": "outside_and_inside",
+                    "PropertyValue": "outside_and_inside",
+                    "Example": {
+                        "Code": "record Person(\n        string Name,\n        int Age\n    );"
+                    }
+                },
+                {
+                    "Name": "none",
+                    "PropertyValue": "none",
+                    "Example": {
+                        "Code": "record Person(\nstring Name,\nint Age\n);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Indent method calls' parenthesis",
+            "PropertyName": "resharper_csharp_indent_invocation_pars",
+            "Answers": [
+                {
+                    "Name": "inside",
+                    "PropertyValue": "inside",
+                    "Example": {
+                        "Code": "var x = Method(\n    parameter1,\n    parameter2\n);"
+                    }
+                },
+                {
+                    "Name": "outside",
+                    "PropertyValue": "outside",
+                    "Example": {
+                        "Code": "var x = Method(\n    parameter1,\n    parameter2\n    );"
+                    }
+                },
+                {
+                    "Name": "outside_and_inside",
+                    "PropertyValue": "outside_and_inside",
+                    "Example": {
+                        "Code": "var x = Method(\n        parameter1,\n        parameter2\n    );"
+                    }
+                },
+                {
+                    "Name": "none",
+                    "PropertyValue": "none",
+                    "Example": {
+                        "Code": "var x = Method(\nparameter1,\nparameter2\n);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Indent statement (if, while, for, etc) parenthesis",
+            "PropertyName": "resharper_csharp_indent_statement_pars",
+            "Answers": [
+                {
+                    "Name": "inside",
+                    "PropertyValue": "inside",
+                    "Example": {
+                        "Code": "if (\n    condition1 &&\n    condition2\n)\n    return;"
+                    }
+                },
+                {
+                    "Name": "outside",
+                    "PropertyValue": "outside",
+                    "Example": {
+                        "Code": "if (\n    condition1 &&\n    condition2\n    )\n    return;"
+                    }
+                },
+                {
+                    "Name": "outside_and_inside",
+                    "PropertyValue": "outside_and_inside",
+                    "Example": {
+                        "Code": "if (\n        condition1 &&\n        condition2\n    )\n    return;"
+                    }
+                },
+                {
+                    "Name": "none",
+                    "PropertyValue": "none",
+                    "Example": {
+                        "Code": "if (\ncondition1 &&\ncondition2\n)\n    return;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Indent type parameter's angles",
+            "PropertyName": "resharper_csharp_indent_typeparam_angles",
+            "Answers": [
+                {
+                    "Name": "inside",
+                    "PropertyValue": "inside",
+                    "Example": {
+                        "Code": "void Method<\n    T1,\n    T2\n>();"
+                    }
+                },
+                {
+                    "Name": "outside",
+                    "PropertyValue": "outside",
+                    "Example": {
+                        "Code": "void Method<\n    T1,\n    T2\n    >();"
+                    }
+                },
+                {
+                    "Name": "outside_and_inside",
+                    "PropertyValue": "outside_and_inside",
+                    "Example": {
+                        "Code": "void Method<\n        T1,\n        T2\n    >();"
+                    }
+                },
+                {
+                    "Name": "none",
+                    "PropertyValue": "none",
+                    "Example": {
+                        "Code": "void Method<\nT1,\nT2\n>();"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Indent type argument's angles",
+            "PropertyName": "resharper_csharp_indent_typearg_angles",
+            "Answers": [
+                {
+                    "Name": "inside",
+                    "PropertyValue": "inside",
+                    "Example": {
+                        "Code": "var x = Method<\n    Class1,\n    Class2\n>();"
+                    }
+                },
+                {
+                    "Name": "outside",
+                    "PropertyValue": "outside",
+                    "Example": {
+                        "Code": "var x = Method<\n    Class1,\n    Class2\n    >();"
+                    }
+                },
+                {
+                    "Name": "outside_and_inside",
+                    "PropertyValue": "outside_and_inside",
+                    "Example": {
+                        "Code": "var x = Method<\n        Class1,\n        Class2\n    >();"
+                    }
+                },
+                {
+                    "Name": "none",
+                    "PropertyValue": "none",
+                    "Example": {
+                        "Code": "var x = Method<\nClass1,\nClass2\n>();"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Indent other parenthesis and brackets",
+            "PropertyName": "resharper_csharp_indent_pars",
+            "Answers": [
+                {
+                    "Name": "inside",
+                    "PropertyValue": "inside",
+                    "Example": {
+                        "Code": "var x = 1 * checked(\n    5 +\n    6\n);"
+                    }
+                },
+                {
+                    "Name": "outside",
+                    "PropertyValue": "outside",
+                    "Example": {
+                        "Code": "var x = 1 * checked(\n    5 +\n    6\n    );"
+                    }
+                },
+                {
+                    "Name": "outside_and_inside",
+                    "PropertyValue": "outside_and_inside",
+                    "Example": {
+                        "Code": "var x = 1 * checked(\n        5 +\n        6\n    );"
+                    }
+                },
+                {
+                    "Name": "none",
+                    "PropertyValue": "none",
+                    "Example": {
+                        "Code": "var x = 1 * checked(\n5 +\n6\n);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Indent #if, #else, #elif, #endif",
+            "PropertyName": "resharper_csharp_indent_preprocessor_if",
+            "Answers": [
+                {
+                    "Name": "no_indent",
+                    "PropertyValue": "no_indent",
+                    "Example": {
+                        "Code": "namespace N\n{\n    class C\n    {\n#if !HideSomething\n        int myField;\n#endif\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "usual_indent",
+                    "PropertyValue": "usual_indent",
+                    "Example": {
+                        "Code": "namespace N\n{\n    class C\n    {\n        #if !HideSomething\n        int myField;\n        #endif\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "outdent",
+                    "PropertyValue": "outdent",
+                    "Example": {
+                        "Code": "namespace N\n{\n    class C\n    {\n    #if !HideSomething\n        int myField;\n    #endif\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "do_not_change",
+                    "PropertyValue": "do_not_change",
+                    "Example": {
+                        "Code": "namespace N\n{\n    class C\n    {\n #if !HideSomething\n        int myField;\n #endif\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Indent #region, #endregion",
+            "PropertyName": "resharper_csharp_indent_preprocessor_region",
+            "Answers": [
+                {
+                    "Name": "no_indent",
+                    "PropertyValue": "no_indent",
+                    "Example": {
+                        "Code": "namespace N\n{\n    class C\n    {\n#region Fields\n        int myField;\n#endregion\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "usual_indent",
+                    "PropertyValue": "usual_indent",
+                    "Example": {
+                        "Code": "namespace N\n{\n    class C\n    {\n        #region Fields\n        int myField;\n        #endregion\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "outdent",
+                    "PropertyValue": "outdent",
+                    "Example": {
+                        "Code": "namespace N\n{\n    class C\n    {\n    #region Fields\n        int myField;\n    #endregion\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "do_not_change",
+                    "PropertyValue": "do_not_change",
+                    "Example": {
+                        "Code": "namespace N\n{\n    class C\n    {\n #region Fields\n        int myField;\n #endregion\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Indent other preprocessor directives",
+            "PropertyName": "resharper_csharp_indent_preprocessor_other",
+            "Answers": [
+                {
+                    "Name": "no_indent",
+                    "PropertyValue": "no_indent",
+                    "Example": {
+                        "Code": "namespace N\n{\n    class C\n    {\n#pragma warning disable CS3021\n        int myField;\n#warning Fixme\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "usual_indent",
+                    "PropertyValue": "usual_indent",
+                    "Example": {
+                        "Code": "namespace N\n{\n    class C\n    {\n        #pragma warning disable CS3021\n        int myField;\n        #warning Fixme\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "outdent",
+                    "PropertyValue": "outdent",
+                    "Example": {
+                        "Code": "namespace N\n{\n    class C\n    {\n    #pragma warning disable CS3021\n        int myField;\n    #warning Fixme\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "do_not_change",
+                    "PropertyValue": "do_not_change",
+                    "Example": {
+                        "Code": "namespace N\n{\n    class C\n    {\n #pragma warning disable CS3021\n        int myField;\n #warning Fixme\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Indent 'case' from 'switch'",
+            "PropertyName": "csharp_indent_switch_labels",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "switch (expression)\n{\n    case 0:\n        break;\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "switch (expression)\n{\ncase 0:\n    break;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Outdent statement labels",
+            "PropertyName": "resharper_csharp_outdent_statement_labels",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "{\n    int a = 5;\nMyLabel:\n    a--;\n    if (a > 0) goto MyLabel;\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "{\n    int a = 5;\n    MyLabel:\n    a--;\n    if (a > 0) goto MyLabel;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Indent type constraints",
+            "PropertyName": "resharper_csharp_indent_type_constraints",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class C1<T1>\n    where T1 : I1\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class C1<T1>\nwhere T1 : I1\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Don't indent comments started at first column",
+            "PropertyName": "resharper_csharp_stick_comment",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "namespace N\n{\n// Some comment\n    class C\n    {\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "namespace N\n{\n    // Some comment\n    class C\n    {\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Indent braces inside statement conditions",
+            "PropertyName": "resharper_csharp_indent_braces_inside_statement_conditions",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "while (x is IMyInterface\n       {\n           Prop1: 1,\n           Prop2: 2\n       })\n{\n    DoSomething();\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "while (x is IMyInterface\n{\n    Prop1: 1,\n    Prop2: 2\n})\n{\n    DoSomething();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "How to align when tabs are used for indents",
+            "PropertyName": "resharper_csharp_alignment_tab_fill_style",
+            "Answers": [
+                {
+                    "Name": "use_spaces",
+                    "PropertyValue": "use_spaces",
+                    "Example": {
+                        "Code": "SomeMyMethod(param1,\n             param2);"
+                    }
+                },
+                {
+                    "Name": "use_tabs_only",
+                    "PropertyValue": "use_tabs_only",
+                    "Example": {
+                        "Code": "SomeMyMethod(param1,\n\t\t\tparam2);"
+                    }
+                },
+                {
+                    "Name": "optimal_fill",
+                    "PropertyValue": "optimal_fill",
+                    "Example": {
+                        "Code": "SomeMyMethod(param1,\n\t\t\t param2);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Method parameters",
+            "PropertyName": "resharper_csharp_align_multiline_parameter",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "void fooCall(int firstParameter,\n             int secondParameter)\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "void fooCall(int firstParameter,\n    int secondParameter)\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "List of base classes and interfaces",
+            "PropertyName": "resharper_csharp_align_multiline_extends_list",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class C : BaseClass,\n          SomeInterface\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class C : BaseClass,\n    SomeInterface\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "LINQ query",
+            "PropertyName": "resharper_csharp_align_linq_query",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "var q = from x in xs\n        where x != null\n        select x;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "var q = from x in xs\n    where x != null\n    select x;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Binary expressions",
+            "PropertyName": "resharper_csharp_align_multiline_binary_expressions_chain",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "var a = someOperand + operand2\n                    + operand3\n                    + operand4;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "var a = someOperand + operand2\n    + operand3\n    + operand4;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Outdent binary operators",
+            "PropertyName": "resharper_csharp_outdent_binary_ops",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "{\n    var a =\n        someOperand\n      + operand2\n      + operand3\n      + operand4;\n    var b = someOperand\n          + operand2\n          + operand3\n          + operand4;\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "{\n    var a =\n        someOperand\n        + operand2\n        + operand3\n        + operand4;\n    var b = someOperand\n            + operand2\n            + operand3\n            + operand4;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Chained method calls",
+            "PropertyName": "resharper_csharp_align_multiline_calls_chain",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "MyVar.SomeMethod()\n     .OtherMethod()\n     .ThirdMethod();"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "MyVar.SomeMethod()\n    .OtherMethod()\n    .ThirdMethod();"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Outdent dots in chained method calls",
+            "PropertyName": "resharper_csharp_outdent_dots",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "{\n    var a =\n        MyVar\n           .SomeMethod()\n          ?.OtherMethod()\n           .ThirdMethod();\n    var b = MyVar\n       .SomeMethod()\n      ?.OtherMethod()\n       .ThirdMethod();\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "{\n    var a =\n        MyVar\n            .SomeMethod()\n            ?.OtherMethod()\n            .ThirdMethod();\n    var b = MyVar\n        .SomeMethod()\n        ?.OtherMethod()\n        .ThirdMethod();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Array, object and collection initializer",
+            "PropertyName": "resharper_csharp_align_multiline_array_and_object_initializer",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "StudentName student = new StudentName\n                      {\n                          FirstName = \"John\",\n                          LastName = \"Smith\",\n                          ID = 116\n                      }"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "StudentName student = new StudentName\n{\n    FirstName = \"John\",\n    LastName = \"Smith\",\n    ID = 116\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Switch expressions",
+            "PropertyName": "resharper_csharp_align_multiline_switch_expression",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "var z = op switch {\n            op.Add => x + y,\n            op.Subtract => x - y,\n            op.Multiply => x * y,\n            op.Divide => x / y\n        }"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "var z = op switch {\n    op.Add => x + y,\n    op.Subtract => x - y,\n    op.Multiply => x * y,\n    op.Divide => x / y\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Property patterns",
+            "PropertyName": "resharper_csharp_align_multiline_property_pattern",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "bool matches = sourceObject is MyType {\n                                   Field1: 1,\n                                   Field2: 2,\n                               };"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "bool matches = sourceObject is MyType {\n    Field1: 1,\n    Field2: 2,\n};"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "List patterns and collection expressions",
+            "PropertyName": "resharper_csharp_align_multiline_list_pattern",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "int[] collection = [\n                       1,\n                       2,\n                       3\n                   ];\n\nvar matches = collection is [\n                                1,\n                                > 0,\n                                not 42\n                            ];"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "int[] collection = [\n    1,\n    2,\n    3\n];\n\nvar matches = collection is [\n    1,\n    > 0,\n    not 42\n];"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Binary patterns",
+            "PropertyName": "resharper_csharp_align_multiline_binary_patterns",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "var a = e is someOperand or operand2\n                         or operand3\n                         or operand4;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "var a = e is someOperand or operand2\n    or operand3\n    or operand4;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Outdent binary patterns",
+            "PropertyName": "resharper_csharp_outdent_binary_pattern_ops",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "{\n    var a = e is\n        someOperand\n     or operand2\n     or operand3\n     or operand4;\n    var b = e is someOperand\n     or operand2\n     or operand3\n     or operand4;\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "{\n    var a = e is\n        someOperand\n        or operand2\n        or operand3\n        or operand4;\n    var b = e is someOperand\n        or operand2\n        or operand3\n        or operand4;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Anonymous method body",
+            "PropertyName": "resharper_csharp_indent_anonymous_method_block",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "FooCall(delegate\n        {\n            DoSomething();\n            return 0;\n        });"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "FooCall(delegate\n{\n    DoSomething();\n    return 0;\n});"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Call arguments by '('",
+            "PropertyName": "resharper_csharp_align_first_arg_by_paren",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "fooCall(\n        firstParameter,\n        secondParameter);"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "fooCall(\n    firstParameter,\n    secondParameter);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Call arguments",
+            "PropertyName": "resharper_csharp_align_multiline_argument",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "fooCall(firstParameter,\n        secondParameter);"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "fooCall(firstParameter,\n    secondParameter);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Tuple components",
+            "PropertyName": "resharper_csharp_align_tuple_components",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "var tuple = (firstParameter,\n             secondParameter);"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "var tuple = (firstParameter,\n    secondParameter);"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Other expressions",
+            "PropertyName": "resharper_csharp_align_multiline_expression",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "destination = source1\n                  ? source2\n                  : source3"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "destination = source1\n    ? source2\n    : source3"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Statement conditions inside parenthesis",
+            "PropertyName": "resharper_csharp_align_multiline_statement_conditions",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "while (x is IMyInterface or\n       IMyInterface2 or\n       IMyInterface3\n       {\n           Prop1: 1,\n           Prop2: 2\n       })\n{\n    DoSomething();\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "while (x is IMyInterface or\n    IMyInterface2 or\n    IMyInterface3\n    {\n        Prop1: 1,\n        Prop2: 2\n    })\n{\n    DoSomething();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "'for' statement header",
+            "PropertyName": "resharper_csharp_align_multiline_for_stmt",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "for (int i = 0;\n     i < 10;\n     i++)\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "for (int i = 0;\n     i < 10;\n     i++)\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Multiple declarations",
+            "PropertyName": "resharper_csharp_align_multiple_declaration",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class C\n{\n    private int i = 0,\n                j = 10;\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class C\n{\n    private int i = 0,\n        j = 10;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Type parameters list",
+            "PropertyName": "resharper_csharp_align_multline_type_parameter_list",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class Class<T1,\n            T2,\n            T3>\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class Class<T1,\n    T2,\n    T3>\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Type parameter constraints",
+            "PropertyName": "resharper_csharp_align_multline_type_parameter_constrains",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class C<T1, T2> where T1 : I1\n                where T2 : I1\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class C<T1, T2> where T1 : I1\n    where T2 : I1\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Outdent commas",
+            "PropertyName": "resharper_csharp_outdent_commas",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class Class<\n    T1\n  , T3> :\n    Base\n  , SomeInterface\n{\n    void fooCall(\n        int firstParameter\n      , int secondParameter)\n    {\n        fooCall(\n            firstParameter\n          , secondParameter);\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class Class<\n    T1\n    , T3> :\n    Base\n    , SomeInterface\n{\n    void fooCall(\n        int firstParameter\n        , int secondParameter)\n    {\n        fooCall(\n            firstParameter\n            , secondParameter);\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Align multiline comments with asterisks",
+            "PropertyName": "resharper_csharp_align_multiline_comments",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "DoSomething(); /* This is\n                * badly aligned\n                * comment\n                */"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "DoSomething(); /* This is\n   * badly aligned\n   * comment\n */"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "How to indent raw string literals",
+            "PropertyName": "resharper_csharp_indent_raw_literal_string",
+            "Answers": [
+                {
+                    "Name": "align",
+                    "PropertyValue": "align",
+                    "Example": {
+                        "Code": "string x = \"\"\"\n           Some literal text\n             with indents\n           or without\n           \"\"\";"
+                    }
+                },
+                {
+                    "Name": "indent",
+                    "PropertyValue": "indent",
+                    "Example": {
+                        "Code": "string x = \"\"\"\n    Some literal text\n      with indents\n    or without\n    \"\"\";"
+                    }
+                },
+                {
+                    "Name": "do_not_change",
+                    "PropertyValue": "do_not_change",
+                    "Example": {
+                        "Code": "string x = \"\"\"\n      Some literal text\n        with indents\n      or without\n      \"\"\";"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Fields and constants",
+            "PropertyName": "resharper_csharp_int_align_fields",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class C\n{\n    [Attr]        private string    x     = \"x\";\n    [Attr(2)]     public  SomeClass xxxxx = \"xxxxx\";\n    [Attr, Attr3] private string    xxx;\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class C\n{\n    [Attr] private string x = \"x\";\n    [Attr(2)] public SomeClass xxxxx = \"xxxxx\";\n    [Attr, Attr3] private string xxx;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Properties and events",
+            "PropertyName": "resharper_csharp_int_align_properties",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class C\n{\n    [Attr]        private string    x      { get; set; } = \"x\";\n    [Attr(2)]     public  SomeClass xxxxx  { get; set; } = SomeClass.Default;\n    [Attr, Attr3] private string    xxx    { get; }\n    [Attr]        private string    x2     => \"x\";\n    [Attr(2)]     public  SomeClass xxxxx2 => \"xxxxx\";\n    [Attr, Attr3] private string    xxx2   => \"xxx\";\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class C\n{\n    [Attr] private string x { get; set; } = \"x\";\n    [Attr(2)] public SomeClass xxxxx { get; set; } = SomeClass.Default;\n    [Attr, Attr3] private string xxx { get; }\n    [Attr] private string x2 => \"x\";\n    [Attr(2)] public SomeClass xxxxx2 => \"xxxxx\";\n    [Attr, Attr3] private string xxx2 => \"xxx\";\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Simple methods, operators, delegates",
+            "PropertyName": "resharper_csharp_int_align_methods",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "class C\n{\n    [Attr]        private string    x(int p)         { return \"x\" + p; };\n    [Attr(2)]     public  SomeClass xxxxx(string b)  { return b.ToSomeClass(); }\n    [Attr, Attr3] private string    xxx()            { return null; }\n    [Attr]        private string    x2(int p)        => \"x\" + p;\n    [Attr(2)]     public  SomeClass xxxxx2(string b) => b.ToSomeClass();\n    [Attr, Attr3] private string    xxx()            => null;\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "class C\n{\n    [Attr] private string x(int p) { return \"x\" + p; };\n    [Attr(2)] public SomeClass xxxxx(string b) { return b.ToSomeClass(); }\n    [Attr, Attr3] private string xxx() { return null; }\n    [Attr] private string x2(int p) => \"x\" + p;\n    [Attr(2)] public SomeClass xxxxx2(string b) => b.ToSomeClass();\n    [Attr, Attr3] private string xxx() => null;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Multiline method signature",
+            "PropertyName": "resharper_csharp_int_align_parameters",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "void MyMethod(\n    [Attr, Attr3] string    xxx,\n    [Attr]        string    x     = \"x\",\n    [Attr(2)]     SomeClass xxxxx = \"xxxxx\")\n{\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "void MyMethod(\n    [Attr, Attr3] string xxx,\n    [Attr] string x = \"x\",\n    [Attr(2)] SomeClass xxxxx = \"xxxxx\")\n{\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Variables and local constants",
+            "PropertyName": "resharper_csharp_int_align_variables",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "{\n    var x     = 1;\n    var xxxxx = 2;\n    var xxx   = 2;\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "{\n    var x = 1;\n    var xxxxx = 2;\n    var xxx = 2;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Other assignments and initializers",
+            "PropertyName": "resharper_csharp_int_align_assignments",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "{\n    x     = 1;\n    xxxxx = 2;\n    xxx   = 2;\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "{\n    x = 1;\n    xxxxx = 2;\n    xxx = 2;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Property patterns",
+            "PropertyName": "resharper_csharp_int_align_property_patterns",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "bool matches = sourceObject is MyType\n{\n    FShort       : 1,\n    FieldLongLong: 2,\n};"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "bool matches = sourceObject is MyType\n{\n    FShort: 1,\n    FieldLongLong: 2,\n};"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Nested ternary operators",
+            "PropertyName": "resharper_csharp_int_align_nested_ternary",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "var x =\n    y == \"a\"    ? 1 :\n    y == \"aaaa\" ? 4 :\n    y == \"aa\"   ? 2 :\n                  0;"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "var x =\n    y == \"a\" ? 1 :\n    y == \"aaaa\" ? 4 :\n    y == \"aa\" ? 2 :\n    0;"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Invocations of the same method",
+            "PropertyName": "resharper_csharp_int_align_invocations",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "[Attr(\"x\",               1234567)]\n[Attr(\"xxxxx\",           1)]\n[Attr(MyEnum.MyConstant, 124)]\nvoid MyMethod()\n{\n    CallMe(\"x\",               1234567);\n    CallMe(\"xxxxx\",           1);\n    CallMe(MyEnum.MyConstant, 124);\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "[Attr(\"x\", 1234567)]\n[Attr(\"xxxxx\", 1)]\n[Attr(MyEnum.MyConstant, 124)]\nvoid MyMethod()\n{\n    CallMe(\"x\", 1234567);\n    CallMe(\"xxxxx\", 1);\n    CallMe(MyEnum.MyConstant, 124);\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Binary expressions",
+            "PropertyName": "resharper_csharp_int_align_binary_expressions",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "if (\n    zzz                             ||\n    someCondition && otherCondition ||\n    aa            && bb             ||\n    x       == \"a\"                  ||\n    xxxxxxx != \"aaaa\"               ||\n    xx      > \"aa\")\n{\n    DoSomething();\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "if (\n    zzz ||\n    someCondition && otherCondition ||\n    aa && bb ||\n    x == \"a\" ||\n    xxxxxxx != \"aaaa\" ||\n    xx > \"aa\")\n{\n    DoSomething();\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "End comments",
+            "PropertyName": "resharper_csharp_int_align_comments",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "{\n    DoSomething();       // I'm\n    var y = 6;           // forced\n    while (y > 0) y--;   // to\n    DoSomethingElse();   /* document */\n    var z = 10;          /* my code */\n    while (z < 100) z++; /* profusely */\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "{\n    DoSomething(); // I'm\n    var y = 6; // forced\n    while (y > 0) y--; // to\n    DoSomethingElse(); /* document */\n    var z = 10; /* my code */\n    while (z < 100) z++; /* profusely */\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Simple switch sections",
+            "PropertyName": "resharper_csharp_int_align_switch_sections",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "switch (op)\n{\n    case op.Add:      return x + y;\n    case op.Subtract: return x - y;\n    case op.Multiply: return x * y;\n    case op.Divide:   return x / y;\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "switch (op)\n{\n    case op.Add: return x + y;\n    case op.Subtract: return x - y;\n    case op.Multiply: return x * y;\n    case op.Divide: return x / y;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Switch expressions",
+            "PropertyName": "resharper_csharp_int_align_switch_expressions",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "var z = op switch\n{\n    op.Add      => x + y,\n    op.Subtract => x - y,\n    op.Multiply => x * y,\n    op.Divide   => x / y\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "var z = op switch\n{\n    op.Add => x + y,\n    op.Subtract => x - y,\n    op.Multiply => x * y,\n    op.Divide => x / y\n}"
+                    }
+                }
+            ]
+        }
+    ]
+}

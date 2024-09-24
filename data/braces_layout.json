@@ -1,0 +1,476 @@
+{
+    "Name": "ReSharper Config Quiz Braces Layout",
+    "Questions": [
+        {
+            "Name": "Type and namespace declaration",
+            "PropertyName": "resharper_csharp_type_declaration_braces",
+            "Answers": [
+                {
+                    "Name": "end_of_line",
+                    "PropertyValue": "end_of_line",
+                    "Example": {
+                        "Code": "namespace N {\n    interface I {\n        void foo();\n    }\n\n    class C {\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "end_of_line_no_space",
+                    "PropertyValue": "end_of_line_no_space",
+                    "Example": {
+                        "Code": "namespace N{\n    interface I{\n        void foo();\n    }\n\n    class C{\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "next_line",
+                    "PropertyValue": "next_line",
+                    "Example": {
+                        "Code": "namespace N\n{\n    interface I\n    {\n        void foo();\n    }\n\n    class C\n    {\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "next_line_shifted",
+                    "PropertyValue": "next_line_shifted",
+                    "Example": {
+                        "Code": "namespace N\n    {\n    interface I\n        {\n        void foo();\n        }\n\n    class C\n        {\n        }\n    }"
+                    }
+                },
+                {
+                    "Name": "next_line_shifted_2",
+                    "PropertyValue": "next_line_shifted_2",
+                    "Example": {
+                        "Code": "namespace N\n    {\n        interface I\n            {\n                void foo();\n            }\n\n        class C\n            {\n            }\n    }"
+                    }
+                },
+                {
+                    "Name": "pico",
+                    "PropertyValue": "pico",
+                    "Example": {
+                        "Code": "namespace N\n{ interface I\n  { void foo(); }\n\n  class C\n  { } }"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Indent inside namespace declaration",
+            "PropertyName": "resharper_csharp_indent_inside_namespace",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "namespace N\n{\n    interface I\n    {\n        void foo();\n    }\n\n    class C\n    {\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "namespace N\n{\ninterface I\n{\n    void foo();\n}\n\nclass C\n{\n}\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Method declaration",
+            "PropertyName": "resharper_csharp_invocable_declaration_braces",
+            "Answers": [
+                {
+                    "Name": "end_of_line",
+                    "PropertyValue": "end_of_line",
+                    "Example": {
+                        "Code": "class C\n{\n    void Method() {\n        foo();\n        foo1();\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "end_of_line_no_space",
+                    "PropertyValue": "end_of_line_no_space",
+                    "Example": {
+                        "Code": "class C\n{\n    void Method(){\n        foo();\n        foo1();\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "next_line",
+                    "PropertyValue": "next_line",
+                    "Example": {
+                        "Code": "class C\n{\n    void Method()\n    {\n        foo();\n        foo1();\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "next_line_shifted",
+                    "PropertyValue": "next_line_shifted",
+                    "Example": {
+                        "Code": "class C\n{\n    void Method()\n        {\n        foo();\n        foo1();\n        }\n}"
+                    }
+                },
+                {
+                    "Name": "next_line_shifted_2",
+                    "PropertyValue": "next_line_shifted_2",
+                    "Example": {
+                        "Code": "class C\n{\n    void Method()\n        {\n            foo();\n            foo1();\n        }\n}"
+                    }
+                },
+                {
+                    "Name": "pico",
+                    "PropertyValue": "pico",
+                    "Example": {
+                        "Code": "class C\n{\n    void Method()\n    { foo();\n      foo1(); }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Lambda and delegate (anonymous method declaration)",
+            "PropertyName": "resharper_csharp_anonymous_method_declaration_braces",
+            "Answers": [
+                {
+                    "Name": "end_of_line",
+                    "PropertyValue": "end_of_line",
+                    "Example": {
+                        "Code": "D d = delegate() {\n    int x = 0;\n    return x;\n}"
+                    }
+                },
+                {
+                    "Name": "end_of_line_no_space",
+                    "PropertyValue": "end_of_line_no_space",
+                    "Example": {
+                        "Code": "D d = delegate(){\n    int x = 0;\n    return x;\n}"
+                    }
+                },
+                {
+                    "Name": "next_line",
+                    "PropertyValue": "next_line",
+                    "Example": {
+                        "Code": "D d = delegate()\n{\n    int x = 0;\n    return x;\n}"
+                    }
+                },
+                {
+                    "Name": "next_line_shifted",
+                    "PropertyValue": "next_line_shifted",
+                    "Example": {
+                        "Code": "D d = delegate()\n    {\n    int x = 0;\n    return x;\n    }"
+                    }
+                },
+                {
+                    "Name": "next_line_shifted_2",
+                    "PropertyValue": "next_line_shifted_2",
+                    "Example": {
+                        "Code": "D d = delegate()\n    {\n        int x = 0;\n        return x;\n    }"
+                    }
+                },
+                {
+                    "Name": "pico",
+                    "PropertyValue": "pico",
+                    "Example": {
+                        "Code": "D d = delegate()\n{ int x = 0;\n  return x; }"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Property declaration",
+            "PropertyName": "resharper_csharp_accessor_owner_declaration_braces",
+            "Answers": [
+                {
+                    "Name": "end_of_line",
+                    "PropertyValue": "end_of_line",
+                    "Example": {
+                        "Code": "class C\n{\n    int Property {\n        get { return null; }\n        set { }\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "end_of_line_no_space",
+                    "PropertyValue": "end_of_line_no_space",
+                    "Example": {
+                        "Code": "class C\n{\n    int Property{\n        get { return null; }\n        set { }\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "next_line",
+                    "PropertyValue": "next_line",
+                    "Example": {
+                        "Code": "class C\n{\n    int Property\n    {\n        get { return null; }\n        set { }\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "next_line_shifted",
+                    "PropertyValue": "next_line_shifted",
+                    "Example": {
+                        "Code": "class C\n{\n    int Property\n        {\n        get { return null; }\n        set { }\n        }\n}"
+                    }
+                },
+                {
+                    "Name": "next_line_shifted_2",
+                    "PropertyValue": "next_line_shifted_2",
+                    "Example": {
+                        "Code": "class C\n{\n    int Property\n        {\n            get { return null; }\n            set { }\n        }\n}"
+                    }
+                },
+                {
+                    "Name": "pico",
+                    "PropertyValue": "pico",
+                    "Example": {
+                        "Code": "class C\n{\n    int Property\n    { get { return null; }\n      set { } }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Accessor declaration",
+            "PropertyName": "resharper_csharp_accessor_declaration_braces",
+            "Answers": [
+                {
+                    "Name": "end_of_line",
+                    "PropertyValue": "end_of_line",
+                    "Example": {
+                        "Code": "class C\n{\n    int Property\n    {\n        get { return null; }\n        set {\n            Notify(value);\n            Set(value);\n        }\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "end_of_line_no_space",
+                    "PropertyValue": "end_of_line_no_space",
+                    "Example": {
+                        "Code": "class C\n{\n    int Property\n    {\n        get{ return null; }\n        set{\n            Notify(value);\n            Set(value);\n        }\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "next_line",
+                    "PropertyValue": "next_line",
+                    "Example": {
+                        "Code": "class C\n{\n    int Property\n    {\n        get { return null; }\n        set\n        {\n            Notify(value);\n            Set(value);\n        }\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "next_line_shifted",
+                    "PropertyValue": "next_line_shifted",
+                    "Example": {
+                        "Code": "class C\n{\n    int Property\n    {\n        get { return null; }\n        set\n            {\n            Notify(value);\n            Set(value);\n            }\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "next_line_shifted_2",
+                    "PropertyValue": "next_line_shifted_2",
+                    "Example": {
+                        "Code": "class C\n{\n    int Property\n    {\n        get { return null; }\n        set\n            {\n                Notify(value);\n                Set(value);\n            }\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "pico",
+                    "PropertyValue": "pico",
+                    "Example": {
+                        "Code": "class C\n{\n    int Property\n    {\n        get { return null; }\n        set\n        { Notify(value);\n          Set(value); }\n    }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Block under the 'case' label",
+            "PropertyName": "resharper_csharp_case_block_braces",
+            "Answers": [
+                {
+                    "Name": "end_of_line",
+                    "PropertyValue": "end_of_line",
+                    "Example": {
+                        "Code": "switch (expression)\n{\n    case 0: {\n        foo();\n        break;\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "end_of_line_no_space",
+                    "PropertyValue": "end_of_line_no_space",
+                    "Example": {
+                        "Code": "switch (expression)\n{\n    case 0:{\n        foo();\n        break;\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "next_line",
+                    "PropertyValue": "next_line",
+                    "Example": {
+                        "Code": "switch (expression)\n{\n    case 0:\n    {\n        foo();\n        break;\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "next_line_shifted",
+                    "PropertyValue": "next_line_shifted",
+                    "Example": {
+                        "Code": "switch (expression)\n{\n    case 0:\n        {\n        foo();\n        break;\n        }\n}"
+                    }
+                },
+                {
+                    "Name": "next_line_shifted_2",
+                    "PropertyValue": "next_line_shifted_2",
+                    "Example": {
+                        "Code": "switch (expression)\n{\n    case 0:\n        {\n            foo();\n            break;\n        }\n}"
+                    }
+                },
+                {
+                    "Name": "pico",
+                    "PropertyValue": "pico",
+                    "Example": {
+                        "Code": "switch (expression)\n{\n    case 0:\n    { foo();\n      break; }\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Expressions (initializers, switch expressions, patterns, collection expressions)",
+            "PropertyName": "resharper_csharp_initializer_braces",
+            "Answers": [
+                {
+                    "Name": "end_of_line",
+                    "PropertyValue": "end_of_line",
+                    "Example": {
+                        "Code": "int[] array = new int[] {\n    1, 2, 3\n}"
+                    }
+                },
+                {
+                    "Name": "end_of_line_no_space",
+                    "PropertyValue": "end_of_line_no_space",
+                    "Example": {
+                        "Code": "int[] array = new int[]{\n    1, 2, 3\n}"
+                    }
+                },
+                {
+                    "Name": "next_line",
+                    "PropertyValue": "next_line",
+                    "Example": {
+                        "Code": "int[] array = new int[]\n{\n    1, 2, 3\n}"
+                    }
+                },
+                {
+                    "Name": "next_line_shifted",
+                    "PropertyValue": "next_line_shifted",
+                    "Example": {
+                        "Code": "int[] array = new int[]\n    {\n    1, 2, 3\n    }"
+                    }
+                },
+                {
+                    "Name": "next_line_shifted_2",
+                    "PropertyValue": "next_line_shifted_2",
+                    "Example": {
+                        "Code": "int[] array = new int[]\n    {\n        1, 2, 3\n    }"
+                    }
+                },
+                {
+                    "Name": "pico",
+                    "PropertyValue": "pico",
+                    "Example": {
+                        "Code": "int[] array = new int[]\n{ 1, 2, 3 }"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Use continuous line indent inside expression braces",
+            "PropertyName": "resharper_csharp_use_continuous_indent_inside_initializer_braces",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "int[] array = new int[]\n{\n    1, 2, 3\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "int[] array = new int[]\n{\n    1, 2, 3\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Other",
+            "PropertyName": "resharper_csharp_other_braces",
+            "Answers": [
+                {
+                    "Name": "end_of_line",
+                    "PropertyValue": "end_of_line",
+                    "Example": {
+                        "Code": "if (condition) {\n    foo();\n}\nelse {\n    foo();\n}"
+                    }
+                },
+                {
+                    "Name": "end_of_line_no_space",
+                    "PropertyValue": "end_of_line_no_space",
+                    "Example": {
+                        "Code": "if (condition){\n    foo();\n}\nelse{\n    foo();\n}"
+                    }
+                },
+                {
+                    "Name": "next_line",
+                    "PropertyValue": "next_line",
+                    "Example": {
+                        "Code": "if (condition)\n{\n    foo();\n}\nelse\n{\n    foo();\n}"
+                    }
+                },
+                {
+                    "Name": "next_line_shifted",
+                    "PropertyValue": "next_line_shifted",
+                    "Example": {
+                        "Code": "if (condition)\n    {\n    foo();\n    }\nelse\n    {\n    foo();\n    }"
+                    }
+                },
+                {
+                    "Name": "next_line_shifted_2",
+                    "PropertyValue": "next_line_shifted_2",
+                    "Example": {
+                        "Code": "if (condition)\n    {\n        foo();\n    }\nelse\n    {\n        foo();\n    }"
+                    }
+                },
+                {
+                    "Name": "pico",
+                    "PropertyValue": "pico",
+                    "Example": {
+                        "Code": "if (condition)\n{ foo(); }\nelse\n{ foo(); }"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Allow comment after '{'",
+            "PropertyName": "resharper_csharp_allow_comment_after_lbrace",
+            "Answers": [
+                {
+                    "Name": "true",
+                    "PropertyValue": "true",
+                    "Example": {
+                        "Code": "if (condition)\n{ // comment\n    statement;\n}"
+                    }
+                },
+                {
+                    "Name": "false",
+                    "PropertyValue": "false",
+                    "Example": {
+                        "Code": "if (condition)\n{\n    // comment\n    statement;\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "Name": "Empty braces formatting",
+            "PropertyName": "resharper_csharp_empty_block_style",
+            "Answers": [
+                {
+                    "Name": "multiline",
+                    "PropertyValue": "multiline",
+                    "Example": {
+                        "Code": "class C\n{\n    void EmptyMethod()\n    {\n    }\n}"
+                    }
+                },
+                {
+                    "Name": "together",
+                    "PropertyValue": "together",
+                    "Example": {
+                        "Code": "class C\n{\n    void EmptyMethod()\n    { }\n}"
+                    }
+                },
+                {
+                    "Name": "together_same_line",
+                    "PropertyValue": "together_same_line",
+                    "Example": {
+                        "Code": "class C\n{\n    void EmptyMethod() { }\n}"
+                    }
+                }
+            ]
+        }
+    ]
+}
